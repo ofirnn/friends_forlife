@@ -1,0 +1,44 @@
+[
+    {
+        "fields": {
+            "birth_date": "2015-11-26",
+            "chip_id": "44443255",
+            "color": "\\u05d7\\u05d5\\u05dd",
+            "description": "\\u05d0\\u05d1\\u05e8\\u05d5\\u05dd \\u05d4\\u05e0\\u05d7\\u05de\\u05d3",
+            "is_adopted": false,
+            "is_castrated": false,
+            "is_children_friendly": true,
+            "is_educated": false,
+            "is_hypoallergenic": false,
+            "last_updated": "2015-11-26T09:00:27.404Z",
+            "name": "\\u05d0\\u05d1\\u05e8\\u05d5\\u05dd",
+            "picture": "",
+            "status": "\\u05d8\\u05d9\\u05e4\\u05d5\\u05dc",
+            "stayings": [],
+            "type_name": "\\u05e4\\u05d5\\u05d3\\u05dc"
+        },
+        "model": "app.dog",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "birth_date": "2015-11-26",
+            "chip_id": "3123123",
+            "color": "\\u05dc\\u05d1\\u05df",
+            "description": "\\u05db\\u05dc\\u05d1 \\u05e0\\u05d4\\u05d3\\u05e8",
+            "is_adopted": false,
+            "is_castrated": false,
+            "is_children_friendly": true,
+            "is_educated": false,
+            "is_hypoallergenic": false,
+            "last_updated": "2015-11-26T09:01:43.394Z",
+            "name": "\\u05de\\u05e0\\u05d7\\u05dd",
+            "picture": "",
+            "status": "\\u05d8\\u05d9\\u05e4\\u05d5\\u05dc",
+            "stayings": [],
+            "type_name": "\\u05e6\\u05d9\\u05d5\\u05d5\\u05d0\\u05d5\\u05d4"
+        },
+        "model": "app.dog",
+        "pk": 3
+    }
+]

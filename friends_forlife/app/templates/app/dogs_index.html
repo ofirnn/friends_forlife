@@ -1,0 +1,25 @@
+{% if dogs_list %}
+
+    <h1> Dogs Details </h1>
+    <table style="width:100%" lang="he">
+    <tr>
+        <td>שם</td>
+        <td>תאריך לידה</td>
+        <td>גזע</td>
+        <td>חברותי לילדים?</td>
+        <td>תמונה</td>
+    </tr>
+    {% for dog in dogs_list %}
+        <tr>
+            <td>{{ dog.name }}</td>
+            <td>{{ dog.birth_date }}</td>
+            <td>{{ dog.type_name }}</td>
+            <td>{{ dog.is_children_friendly }}</td>
+            <td> <img src="{{ dog.picture }}"></td>
+        </tr>
+    {% endfor %}
+
+    </tr>
+{% else %}
+    <p> אין כלבים להצגה</p>
+{% endif %}
