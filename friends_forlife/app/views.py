@@ -14,3 +14,13 @@ def dog_details(request, dog_id):
     dog = get_object_or_404(Dog, pk=dog_id)
     context = RequestContext(request, {'dog': dog})
     return render(request, 'app/dog_details.html', context)
+
+
+def dogs_4_adoption(request):
+    context = RequestContext(request, {'dog': 'dog'})
+    return render(request, 'app/dogs_4_adoption.html', context)
+
+
+def dogs_list(request):
+    dog_size = request.GET.get("dog_size", "")
+    return HttpResponse("%s" % dog_size)
