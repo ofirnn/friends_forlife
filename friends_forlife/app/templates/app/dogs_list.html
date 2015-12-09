@@ -50,11 +50,14 @@
 						<div class="mainTop"></div>
 						<div class="mainContent">
 				    		<h1>תוצאות החיפוש</h1>
-					     	<div class="picture"   <!-- here come's dog's pic-->
-					     		<p class="name">לכאן ייכנס שם הכלב</p>
-					     		<img src="../../static/img/panels/dog_frame.png">
-					     	
-					     	</div>
+                            {% for dog in dogs_list %}
+                                <div class="picture"   <!-- here come's dog's pic-->
+					     		    <p class="name">{{ dog.name }}</p>
+                                    <p class="color">{{ dog.color }}</p>
+					     	        <p class="description"> {{ dog.description }}</p>
+                                    <img src={{ dog.picture }}>
+					     	    </div>
+                            {%  endfor %}
 								<div class="clear"></div>
 							</form>							
 						</div>
