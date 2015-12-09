@@ -1,5 +1,6 @@
 from django.db import models
 import json
+import friends_forlife.settings
 # Create your models here.
 
 
@@ -38,7 +39,7 @@ class Dog(models.Model):
     gender = models.CharField(max_length=10, null=True)
     status = models.CharField(max_length=50, help_text="State Name - In-Adoption / In-House / Treatment ")
     last_updated = models.DateTimeField(auto_created=True)
-    picture = models.ImageField(null=True, blank=True)
+    picture = models.ImageField(upload_to="media/dog_pictures/", default="media/dogs_pictures/no-img.jpg")
     chip_id = models.CharField(max_length=200, help_text="IL chip-id")
 
     size = models.CharField(max_length=200, null=True)
