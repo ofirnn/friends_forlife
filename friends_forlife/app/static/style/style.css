@@ -393,7 +393,7 @@ form{
 
 }
 
-/*Adi*/
+/********************Adi******************/
 .picture
 {
 	width: 30%;
@@ -405,10 +405,30 @@ form{
 	width: 80%;
 }
 
-.picture p
+.picture .name
 {
 	width: 80%;
 	font-size: 25px;
 }
 
+select
+{
+	/*background: rgba(189, 210, 215, 0.5);*/
+	background:url("../../static/img/buttons/select_button.png") 0 0 no-repeat;
+ 	border-right: solid;
+ 	width: 138px;
+ 	height: 24px;
+ 	font-family: trashimclm;
+ 	padding-top: 3px;
+ 	font-size: 16px; 
+	color: #333333;
+}
+
+option:not(:checked) { background: white;  color: #566A6F}
+
+h3
+{
+	font-size: 20px;
+}
+/****************************************************************/
 
