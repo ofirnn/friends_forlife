@@ -67,4 +67,5 @@ def dogs_list(request):
     if req_suitable_for_allergic:
         dogs = dogs.filter(Q(is_hypoallergenic=True))
 
-    return HttpResponse("%s" % len(dogs))
+    context = RequestContext(request, {'dogs_list': dogs})
+    return render(request, 'app/dogs_list.html', context)
