@@ -188,7 +188,7 @@ span.number {
 }
 
 .mainContent h1{
-	color:#729299;
+	color:#3E5560;
 	font-size:34px; line-height:19px; margin:0 15px 0 10px;
 }
 /*=========================================*/
@@ -206,24 +206,67 @@ span.number {
 /*=========== PAGE - ADOPT A DOG ===============*/ 
 /*=========================================*/
 
-.IndexLeftSideAdopt{
-	background:url("../../static/img/panels/rhs-comb-white-bg.jpg") no-repeat;
-	/*width:393px; height:168px;*/
-	width:170px; height:129px;
-	padding:39px 180px 0px 43px;
+.indexRightSide{
+	width:400px;
+	float:right;	
+}
+.banner{
+	width:500px;
+	height:250px;
 }
 
-.IndexLeftSideAdopt span{
+
+.IndexLeftSide{
+	width:400px;
+	float:left;
+}
+.IndexLeftSideAdoptaionDays, .IndexLeftSideAdopt{
+	background:url("../../static/img/panels/rhs-comb-white-bg.jpg") no-repeat;
+	/*width:393px; height:168px;*/
+	width:160px; height:110px;
+	padding:39px 180px 0px 43px;
+	float:left;
+	margin: 20px 0 20px 0;
+}
+
+.IndexLeftSideStore, .IndexLeftSideVolenteer{
+	background:url("../../static/img/panels/rhs-pink-puppy.jpg") no-repeat;
+	width:160px; height:110px;
+	padding:39px 43px 0px 180px;
+	float:left;	
+}
+
+
+.IndexLeftSideAdoptaionDays h4,.IndexLeftSideAdopt h4{
 	text-align:center;
-	font-size:26px;
+	font-size:25px;
 	color:#7A8D90;
 	font-weight:bold;
+
 }
-.IndexLeftSideAdopt a{
+.IndexLeftSideAdoptaionDays p, .IndexLeftSideAdopt p{
 	text-align:center;
 	font-size:14px;
-	color:#729299;
+	color:#729299;	
 }
+
+.IndexLeftSideStore h4, .IndexLeftSideVolenteer h4{
+	text-align:center;
+	font-size:25px;
+	color:#AC6D76;
+	width:200px;
+	margin: 0 -20px 0 0;
+	font-weight:bold;	
+}
+.IndexLeftSideStore p, .IndexLeftSideVolenteer p{
+	text-align:center;
+	font-size:14px;
+	width:200px;
+	color:#DDB2BA;
+}
+.IndexLeftSideStore p{margin:-2px -30px 0 0;}
+.IndexLeftSideVolenteer p{margin:15px -20px 0 0;}
+
 
 
 /*=========================================*/
