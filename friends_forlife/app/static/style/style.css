@@ -1,5 +1,8 @@
 *{margin:0; padding: 0;}
-/*General Settings*/
+/*=========================================*/
+/*=========== GENERAL SETTING ===============*/ 
+/*=========================================*/
+
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary {display: block;}
 
 a {text-decoration: none;}
@@ -9,43 +12,383 @@ a:active,a:hover{outline: 0;}
 
 @font-face{font-family: "trashimclm";src: url(trashimclm.ttf);}
 
-body {font-family: trashimclm; color: #333; background: url("../../static/img/body-bg-tile.jpg") bottom repeat; 
+body {font-family: trashimclm; color: #333; background:#333333 url("../../static/img/background/body-bg-tile.jpg") bottom repeat; 
   	  -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 
-#wrapper{width: 1000px; margin: 0 auto;}
-
-#logo{width: 435px; height: 153px; background:url("../../static/img/logo.png") no-repeat center;
-      display: block; float:right;}
+.clear{clear: both;}
 
 
-.header-user-dropdown {
-	background-color:#292c2f;
-	box-shadow:0 1px 1px #ccc;
-	height: 160px;
-	color: #ffffff;
-	box-sizing: border-box;
+.block {
+  position: relative;
+  margin: 0 auto;
+}
+
+
+#outer-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+#inner-wrap {
+  position: relative;
+  width: 100%;
+}
+
+
+.blueH{
+	font-weight:500px;
+	color:#729299;
+	display:block;
+	font-size:1.429em;
+	line-height:1.1em;
+	letter-spacing:-1px;
+	margin-bottom:4px;	
+}
+.whiteP{	
+	color:#f9f9f1;
+	font-size:1.429em;
+	letter-spacing:0.02em;
+	line-height:1.1em;
+	display:block;
+	}
+/*=========================================*/
+/*=========== HEADER SETTINGS ===============*/ 
+/*=========================================*/
+
+/*=====Logo===*/
+#logo{width: 425px; height: 175px; background:transparent url("../../static/img/logo_425_156.png") no-repeat;
+      display: block; float:right; 
+      z-index:1;
+      }
+
+
+/*=====Donation Banner===*/
+#contact { 
+	background:url(../../static/img/background/contact-details.png) no-repeat;
+	width:213px;
+	height:62px;
+	padding:7px 10px 0px 10px;
+	text-align:center;
+	float:left;	
+}
+
+span.based {
+	font-weight:500px;
+	color:#729299;
+	display:block;
+	font-size:1.429em;
+	line-height:1.1em;
+	letter-spacing:-1px;
+	margin-bottom:4px;
+}
+
+span.number {
+	color:#f9f9f1;
+	font-family: "chunk-1","chunk-2",serif;
+	font-size:1.429em;
+	letter-spacing:0.02em;
+	line-height:1.1em;
+	display:block;
+}
+
+/*=====Navigator Settings===*/
+.close-btn {
+  display: block;
+  width: 2.625em;
+  height: 2.25em;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: url("../../static/img/buttons/close-btn.png") left center no-repeat;
+  background-size: 1.875em 1.875em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.close-btn:focus, .close-btn:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+.nav-btn {
+  display: block;
+  width: 2.625em;
+  height: 2.25em;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background:url("../../static/img/buttons/nav-icon.png") left center no-repeat;
+  background-size: 1.875em 1.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.nav-btn:hover, .nav-btn:focus {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+#nav {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  color: #fff;
+}
+#nav .close-btn {
+  display: none;
+}
+
+#nav ul {
+  *zoom: 1;
+  display: block;
+}
+#nav ul:before, #nav ul:after {
+  content: "";
+  display: table;
+}
+#nav ul:after {
+  clear: both;
+}
+#nav li {
+  display: block;
+}
+#nav li a {
+  display: block;
+  color: #ccc;
+  font-size: 17px;
+  line-height: 1.28571em;
+  font-weight: bold;
+  outline: none;
+}
+#nav li a:focus, #nav li a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+#nav li.is-active a {
+  color: #fff;
+}
+
+/*=========================================*/
+/*=========== GENERAL MAIN SETTINGS ===============*/ 
+/*=========================================*/
+
+#main .block {
+  padding: 2.625em 1.875em;
+}
+
+.mainTop{
+	background:url("../../static/img/background/main-content-top-bubbles.jpg") no-repeat;
+	width:980px;
+	height:69px;
+	display:block;
+}
+
+.mainContent{
+	background:url("../../static/img/background/main-content-tile.jpg") repeat-y;
+	width:920px;
+	overflow:hidden;
+	padding:40px 20px 0px 40px;
+}
+
+.mainBtn{
+	background:url("../../static/img/background/main-content-btm-curve.jpg") no-repeat;
+	height:33px;
+	display:block;
+	width:980px;	
+}
+
+.mainContent h1{
+	color:#729299;
+	font-size:34px; line-height:19px; margin:0 15px 0 10px;
+}
+/*=========================================*/
+/*=========== GENERAL FOOTER SETTINGS ===============*/ 
+/*=========================================*/
+
+#footer {	
+	background:url("../../static/img/background/Footer-tile.jpg") repeat-x #FFF;
+	padding:140px 0px 40px 00px;
+	margin:-70px 0px 0px 0px;
+	overflow:hidden;	
+}
+
+
+/*=========================================*/
+/*=========== PAGE - ADOPT A DOG ===============*/ 
+/*=========================================*/
+
+
+
+/*forms buttons and inputs*/
+button,input,select,textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+button,input {
+  line-height: normal;
+}
+button,html input[type="button"],input[type="reset"],input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],input[disabled] {cursor: default;}
+input[type="checkbox"],input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+form{
+
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+	border: rgba(255, 255, 255, 0.5) solid 5px;
+	width:70%;
+	margin: 5% 14% 0 0;
+}
+
+
+.dog_search_first_section
+{
+    float: right;
+	width: 35%;
+	margin: 5% 5% 5% 0%;
+	/*padding-bottom: 5%;*/
+	border: 4px solid;
+	border-color: #D9F3FF; 
+}
+
+.dog_search_second_section /*WEB*/
+{  
+	float: left;
+	width: 40%;
+	margin: 5% 5% 5% 5%;
+	border: 4px solid;
+	border-radius: 5px;
+	border-color: #D9F3FF; 
+}
+
+.dog_search_first_section label
+{
+ 	float:right;
+  	padding: 10% 0% 10% 0;	
+}
+
+.dog_search_second_section label
+{
+
+
+  	/*padding: 5% 0 10% 0;
+  /*	margin: 5% 5% 5% 5%;*/	
 }
 
 
 
-@media all and (max-width: 600px) {
+/*=========================================*/
+/*=========== Desktop Adaption ===============*/ 
+/*=========================================*/
 
-	#wrapper{
-	width: auto; /* according to design's width*/ 
-	margin: 0 auto;
-	background-color:#8e3d63;	
-	}
-	
-	
-	#logo{
-	    width: 240px;
-	    height: 125px;
-	    background: url("../../static/img/logoS.png") no-repeat center;
-	    display: block;
-	    margin-left: auto;
-	    margin-right: auto;
-	    float:none;
-	}
 
+@media screen and (min-width: 1046px) {
+
+	.block{
+	  max-width: 960px;	
+	}
+	#top > .block{	
+		background:url(../../static/img/background/border.png) bottom repeat-x;
+		height:150px;
+	}
+  #top .nav-btn {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  #nav .close-btn {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  #nav{
+	overflow:visible;
+	float:left;
+  	width:1000px;
+  	margin:-140px 0 0 -130px;
+  }
+  #nav ul {
+    text-align: center;   
+    z-index:999;
+    position:relative;
+    margin:60px 0 0 0;
+  }
+  #nav li {
+    display: inline-block;       
+  }
+  #nav li:last-child {
+    border-right: none;
+  }
+  #nav li a {
+    padding: 8px 18px;
+  }
+
+
+#nav a, #nav a:visited {
+	display:inline-block;
+	color:#756e68;
+	font-weight:500;
+	font-size:26px;
+	text-align:center;
+	height:29px;	
+	padding:12px 0px 0px 0px;
 }
 
+#nav li.is-active a, #nav a:hover {
+	color:#57514b;
+	text-decoration:none;
+	background:url(../../static/img/buttons/menu-tabs/right-brown.png) right top no-repeat;
+}
+
+#nav li.navBtnAdopt a { width:86px;}
+#nav li.navBtnAdopt.is-active a, #nav li.navBtnAdopt a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat;}
+
+#nav li.navBtnFoster a { width:100px; }
+#nav li.navBtnFoster.is-active a, #nav li.navBtnFoster a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn131.jpg) no-repeat;}
+
+#nav li.navBtnAbout a { width:84px; }
+#nav li.navBtnAbout.is-active a, #nav li.navBtnAbout a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
+
+#nav li.navBtnGallery a { width:84px; }
+#nav li.navBtnGallery.is-active a, #nav li.navBtnGallery a:hover {background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
+
+#nav li.navBtnDonate { display:none;}
+
+}
