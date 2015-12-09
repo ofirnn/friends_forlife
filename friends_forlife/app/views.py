@@ -49,22 +49,33 @@ def dogs_list(request):
 
     dogs = Dog.objects.all()
 
+    print dogs
     if req_gender != ALL_STRING:
+        print "Filtering Gender"
         dogs = dogs.filter(Q(gender=req_gender))
     if req_size != ALL_STRING:
+        print "Filtering Size"
         dogs = dogs.filter(Q(size=req_size))
     if req_age != ALL_STRING:
+        print "Filtering Age"
         dogs = dogs.filter(Q(age=req_age))
     if req_breed != ALL_STRING:
+        print "Filtering breed"
         dogs = dogs.filter(Q(type_name=req_breed))
     if req_color != ALL_STRING:
+        print "Filtering color"
         dogs = dogs.filter(Q(color=req_color))
 
     if req_children_friendly:
+        print "Filtering childen_friendly"
         dogs = dogs.filter(Q(is_children_friendly=True))
     if req_habituated_for_needs:
+        print "Filtering educated"
         dogs = dogs.filter(Q(is_educated=True))
     if req_suitable_for_allergic:
+        print "Filtering hypoallergenic"
         dogs = dogs.filter(Q(is_hypoallergenic=True))
+    print dogs
 
-    return HttpResponse("%s" % len(dogs))
+    context = RequestContext(request, {'dogs_list': dogs})
+    return render(request, 'app/dogs_list.html', context)

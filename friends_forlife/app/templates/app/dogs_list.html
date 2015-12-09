@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+	    <title>[4] Treasure Island</title>	
+		<script src="../../static/js/modernizr.js"></script>
+		<link rel="stylesheet" href="../../static/style/style.css">
+		<link rel="stylesheet" href="../../static/style/styleMobile.css">
+	</head>
+	<body dir="rtl">	
+		<div id="outer-wrap">
+			<div id="inner-wrap">	
+			    <header id="top">
+			        <div class="block">
+			            <a href="index.html"  id="logo"></a><!--Logo-->
+			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
+			            <div id="contact">
+			                <span class="based">we're based in Limerick</span>
+			                <span class="number">call us  061 43 7777</span>
+			            </div>		    
+					    <nav id="nav">
+				            <ul>
+				                <li class="is-active navBtnAdopt">
+				                    <a href="#">אמץ כלב</a>
+				                </li>
+				             	<li class="navBtnFoster">
+				                    <a href="#">רישום לאומנה</a>
+				                </li>
+				             <!--<li class="navBtnAbout">
+				                    <a href="#">אודות</>
+				              </li>-->
+				             <li class="navBtnGallery">
+				                    <a href="#">גלריה</a></a>
+				                </li>
+				             <!--<li class="navBtnContact">
+				                    <a href="#">צור קשר</a>
+				                </li>-->
+				                <li class="navBtnDonate">
+				                    <a href="#">תרומה</a></a>
+				                </li>
+				            </ul>	
+			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+			    		</nav>
+					</div>			        
+			    </header>
+				<main id="main">
+					<div class="block">
+						<div class="mainTop"></div>
+						<div class="mainContent">
+				    		<h1>תוצאות החיפוש</h1>
+                            {% for dog in dogs_list %}
+                                <div class="picture"   <!-- here come's dog's pic-->
+					     		    <p class="name">{{ dog.name }}</p>
+                                    <p class="color">{{ dog.color }}</p>
+					     	        <p class="description"> {{ dog.description }}</p>
+                                    <img src={{ dog.picture }}>
+					     	    </div>
+                            {%  endfor %}
+								<div class="clear"></div>
+							</form>							
+						</div>
+						<div class="mainBtn"></div>
+					</main>		
+			    	<footer id="footer"></footer>
+				</div><!--Block-->			    	
+			</div><!--/#inner-wrap-->
+		</div><!--/#outer-wrap-->
+		<script src="../../static/js/main.js"></script>
+	</body>
+</html>
