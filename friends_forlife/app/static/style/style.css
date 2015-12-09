@@ -35,18 +35,23 @@ body {font-family: trashimclm; color: #333; background:#333333 url("../../static
   width: 100%;
 }
 
-.header{
+
+.blueH{
+	font-weight:500px;
+	color:#729299;
+	display:block;
 	font-size:1.429em;
 	line-height:1.1em;
 	letter-spacing:-1px;
 	margin-bottom:4px;	
 }
-.paragraph{
+.whiteP{	
+	color:#f9f9f1;
+	font-size:1.429em;
 	letter-spacing:0.02em;
 	line-height:1.1em;
-	display:block;	
-}
-
+	display:block;
+	}
 /*=========================================*/
 /*=========== HEADER SETTINGS ===============*/ 
 /*=========================================*/
@@ -156,14 +161,28 @@ span.number {
 #nav li {
   display: block;
 }
-
+#nav li a {
+  display: block;
+  color: #ccc;
+  font-size: 17px;
+  line-height: 1.28571em;
+  font-weight: bold;
+  outline: none;
+}
+#nav li a:focus, #nav li a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+#nav li.is-active a {
+  color: #fff;
+}
 
 /*=========================================*/
 /*=========== GENERAL MAIN SETTINGS ===============*/ 
 /*=========================================*/
 
 #main .block {
-  padding: 42px 30px;
+  padding: 2.625em 1.875em;
 }
 
 .mainTop{
@@ -196,33 +215,10 @@ span.number {
 /*=========================================*/
 
 #footer {	
-	background:url("../../static/img/background/footer_img.png") repeat-x #FFF;
+	background:url("../../static/img/background/Footer-tile.jpg") repeat-x #FFF;
 	padding:140px 0px 40px 00px;
 	margin:-70px 0px 0px 0px;
 	overflow:hidden;	
-}
-
-/*=========================================*/
-/*=========== PAGE - ADOPT A DOG ===============*/ 
-/*=========================================*/
-
-.IndexLeftSideAdopt{
-	background:url("../../static/img/panels/rhs-comb-white-bg.jpg") no-repeat;
-	/*width:393px; height:168px;*/
-	width:170px; height:129px;
-	padding:39px 180px 0px 43px;
-}
-
-.IndexLeftSideAdopt span{
-	text-align:center;
-	font-size:26px;
-	color:#7A8D90;
-	font-weight:bold;
-}
-.IndexLeftSideAdopt a{
-	text-align:center;
-	font-size:14px;
-	color:#729299;
 }
 
 
@@ -305,6 +301,8 @@ form{
   /*	margin: 5% 5% 5% 5%;*/	
 }
 
+
+
 /*=========================================*/
 /*=========== Desktop Adaption ===============*/ 
 /*=========================================*/
@@ -313,7 +311,7 @@ form{
 @media screen and (min-width: 1046px) {
 
 	.block{
-	  max-width: 980px;	
+	  max-width: 960px;	
 	}
 	#top > .block{	
 		background:url(../../static/img/background/border.png) bottom repeat-x;
@@ -344,7 +342,7 @@ form{
 	overflow:visible;
 	float:left;
   	width:1000px;
-  	margin:-140px 0 0 -200px;
+  	margin:-140px 0 0 -130px;
   }
   #nav ul {
     text-align: center;   
@@ -361,50 +359,56 @@ form{
   #nav li a {
     padding: 8px 18px;
   }
-	#nav li a:focus, #nav li a:hover {
-	  color: #fff;
-	  background: rgba(255, 255, 255, 0.1);
-	}
-	#nav li.is-active a {
-	  color: #fff;
-	}
 
-	#nav a, #nav a:visited {
-		display:inline-block;
-		color:#756e68;
-		font-weight:500;
-		font-size:17px;
-		text-align:center;
-		height:29px;	
-		padding:12px 0px 0px 0px;
-		line-height: 1.5em;
-	}
 
-	#nav li.is-active a, #nav a:hover {
-		color:#57514b;
-		text-decoration:none;
-		background:url(../../static/img/buttons/menu-tabs/right-brown.png) right top no-repeat;
-	}
+#nav a, #nav a:visited {
+	display:inline-block;
+	color:#756e68;
+	font-weight:500;
+	font-size:26px;
+	text-align:center;
+	height:29px;	
+	padding:12px 0px 0px 0px;
+}
 
-	#nav li.navBtnAdopt a { width:86px;}
-	#nav li.navBtnAdopt.is-active a, #nav li.navBtnAdopt a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat;}
+#nav li.is-active a, #nav a:hover {
+	color:#57514b;
+	text-decoration:none;
+	background:url(../../static/img/buttons/menu-tabs/right-brown.png) right top no-repeat;
+}
 
-	#nav li.navBtnFoster a { width:100px; }
-	#nav li.navBtnFoster.is-active a, #nav li.navBtnFoster a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn131.jpg) no-repeat;}
+#nav li.navBtnAdopt a { width:86px;}
+#nav li.navBtnAdopt.is-active a, #nav li.navBtnAdopt a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat;}
 
-	#nav li.navBtnAbout a { width:84px; }
-	#nav li.navBtnAbout.is-active a, #nav li.navBtnAbout a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
+#nav li.navBtnFoster a { width:100px; }
+#nav li.navBtnFoster.is-active a, #nav li.navBtnFoster a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn131.jpg) no-repeat;}
 
-	#nav li.navBtnDonate a { width:84px; }
-	#nav li.navBtnDonate.is-active a, #nav li.navBtnDonate a:hover {background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
+#nav li.navBtnAbout a { width:84px; }
+#nav li.navBtnAbout.is-active a, #nav li.navBtnAbout a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
+
+#nav li.navBtnGallery a { width:84px; }
+#nav li.navBtnGallery.is-active a, #nav li.navBtnGallery a:hover {background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
+
+#nav li.navBtnDonate { display:none;}
 
 }
 
 /*Adi*/
 .picture
 {
+	width: 30%;
 	margin-top: 5%;
 	margin-right: 5%;
+}
+.picture img
+{
+	width: 80%;
+}
+
+.picture p
+{
+	width: 80%;
+	font-size: 25px;
 }
 
 
