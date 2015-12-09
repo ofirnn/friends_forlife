@@ -137,45 +137,7 @@ span.number {
   opacity: 1;
 }
 
-#nav {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  color: #fff;
-}
-#nav .close-btn {
-  display: none;
-}
 
-#nav ul {
-  *zoom: 1;
-  display: block;
-}
-#nav ul:before, #nav ul:after {
-  content: "";
-  display: table;
-}
-#nav ul:after {
-  clear: both;
-}
-#nav li {
-  display: block;
-}
-#nav li a {
-  display: block;
-  color: #ccc;
-  font-size: 17px;
-  line-height: 1.28571em;
-  font-weight: bold;
-  outline: none;
-}
-#nav li a:focus, #nav li a:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-}
-#nav li.is-active a {
-  color: #fff;
-}
 
 /*=========================================*/
 /*=========== GENERAL MAIN SETTINGS ===============*/ 
@@ -397,22 +359,62 @@ form{
     width: 1px;
   }
 
-  #nav .close-btn {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  #nav{
+	#nav .close-btn {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	}
+
+	#nav{
 	overflow:visible;
 	float:left;
-  	width:1000px;
-  	margin:-140px 0 0 -130px;
-  }
+	width:1000px;
+	margin:-140px 0 0 -180px;
+	}
+
+
+	#nav .close-btn {
+	  display: none;
+	}
+
+	#nav ul {
+	  *zoom: 1;
+	  display: block;
+	}
+	#nav ul:before, #nav ul:after {
+	  content: "";
+	  display: table;
+	}
+	#nav ul:after {
+	  clear: both;
+	}
+	#nav li {
+	  display: block;
+	}
+
+	#nav a, #nav a:visited {
+		display:inline-block;
+		color:#756e68;
+		font-weight:500;
+		line-height: 1.28571em;
+		font-size:17px;
+		text-align:center;
+		height:29px;	
+		padding:12px 0px 0px 0px;
+	}
+#nav li a:focus, #nav li a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+#nav li.is-active a {
+  color: #fff;
+}
+
   #nav ul {
     text-align: center;   
     z-index:999;
@@ -430,15 +432,7 @@ form{
   }
 
 
-#nav a, #nav a:visited {
-	display:inline-block;
-	color:#756e68;
-	font-weight:500;
-	font-size:26px;
-	text-align:center;
-	height:29px;	
-	padding:12px 0px 0px 0px;
-}
+
 
 #nav li.is-active a, #nav a:hover {
 	color:#57514b;
@@ -455,14 +449,12 @@ form{
 #nav li.navBtnAbout a { width:84px; }
 #nav li.navBtnAbout.is-active a, #nav li.navBtnAbout a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
 
-#nav li.navBtnGallery a { width:84px; }
-#nav li.navBtnGallery.is-active a, #nav li.navBtnGallery a:hover {background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
-
-#nav li.navBtnDonate { display:none;}
+#nav li.navBtnDonate a { width:84px; }
+#nav li.navBtnDonate.is-active a, #nav li.navBtnDonate a:hover {background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
 
 }
 
-/********************Adi******************/
+/*Adi*/
 .picture
 {
 	width: 30%;
@@ -474,30 +466,10 @@ form{
 	width: 80%;
 }
 
-.picture .name
+.picture p
 {
 	width: 80%;
 	font-size: 25px;
 }
 
-select
-{
-	/*background: rgba(189, 210, 215, 0.5);*/
-	background:url("../../static/img/buttons/select_button.png") 0 0 no-repeat;
- 	border-right: solid;
- 	width: 138px;
- 	height: 24px;
- 	font-family: trashimclm;
- 	padding-top: 3px;
- 	font-size: 16px; 
-	color: #333333;
-}
-
-option:not(:checked) { background: white;  color: #566A6F}
-
-h3
-{
-	font-size: 20px;
-}
-/****************************************************************/
 
