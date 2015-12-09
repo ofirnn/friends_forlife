@@ -1,6 +1,10 @@
 Connecting To server:
 
-root@vmedu83.mtacloud.co.il
+root@
+vmedu83.mtacloud.co.il
+
+p: DE%6ad87EW
+
 
 1. change directory to friends_forlife:
 
