@@ -35,12 +35,13 @@ class Dog(models.Model):
     is_adopted = models.BooleanField(default=False)
     is_castrated = models.BooleanField(default=False)
     is_educated = models.BooleanField(default=False)
-
+    gender = models.CharField(max_length=10, null=True)
     status = models.CharField(max_length=50, help_text="State Name - In-Adoption / In-House / Treatment ")
     last_updated = models.DateTimeField(auto_created=True)
     picture = models.ImageField(null=True, blank=True)
     chip_id = models.CharField(max_length=200, help_text="IL chip-id")
 
+    size = models.CharField(max_length=200, null=True)
     type_name = models.CharField(max_length=200, null=True, help_text="The name of the Dog-type")
     is_hypoallergenic = models.BooleanField(default=False)
     is_children_friendly = models.BooleanField(default=True)
