@@ -196,15 +196,27 @@ span.number {
 	width:500px;
 	height:250px;
 	margin:50px 10px 0 0;
+	border-radius: 25px;
 }
 
-
-.IndexLeftSide{
+.indexRightSide h2{
+	color:#729299;
+}
+.indexRightSide h3{
+	
+}
+.indexRightSide h4{
+	
+}
+.indexRightSide p{
+	
+}
+.indexLeftSide{
 	width:400px;
 	float:left;
 	background-color: #fff;
 }
-.IndexLeftSideAdoptaionDays, .IndexLeftSideAdopt{
+.indexLeftSideAdoptaionDays, .indexLeftSideAdopt{
 	background:url("../../static/img/panels/rhs-comb-white-bg.jpg") no-repeat;
 	/*width:393px; height:168px;*/
 	width:160px; height:110px;
@@ -213,7 +225,7 @@ span.number {
 	margin: 20px 0 20px 0;
 }
 
-.IndexLeftSideStore, .IndexLeftSideVolenteer{
+.indexLeftSideStore, .indexLeftSideVolenteer{
 	background:url("../../static/img/panels/rhs-pink-puppy.jpg") no-repeat;
 	width:160px; height:110px;
 	padding:39px 43px 0px 180px;
@@ -221,20 +233,20 @@ span.number {
 }
 
 
-.IndexLeftSideAdoptaionDays h4,.IndexLeftSideAdopt h4{
+.indexLeftSideAdoptaionDays h4,.indexLeftSideAdopt h4{
 	text-align:center;
 	font-size:25px;
 	color:#7A8D90;
 	font-weight:bold;
 
 }
-.IndexLeftSideAdoptaionDays p, .IndexLeftSideAdopt p{
+.indexLeftSideAdoptaionDays p, .indexLeftSideAdopt p{
 	text-align:center;
 	font-size:14px;
 	color:#729299;	
 }
 
-.IndexLeftSideStore h4, .IndexLeftSideVolenteer h4{
+.indexLeftSideStore h4, .indexLeftSideVolenteer h4{
 	text-align:center;
 	font-size:25px;
 	color:#AC6D76;
@@ -242,14 +254,14 @@ span.number {
 	margin: 0 -20px 0 0;
 	font-weight:bold;	
 }
-.IndexLeftSideStore p, .IndexLeftSideVolenteer p{
+.indexLeftSideStore p, .indexLeftSideVolenteer p{
 	text-align:center;
 	font-size:14px;
 	width:200px;
 	color:#DDB2BA;
 }
-.IndexLeftSideStore p{margin:-2px -30px 0 0;}
-.IndexLeftSideVolenteer p{margin:15px -20px 0 0;}
+.indexLeftSideStore p{margin:-2px -30px 0 0;}
+.indexLeftSideVolenteer p{margin:15px -20px 0 0;}
 
 
 =======
