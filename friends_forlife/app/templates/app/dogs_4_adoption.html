@@ -1,142 +1,138 @@
 <!DOCTYPE html>
-{% load staticfiles %}
-
 <html class="no-js">
 	<head>
 	    <meta charset="utf-8">
-	    <title>Dogs 4 Adoption</title>
-		<script src="/static/js/modernizr.js"></script>
 	    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
-    	<link rel="stylesheet" href="/static/style/style.css">
+	    <title>[4] Treasure Island</title>	
+		<script src="../../static/js/modernizr.js"></script>
+		<link rel="stylesheet" href="../../static/style/style.css">
+		<link rel="stylesheet" href="../../static/style/styleMobile.css">
 	</head>
-	   
-	<body dir="rtl">
-	    <header id="top">
-	    	<a href="index.html"  id="logo"></a><!--Logo-->
-	        <div class="block">
-	            <h1 class="block-title">חברים לחיים</h1>
-	            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
-	        </div>
-			<div id="outer-wrap">
-				<div id="inner-wrap">		
-				    <nav id="nav">
-				        <div class="block">
-				            <h2 class="block-title">Chapters</h2>
+	<body dir="rtl">	
+		<div id="outer-wrap">
+			<div id="inner-wrap">	
+			    <header id="top">
+			        <div class="block">
+			            <a href="index.html"  id="logo"></a><!--Logo-->
+			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
+			            <div id="contact">
+			                <span class="based">we're based in Limerick</span>
+			                <span class="number">call us  061 43 7777</span>
+			            </div>		    
+					    <nav id="nav">
 				            <ul>
 				                <li class="is-active navBtnAdopt">
-				                    <a href="#">222אמץ כלב</a>
-				                </li><!--
-				             --><li class="navBtnFoster">
-				                    <a href="#">רישום לאומנה</a>
-				                </li><!--
-				             --><li class="navBtnAbout">
-				                    <a href="#">אודות</a>
-				                </li><!--
-				             --><li class="navBtnGallery">
-				                    <a href="#">גלריה</a></a>
-				                </li><!--
-				             --><li class="navBtnContact">
-				                    <a href="#">צור קשר</a>
+				                    <a href="#">אמץ כלב</a>
 				                </li>
-				            </ul>
-				            <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
-				        </div>
-				    </nav>
-				</div>
-				<!--/#inner-wrap-->
-			</div>
-			<!--/#outer-wrap-->				    	        
-	    </header>
-			    <main id="main">
-			    	<h1>חיפוש כלבים לאימוץ</h1>
-			     		<form action="dogs_list" method="get" autocomplete="on">
-							<section class="dog_search_first_section"> 
-								<label class="">
-									<h3>מין</h3>
-									<input type="radio" name="gender" value="female"><span class="radio_botton">שניהם</span>
-									<input type="radio" name="gender" value="male"><span class="radio_botton">זכר</span>
-									<input type="radio" name="gender" value="male"><span class="radio_botton">נקבה</span>
-								</label>
-								<label class="">
-									<h3>גודל</h3>
-									<select name="dog_size">
-										<option value="All">הכול</option>
-										<option value="small">קטן</option>
-										<option value="medium">בינוני</option>
-										<option value="large">גדול</option>				
-									</select>
-								</label>
-								<label class="">
-									<h3>גיל</h3>
-									<select name="dog_age">
-										<option value="All">הכול</option>
-										<option value="puppyhood">גור</option>
-										<option value="adolecence">צעיר</option>
-										<option value="adulthood">בוגר</option>
-										<option value="senior">מבוגר</option>
-									</select>
-								</label>
-								<label class="">
-									<h3>גזע</h3>
-									<select name="dog_breed">
-										<option value="All">מעורב</option>
-										<option value="labrador">לברדור</option>
-										<option value="german_shepherd">רועה גרמני</option>
-										<option value="cavalier_spaniel">קבלייר ספניאל</option>
-										<option value="golden_retriever">גולדן רטריבר</option>
-										<option value="boxer">בוקסר</option>
-										<option value="yorkshire_terrier">יורקשיר טרייר</option>
-										<option value="beagle">ביגל</option>
-										<option value="poodle">פודל</option>
-										<option value="shih_tzu">שי טסו</option>
-										<option value="bull_terrier">בול טרייר</option>
-										<option value="border_collie">בורדר קולי</option>
-										<option value="pug">פאג</option>
-										<option value="cocker_spaniel">קוקר ספניאל</option>
-										<option value="dalmatian">דלמטי</option>
-										<option value="rottweiler">רוטווילר</option>
-										<option value="jack_russell">ג'ק ראסל</option>
-										<option value="great_dane">דני ענק</option>
-										<option value="dobermann">דוברמן</option>
-										<option value="maltese">מלטז</option>
-										<option value="french_bulldog">בולדוג צרפתי</option>
-										<option value="chihuahua">צ'יוואווה</option>	
-										<option value="siberian_husky">האסקי סיבירי</option>	
-										<option value="pit_bull">פיט בול</option>	
-									</select>
-								</label>
-								<label class="">
-									<h3>צבעים</h3>
-									<select name="dog_color">
-										<option value="all">הכול</option>
-										<option value="red">ג'ינג'י</option>
-										<option value="dark">כהה</option>
-										<option value="yellow">צהוב</option>
-										<option value="black">שחור</option>
-										<option value="white">לבן</option>
-									</select>
-								</label>
-						</section>	
-						<section class="dog_search_second_section">	
-							<input type="checkbox" name="Characteristics[]" value="childrens_friendly"><label>ידידותי לילדים</label><br>
-							<input type="checkbox" name="Characteristics[]" value="suitable_for_allergic"><label>מחונך לצרכים</label><br>
-							<input type="checkbox" name="Characteristics[]" value="habituated_for_needs"><label>מתאים לאלרגיים</label><br>
-                            <input type="submit" value="חפש">
-						</section>
-						<div class="clear"></div>
-
-					</form>	
-			    </main>
-			    <footer>
-			        <div class="block prose">
-			            <p class="small"><a href="http://ota.ahds.ac.uk/desc/5730">Text distributed by the University of Oxford under a Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p>
-			            <p class="small">Copyright © <a href="http://dbushell.com/">David Bushell</a></p>
-			        </div>
-			    </footer>
-
-		
-		<script src="/static/js/main.js"></script>
-		
+				             	<li class="navBtnFoster">
+				                    <a href="#">רישום לאומנה</a>
+				                </li>
+				             <!--<li class="navBtnAbout">
+				                    <a href="#">אודות</>
+				              </li>-->
+				             <li class="navBtnGallery">
+				                    <a href="#">גלריה</a></a>
+				                </li>
+				             <!--<li class="navBtnContact">
+				                    <a href="#">צור קשר</a>
+				                </li>-->
+				                <li class="navBtnDonate">
+				                    <a href="#">תרומה</a></a>
+				                </li>
+				            </ul>	
+			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+			    		</nav>
+					</div>			        
+			    </header>
+				<main id="main">
+					<div class="block">
+						<div class="mainTop"></div>
+						<div class="mainContent">
+				    		<h1>חיפוש כלבים לאימוץ</h1>
+					     		<form action="" method="post" autocomplete="on">
+									<section class="dog_search_first_section"> 
+										<label class="radio_botton_label">
+											<h3>מין</h3>
+											<input type="radio" name="gender" value="female"><span class="radio_botton">שניהם</span>
+											<input type="radio" name="gender" value="male"><span class="radio_botton">זכר</span>
+											<input type="radio" name="gender" value="male"><span class="radio_botton">נקבה</span>
+										</label>
+										<label class="">
+											<h3>גודל</h3>
+											<select name="dog_size">
+												<option value="All">הכול</option>
+												<option value="small">קטן</option>
+												<option value="medium">בינוני</option>
+												<option value="large">גדול</option>				
+											</select>
+										</label>
+										<label class="">
+											<h3>גיל</h3>
+											<select name="dog_age">
+												<option value="All">הכול</option>
+												<option value="puppyhood">גור</option>
+												<option value="adolecence">צעיר</option>
+												<option value="adulthood">בוגר</option>
+												<option value="senior">מבוגר</option>
+											</select>
+										</label>
+										<label class="">
+											<h3>גזע</h3>
+											<select name="dog_breed">
+												<option value="All">מעורב</option>
+												<option value="labrador">לברדור</option>
+												<option value="german_shepherd">רועה גרמני</option>
+												<option value="cavalier_spaniel">קבלייר ספניאל</option>
+												<option value="golden_retriever">גולדן רטריבר</option>
+												<option value="boxer">בוקסר</option>
+												<option value="yorkshire_terrier">יורקשיר טרייר</option>
+												<option value="beagle">ביגל</option>
+												<option value="poodle">פודל</option>
+												<option value="shih_tzu">שי טסו</option>
+												<option value="bull_terrier">בול טרייר</option>
+												<option value="border_collie">בורדר קולי</option>
+												<option value="pug">פאג</option>
+												<option value="cocker_spaniel">קוקר ספניאל</option>
+												<option value="dalmatian">דלמטי</option>
+												<option value="rottweiler">רוטווילר</option>
+												<option value="jack_russell">ג'ק ראסל</option>
+												<option value="great_dane">דני ענק</option>
+												<option value="dobermann">דוברמן</option>
+												<option value="maltese">מלטז</option>
+												<option value="french_bulldog">בולדוג צרפתי</option>
+												<option value="chihuahua">צ'יוואווה</option>	
+												<option value="siberian_husky">האסקי סיבירי</option>	
+												<option value="pit_bull">פיט בול</option>	
+											</select>
+										</label>
+										<label class="">
+											<h3>צבעים</h3>
+											<select name="dog_color">
+												<option value="all">הכול</option>
+												<option value="red">ג'ינג'י</option>
+												<option value="dark">כהה</option>
+												<option value="yellow">צהוב</option>
+												<option value="black">שחור</option>
+												<option value="white">לבן</option>
+											</select>
+										</label>
+								</section>	
+								<section class="dog_search_second_section">	
+									<h3>תכונות אופי</h3>
+									<input type="checkbox" name="Characteristics[]" value="childrens_friendly"><label>ידידותי לילדים</label><br>
+									<input type="checkbox" name="Characteristics[]" value="suitable_for_allergic"><label>מחונך לצרכים</label><br>
+									<input type="checkbox" name="Characteristics[]" value="habituated_for_needs"><label>מתאים לאלרגיים</label>
+								</section>
+								<div class="clear"></div>
+							</form>							
+						</div>
+						<div class="mainBtn"></div>
+					</main>		
+			    	<footer id="footer"></footer>
+				</div><!--Block-->			    	
+			</div><!--/#inner-wrap-->
+		</div><!--/#outer-wrap-->
+		<script src="../../static/js/main.js"></script>
 	</body>
 </html>
