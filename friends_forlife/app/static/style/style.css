@@ -177,7 +177,7 @@ span.number {
 /*=========================================*/
 
 #footer {	
-	background:url("../../static/img/background/Footer-tile.jpg") repeat-x #FFF;
+	background:url("../../static/img/background/footer_img.png") repeat-x #FFF;
 	padding:140px 0px 40px 00px;
 	margin:-70px 0px 0px 0px;
 	overflow:hidden;	
@@ -195,12 +195,14 @@ span.number {
 .banner{
 	width:500px;
 	height:250px;
+	margin:50px 10px 0 0;
 }
 
 
 .IndexLeftSide{
 	width:400px;
 	float:left;
+	background-color: #fff;
 }
 .IndexLeftSideAdoptaionDays, .IndexLeftSideAdopt{
 	background:url("../../static/img/panels/rhs-comb-white-bg.jpg") no-repeat;
