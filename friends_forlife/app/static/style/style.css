@@ -70,7 +70,8 @@ body {font-family: trashimclm; color: #333; background:#333333 url("../../static
 	height:62px;
 	padding:7px 10px 0px 10px;
 	text-align:center;
-	float:left;	
+	float:left;
+	display: none;
 }
 
 span.based {
@@ -201,15 +202,24 @@ span.number {
 
 .indexRightSide h2{
 	color:#729299;
+	text-align:center;
+	margin: 20px 0 0 0;
 }
 .indexRightSide h3{
-	
+	color:#77706b;
+	text-align:center;
+	margin: 20px 0 0 0;	
 }
 .indexRightSide h4{
-	
+	color:#77706b;
+	text-align:center;
+	margin: 40px 0 0 0;	
 }
 .indexRightSide p{
-	
+	font-size:16px;
+	color:#77706b;
+	text-align:center;
+	margin: 40px 0 0 0;	
 }
 .indexLeftSide{
 	width:400px;
@@ -486,4 +496,6 @@ form{
 	font-size: 25px;
 }
 
-
+#content{
+    display:none;
+}
