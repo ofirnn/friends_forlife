@@ -53,9 +53,11 @@
                             {% for dog in dogs_list %}
                                 <div class="picture"   <!-- here come's dog's pic-->
 					     		    <p class="name">{{ dog.name }}</p>
-                                    <p class="color">{{ dog.color }}</p>
-					     	        <p class="description"> {{ dog.description }}</p>
-                                    <img src={{ dog.picture }}>
+					     		    <p class="age"> {{ dog.name }} גיל:</p>
+				     		    	<img src={{ dog.picture }}>
+					     			<article class="description"> אני מיקי, כלבה הרפתקנית שאוהבת בלב לבלב לבלחב בלחלבח לח בלחב לבח לחבל בחבלחל לבחבל לבחלבח </article>
+									<!--  <p class="description"> {{ dog.description }}</p> -->   
+									<p class="gender"> {{ dog.name }} צריך למקם תמונה של מין הכלב</p>
 					     	    </div>
                             {%  endfor %}
 								<div class="clear"></div>
