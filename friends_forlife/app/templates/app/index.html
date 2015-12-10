@@ -7,6 +7,7 @@
 	    <title>Friends for Life</title>	
 	    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
 		<script src="../../static/js/modernizr.js"></script>
+		
 		<link rel="stylesheet" href="../../static/style/style.css">
 		<link rel="stylesheet" href="../../static/style/styleMobile.css">
 
@@ -36,7 +37,7 @@
 			            <span id="myButton" class="based">כניסה למערכת:&darr;</span>	
 			            
 			            <div id="loginForm" >
-							<form name="login" action="index_submit" method="get" >							        	
+							<form name="login" action="index_submit" method="get" class="loginForm">							        	
 							        	<input type="text" name="usermail" placeholder="User Name" required>
 							        	<input type="password" name="password" placeholder="password" required>
 							        	<input type="submit" value="Login">
@@ -47,13 +48,16 @@
 
 						<div id="contact">
 							<div id="1">
-							    My Content 1
+								<button id="btnClick" class="based">כניסה למערכת</button>
 							</div>
 							
 							<div id="2" style="display:none;">
-							    My Dynamic Content
-							</div>						
-							<span id="btnClick" class="based">כניסה למערכת</span>
+								<form name="login" action="index_submit" method="get" class="loginForm">							        	
+								        	<input type="text" name="usermail" placeholder="שם משתמש" required>
+								        	<input type="password" name="password" placeholder="סיסמא" required>
+								        	<input type="submit" value="כניסה">
+								</form>	
+							</div>													
 						</div>	    
 					    <nav id="nav">
 				            <ul>
