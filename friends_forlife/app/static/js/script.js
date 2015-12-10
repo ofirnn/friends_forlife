@@ -3,9 +3,9 @@ $('#btnClick').on('click',function(){
        return v === 'כניסה למערכת' ? 'ביטול' : 'כניסה למערכת'
     })
     
-    if($('#1').css('display')!='none'){
-    $('#2').show().siblings('div').hide();
-    }else if($('#2').css('display')!='none'){
-        $('#1').show().siblings('div').hide();
+    if($('#loginBannerBeforeClick').css('display')!='none'){
+    $('#loginBannerAfterClick').show().siblings('div').hide();
+    }else if($('#loginBannerAfterClick').css('display')!='none'){
+        $('#loginBannerBeforeClick').show().siblings('div').hide();
     }
 });

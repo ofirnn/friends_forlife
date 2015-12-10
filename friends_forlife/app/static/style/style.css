@@ -67,20 +67,37 @@ body {font-family: trashimclm; color: #333; background:#333333 url("../../static
 #contact { 
 	background:url(../../static/img/background/contact-details.png) no-repeat;
 	width:213px;
-	height:62px;
+	height:90px;
 	padding:7px 10px 0px 10px;
 	text-align:center;
 	float:left;	
 }
 
-.based {
+.based{
 	white-space:normal;
 	padding:10px 15px;font-size:17px;line-height:1.371;border-radius:6px;
-	color:#fff;background-color:#7A8D90; border: 0; outline: 0;
+	color:#fff;background-color:#7A8D90; border: 0; outline: 0; 
+	margin: 10px 0 0 0;
 }
+#loginBannerAfterClick form input[type="submit"]{width:120px; height:25px;
+white-space:normal; background-color:#7A8D90; border: 0; outline: 0;
+padding:2px 4px;font-size:17px; border-radius:6px;
+	color:#fff; margin: -10px 0 10px 0;}
 
-#btnClick:hover{
-	pointer:cursor;
+#loginBannerAfterClick form input[type="text"],
+#loginBannerAfterClick form input[type="password"]{
+	height:5px;
+	text-align:center;
+	outline: 0;
+	color:#7A8D90;
+	border-color:#7A8D90;
+	box-shadow:none;
+	padding:8px 12px;
+	font-size:15px;
+	line-height:1.467;		
+ 	border-radius:6px;
+ 	box-shadow:none;
+ 	margin: -10px 0 10px 0;	
 }
 
 .number {
@@ -404,7 +421,7 @@ input[type="search"]::-webkit-search-decoration {
 	float:left;
 	width:550px;
 	height:10px;
-	margin:-30px -180px 0 30px;
+	margin:-57px -180px 0 30px;
 	}
 
 
