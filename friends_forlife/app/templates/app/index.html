@@ -10,7 +10,12 @@
 		
 		<link rel="stylesheet" href="../../static/style/style.css">
 		<link rel="stylesheet" href="../../static/style/styleMobile.css">
-
+<script>
+  var footerResize = function() {
+    $('#footer').css('position', $("body").height() + $("#footer").innerHeight() > $(window).height() ? "inherit" : "fixed");
+  };
+  $(window).resize(footerResize).ready(footerResize);
+</script>
 	</head>
 	<body dir="rtl">	
 		<div id="outer-wrap">
@@ -125,8 +130,18 @@
 							</section>
 						</div>
 						<div class="mainBtn"></div>
-					</main>		
-			    	<footer id="footer">
+					</main>
+					<div id="footer">
+					  Footer content
+					</div>
+					<script>
+					  var footerResize = function() {
+					    $('#footer').css('position', $("body").height() + $("#footer").innerHeight() > $(window).height() ? "inherit" : "fixed");
+					  };
+					  $(window).resize(footerResize).ready(footerResize);
+					</script>		
+			    	<!--<footer id="footer">
+			    		<!--
 			            <div id="footer_data">
 			                <div id="footer_menu">
 			                    <div id="footer_menu_data">			        			            
@@ -164,8 +179,9 @@
             						</div>
             					</div>
             				</div>
-            			</div>          								    		
-			    	</footer>
+            			</div>
+            			         								    		
+			    	</footer>--> 
 				</div><!--Block-->			    	
 			</div><!--/#inner-wrap-->
 		</div><!--/#outer-wrap-->

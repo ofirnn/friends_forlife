@@ -59,6 +59,8 @@
 	}
 	#nav li {
 	position: relative;
+	text-decoration:none;
+	list-style-type: none;
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 	#nav li:last-child {
@@ -78,6 +80,7 @@
 	}
 	#nav li a {
 	padding: 0.85714em 2.14286em;
+	text-decoration:none;
 	}
 
   .js-ready #nav {
@@ -185,7 +188,7 @@
 /*=========================================*/
 /*=========== GENERAL MAIN SETTINGS ===============*/ 
 /*=========================================*/
-.mainBtn,.mainTop{
+.mainBtn,.mainTop,.indexLeftSide,.indexRightSide{
 	display:none;
 }
 
@@ -194,10 +197,14 @@
 /*=========== GENERAL FOOTER SETTINGS ===============*/ 
 /*=========================================*/
 
-
 /*=========================================*/
 /*=========== PAGE - ADOPT A DOG ===============*/ 
 /*=========================================*/
+
+/*=========================================*/
+/*=========== PAGE - Index ===============*/ 
+/*=========================================*/
+
 
 
 
