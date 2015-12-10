@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 *{margin:0; padding: 0;}
 /*=========================================*/
 /*=========== GENERAL SETTING ===============*/ 
@@ -481,47 +480,25 @@ input[type="search"]::-webkit-search-decoration {
 #nav li.navBtnDonate.is-active a, #nav li.navBtnDonate a:hover {background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
 
 }
-=======
->>>>>>> 69b21801fe57a463889f7942ff54293421bd6663
 
 /*Adi*/
-/*#dog_div*/ .picture
+.picture
 {
 	width: 30%;
 	margin-top: 5%;
 	margin-right: 5%;
-	position: relative;
 }
 .picture img
 {
 	width: 80%;
 }
 
-/*#dog_div*/
-#dog_div .name
+.picture p
 {
-	
-	font-size: 23px;
-	color: #AC6D76;
+	width: 80%;
+	font-size: 25px;
 }
 
-#dog_div .age
-{
-	float: left;
-	display: inline; 
-	font-size: 15px;
-}
-
-#dog_div .gender
-{	
-	position: absolute;
-	top: 15%;
-	left: 5%;
-}
-
-#dog_div .description
-{
-	font-family: gisha;
-	font-size: 15px;
-	font-weight: lighter;
+#content{
+    display:none;
 }
