@@ -480,24 +480,47 @@ input[type="search"]::-webkit-search-decoration {
 
 }
 
-/*Adi*/
-.picture
+/*=========================================*/
+/*=========== PAGE - DOG LIST ===============*/ 
+/*=========================================*/
+
+#dog_div .picture
 {
 	width: 30%;
 	margin-top: 5%;
 	margin-right: 5%;
+	position: relative;
 }
-.picture img
+#dog_div .picture img
 {
 	width: 80%;
 }
 
-.picture p
+
+#dog_div .name
 {
-	width: 80%;
-	font-size: 25px;
+	
+	font-size: 23px;
+	color: #AC6D76;
 }
 
-#content{
-    display:none;
+#dog_div .age
+{
+	float: left;
+	display: inline; 
+	font-size: 15px;
+}
+
+#dog_div .gender
+{	
+	position: absolute;
+	top: 15%;
+	left: 5%;
+}
+
+#dog_div .description
+{
+	font-family: gisha;
+	font-size: 15px;
+	font-weight: lighter;
 }
