@@ -197,10 +197,9 @@ span.number {
 	float:right;	
 }
 .banner{
-	width:500px;
-	height:250px;
+	width:110%;
 	margin:50px 10px 0 0;
-	border-radius: 25px;
+	border-radius: 10px;
 }
 
 .indexRightSide h2{
