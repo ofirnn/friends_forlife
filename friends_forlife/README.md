@@ -3,9 +3,6 @@ Connecting To server:
 root@
 vmedu83.mtacloud.co.il
 
-p: DE%6ad87EW
-
-
 1. change directory to friends_forlife:
 
 cd /root/friends_forlife/friends_forlife

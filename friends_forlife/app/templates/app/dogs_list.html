@@ -51,7 +51,7 @@
 						<div class="mainContent">
 				    		<h1>תוצאות החיפוש</h1>
                             {% for dog in dogs_list %}
-                                <div class="picture"   <!-- here come's dog's pic-->
+                                <div id="dog_div"   <!-- here come's dog's pic-->
 					     		    <p class="name">{{ dog.name }}</p>
 					     		    <p class="age"> {{ dog.age }} גיל:</p>
 				     		    	<img src={{ dog.picture }}>
