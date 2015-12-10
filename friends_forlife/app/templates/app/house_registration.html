@@ -1,0 +1,128 @@
+<!-- 
+	
+class DogHouse(models.Model):
+    owner_name = models.CharField(max_length=200, help_text="Name of doghouse owner")
+    owner_phone = models.CharField(max_length=200, help_text="Phone Number of owner")
+    owner_email = models.EmailField(help_text="Email of doghouse owner")
+    owner_city = models.CharField(max_length=50)
+    address = models.CharField(max_length=500, help_text="Full-Address Of DogHouse")
+    capacity = models.IntegerField(help_text="Maximum dogs capacity")
+
+	
+!-->
+	
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+	    <title>Friends for Life</title>	
+	    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+		<script src="../../static/js/modernizr.js"></script>
+		
+		<link rel="stylesheet" href="../../static/style/style.css">
+		<link rel="stylesheet" href="../../static/style/styleMobile.css">
+<script>
+  var footerResize = function() {
+    $('#footer').css('position', $("body").height() + $("#footer").innerHeight() > $(window).height() ? "inherit" : "fixed");
+  };
+  $(window).resize(footerResize).ready(footerResize);
+</script>
+	</head>
+	<body dir="rtl">	
+		<div id="outer-wrap">
+			<div id="inner-wrap">	
+			    <header id="top">
+			        <div class="block">
+			            <a href="index.html"  id="logo"></a><!--Logo-->
+			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
+						<div id="contact">
+							<div id="loginBannerBeforeClick">
+								<button id="btnClick" class="based">כניסה למערכת</button>
+							</div>
+							
+							<div id="loginBannerAfterClick" style="display:none;">
+								<form name="login" action="index_submit" method="get">							        	
+						        	<input type="text" name="usermail" placeholder="שם משתמש" required>
+						        	<input type="password" name="password" placeholder="סיסמא" required>
+						        	<input type="submit" value="כניסה">
+								</form>	
+							</div>													
+						</div>	    
+					    <nav id="nav">
+				            <ul>
+				                <li class="navBtnAdopt">
+				                    <a href="dogs_4_adoption.html">אמץ כלב</a>
+				                </li>
+				             	<li class="navBtnFoster">
+				                    <a href="house_registration.html">רישום לאומנה</a>
+				                </li>
+				             <li class="navBtnAbout">
+				                    <a href="#">על העמותה</a>
+				                </li>
+				                </li>
+				                <li class="navBtnDonate">
+				                    <a href="#">תרומה</a></a>
+				                </li>
+				            </ul>	
+			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+			    		</nav>
+					</div>			        
+			    </header>
+				<main id="main">
+					<div class="block">
+						<div class="mainTop"></div>
+						<div class="mainContent">
+							<h1>רישום לאומנה</h1>
+							<section class="Foster_Registration">
+								<article class="information_about_foster">
+									משפחות רבות חוששות לאמץ ולהביא הביתה כלב או חתול, 
+									מחשש שיהיה צורך להחזירו בשל חוסר התאמה.
+									 לנו בעמותת "חברים לחיים" 
+									 חשוב ליידע את הציבור שישנה דרך נוספת, מוכרת פחות לשם סיוע להצלת כלבים וחתולים.
+									   מכיוון שהעמותה פועלת בדרך ייחודית - ללא מכלאות, 
+									 מרבית בעלי החיים שלנו שוהים במהלך השבוע בבתים של משפחות אומנה.  
+									 בית אומנה נועד לארח את בעל החיים זמנית לתקופה קצובה, 
+									 לרוב של שבוע. במהלך השבוע הכלב או החתול יגיעו  ליום האימוץ אשר בו ימצא בית מאמץ קבוע או שיעבור לבית אומנה זמני אחר, 
+									 לשבוע נוסף. גם אם בעל החיים עובר כמה בתים עד למציאת בית קבע, 
+									 הוא אינו נמצא ברחוב או חווה את חווית המכלאה הקשה והטראומטית. הוא נמצא בבית עם אנשים שנותנים לו חום ודואגים למחסורו. 
+									  הניסיון מלמד שדרך ייחודית זו מביאה פעמים רבות לכך שבסוף התהליך, 
+									 מגיע למשפחה המאמצת בעל חיים חברותי ורגוע יותר.
+										המשפחה האומנת מקבלת מזון לכל אורך תקופת השהייה, 
+										ביקורים אצל וטרינר במידת הצורך, ייעוץ רלוונטי וליווי ע"י משרד העמותה.  כך,
+										 גם כאלה שאינם בעלי ניסיון בגידול כלבים או חתולים יכולים לקחת חלק בתהליך ולסייע לנו. 
+										 במהלך שנות הפעילות הרבות שלנו, נתקלנו באנשים רבים ש"לא ידעו שהם כאלה" -
+										 כלומר שיש בהם אהבה גדולה לבעלי חיים שרק מחכה לפרוץ החוצה, 
+										ושמאז שההולך על ארבע נכנס לביתם, חייהם השתנו לטובה. 
+										משפחה אומנת לשבוע, לא רק שמסייעת רבות לבעל החיים 
+										שמתארח אצלה ומהווה חוליה חשובה בדרכו לאימוץ קבע,
+										 אלא שבראייתנו התהליך עצמו תורם רבות גם למשפחה עצמה,
+										  בפרט בבית עם ילדים, שסופגים חוויה ערכית אמתית של נתינה וסיוע לבעל חיים נזקק. 
+										לא מעט מהמשפחות האומנות שלנו הפכו למשפחות מאמצות עם הזמן. 
+										ככל שתצטרפנה אלינו יותר משפחות, לפעילות חשובה זו,
+										 כך נוכל לסייע במציאת בתים מאמצים ליותר כלבים וחתולים עזובים וחסרי בית.	
+								</artical>						
+							</section>			
+							<section class="indexRightSide">
+								
+							</section>
+						</div>
+						<div class="mainBtn"></div>
+					</main>
+					<div id="footer">
+					  Footer content
+					</div>
+					<script>
+					  var footerResize = function() {
+					    $('#footer').css('position', $("body").height() + $("#footer").innerHeight() > $(window).height() ? "inherit" : "fixed");
+					  };
+					  $(window).resize(footerResize).ready(footerResize);
+					</script>		
+				</div><!--Block-->			    	
+			</div><!--/#inner-wrap-->
+		</div><!--/#outer-wrap-->
+		<script src="../../static/js/main.js"></script>
+		<script src="../../static/js/script.js"></script>
+	</body>
+</html>

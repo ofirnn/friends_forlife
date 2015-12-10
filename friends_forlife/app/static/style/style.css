@@ -1,4 +1,4 @@
-*{margin:0; padding: 0;}
+*{margin:0;padding: 0;}
 /*=========================================*/
 /*=========== GENERAL SETTING ===============*/ 
 /*=========================================*/
@@ -12,8 +12,13 @@ a:active,a:hover{outline: 0;}
 
 @font-face{font-family: "trashimclm";src: url(trashimclm.ttf);}
 
-body {font-family: trashimclm; color: #333; background:#333333 url("../../static/img/background/body-bg-tile.jpg") bottom repeat; 
-  	  -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+body {
+  	  font-family: trashimclm;
+  	  color: #333;
+  	  background:#333333 url("../../static/img/background/body-bg-tile.jpg") bottom repeat;
+  	  -webkit-text-size-adjust: 100%;
+  	  -ms-text-size-adjust: 100%;
+  	  }
 
 .clear{clear: both;}
 
@@ -195,7 +200,7 @@ body {font-family: trashimclm; color: #333; background:#333333 url("../../static
 
 .mainContent h1{
 	color:#3E5560;
-	font-size:34px; line-height:19px; margin:0 15px 0 10px;
+	font-size:40px; line-height:19px; margin:0 15px 0 10px;
 }
 /*=========================================*/
 /*=========== GENERAL FOOTER SETTINGS ===============*/ 
@@ -265,7 +270,7 @@ font-size: 11px;}
 .indexRightSide{
 	width:400px;
 	float:right;
-	margin:50px 20px 0 0;		
+	margin: 5px 20px 0 0;		
 }
 .banner{
 	width:110%;
@@ -273,21 +278,27 @@ font-size: 11px;}
 }
 
 .indexRightSide h2{
+	width: 430px;
 	color:#729299;
 	text-align:center;
-	margin: 20px 0 0 0;
+	margin: 28px 0 0 0;
+
 }
 .indexRightSide h3{
+	width: 430px;
 	color:#77706b;
 	text-align:center;
+	line-height: 28px;
 	margin: 20px 0 0 0;	
 }
 .indexRightSide h4{
 	color:#77706b;
 	text-align:center;
 	margin: 40px 0 0 0;	
+	font-weight: bold;
 }
 .indexRightSide p{
+	
 	font-size:16px;
 	color:#77706b;
 	text-align:center;
@@ -305,17 +316,17 @@ font-size: 11px;}
 
 .indexLeftSideAdoptaionDays, 
 .indexLeftSideAdopt{width:160px; height:110px; padding:45px 180px 0px 43px; float:left;
-					margin: 20px 0 20px 0;}
+					margin: 0 0 20px 0;}
 .indexLeftSideStore, .indexLeftSideVolenteer{width:160px; height:110px; float:left;	
-											 padding:55px 45px 0px 180px;}
-.indexLeftSideAdoptaionDays h4,.indexLeftSideAdopt h4{text-align:center; font-size:25px;
+											 padding:55px 45px 0px 180px; margin-bottom:18px; }
+.indexLeftSideAdoptaionDays h4,.indexLeftSideAdopt h4{text-align:center; font-size:25px; margin-top: -10px; line-height: 35px;
 													  color:#7A8D90;font-weight:bold;}
-.indexLeftSideAdoptaionDays p, .indexLeftSideAdopt p{text-align:center; font-size:14px; color:#729299;	}
+.indexLeftSideAdoptaionDays p, .indexLeftSideAdopt p{text-align:center; font-size:15px; color:#729299;	line-height: 20px;}
 .indexLeftSideStore h4, .indexLeftSideVolenteer h4{text-align:center; font-size:25px;
-												   color:#AC6D76; width:200px; margin: -15px -20px 0 0; font-weight:bold;	}
-.indexLeftSideStore p, .indexLeftSideVolenteer p{text-align:center; font-size:14px; width:200px; color:#DDB2BA;}
+												   color:#AC6D76; margin: -15px -35px 0; font-weight:bold; line-height: 30px;}
+.indexLeftSideStore p, .indexLeftSideVolenteer p{text-align:center; font-size:15px; color:#AC6D76; line-height: 20px;}
 .indexLeftSideStore p{margin:2px -24px 0 0;}
-.indexLeftSideVolenteer p{margin:15px -20px 0 0;}
+.indexLeftSideVolenteer p{margin:0 -20px 0 0; }
 
 
 =======
@@ -565,4 +576,18 @@ input[type="search"]::-webkit-search-decoration {
 	font-family: gisha;
 	font-size: 15px;
 	font-weight: lighter;
+}
+
+
+
+/*=========================================*/
+/*==PAGE - Foster_Registration =====*/ 
+/*=========================================*/
+
+.information_about_foster
+{
+	margin: 20px 20px 20px 20px;
+	line-height: 25px;
+	font-size: 18px;
+	width: 50%;
 }
