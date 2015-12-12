@@ -2,7 +2,7 @@ from django.conf.urls import url
 
 from . import views
 from django.conf.urls.static import static
-from friends_forlife import settings
+from django.conf import settings
 
 urlpatterns = [
     url(r'^dogs-index', views.dogs_index, name="dogs_index"),
