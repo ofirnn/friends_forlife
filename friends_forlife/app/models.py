@@ -56,6 +56,7 @@ class Dog(models.Model):
         output["type_name"] = self.type_name
         return json.dumps(output)
 
+
 class AdoptionDay(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()

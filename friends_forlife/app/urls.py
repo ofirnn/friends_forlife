@@ -9,6 +9,8 @@ urlpatterns = [
     url(r'^dogs_list', views.dogs_list, name="dogs_list"),
     url(r'^dog-details/(?P<dog_id>[0-9]+)', views.dog_details, name="dog_details"),
     url(r'^dogs_4_adoption', views.dogs_4_adoption, name="dogs_4_adoption"),
+    url(r'^house_registration', views.house_registration, name="house_registration"),
+    url(r'^index', views.index),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT, show_indexes=True)
