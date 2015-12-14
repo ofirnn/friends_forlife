@@ -10,12 +10,6 @@
 		
 		<link rel="stylesheet" href="../../static/style/style.css">
 		<link rel="stylesheet" href="../../static/style/styleMobile.css">
-<script>
-  var footerResize = function() {
-    $('#footer').css('position', $("body").height() + $("#footer").innerHeight() > $(window).height() ? "inherit" : "fixed");
-  };
-  $(window).resize(footerResize).ready(footerResize);
-</script>
 	</head>
 	<body dir="rtl">	
 		<div id="outer-wrap">
@@ -24,33 +18,6 @@
 			        <div class="block">
 			            <a href="index.html"  id="logo"></a><!--Logo-->
 			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
-			            <!--<div id="contact">
-			                <span class="based">כניסה למערכת:</span>
-							<form name="login" action="index_submit" method="get" accept-charset="utf-8">
-							        <div class="number">
-							        	
-							        	<label for="usermail">Email</label>
-							        	<input type="email" name="usermail" placeholder="yourname@email.com" required>
-							        </div>
-							        <div class="number">
-							        	<label for="password">Password</label>
-							        	<input type="password" name="password" placeholder="password" required>
-							        </div>
-							        <input type="submit" value="Login"></li>
-							</form>			                
-			            </div>
-			            <span id="myButton" class="based">כניסה למערכת:&darr;</span>	
-			            
-			            <div id="loginForm" >
-							<form name="login" action="index_submit" method="get" class="loginForm">							        	
-							        	<input type="text" name="usermail" placeholder="User Name" required>
-							        	<input type="password" name="password" placeholder="password" required>
-							        	<input type="submit" value="Login">
-							</form>	
-						</div>			            
-			            
-			            -->
-
 						<div id="contact">
 							<div id="loginBannerBeforeClick">
 								<button id="btnClick" class="based">כניסה למערכת</button>
@@ -67,22 +34,30 @@
 					    <nav id="nav">
 				            <ul>
 				                <li class="navBtnAdopt">
+				                	<img src="../../static/img/icons/adoption_icon.jpg">
 				                    <a href="dogs_4_adoption.html">אמץ כלב</a>
+				                    <hr>
 				                </li>
 				             	<li class="navBtnFoster">
+				             		<img src="../../static/img/icons/foster.png">
 				                    <a href="house_registration.html">רישום לאומנה</a>
+				                    <hr>
 				                </li>
 				             <!--<li class="navBtnAbout">
 				                    <a href="#">אודות</>
 				              </li>-->
 				             <li class="navBtnAbout">
-				                    <a href="#">על העמותה</a>
+									<img src="../../static/img/icons/logo_icon.png">
+									<a href="">על העמותה</a>
+									<hr>
 				                </li>
 				             <!--<li class="navBtnContact">
 				                    <a href="#">צור קשר</a>
 				                </li>-->
 				                <li class="navBtnDonate">
-				                    <a href="#">תרומה</a></a>
+				                	<img src="../../static/img/icons/donation.png">
+				                    <a href="#">תרומה</a>
+				                    <hr>
 				                </li>
 				            </ul>	
 			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
