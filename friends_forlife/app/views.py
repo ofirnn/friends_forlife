@@ -97,6 +97,15 @@ def dog_insert(request):
     context = RequestContext(request, {'dog': dog})
     return render(request, "app/success_dog_insertion.html", context)
 
+def dog_updation(request):
+    req_id = request.GET.get("id")
+    dog = Dog.objects.get(id=req_id)
+    context = RequestContext(request, {'dog': dog})
+    return render(request, 'app/dog_update.html', context)
+
+def dog_update(request):
+    return
+
 def dogs_list(request):
     #Parameters : gender, dog_size, dog_age, dog_breed, dog_color
     # childrens_friendly, suitable_for_allergic , habituated_for_needs
