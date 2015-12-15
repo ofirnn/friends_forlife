@@ -196,25 +196,25 @@ footer, #outer-wrap:after {
 }
 
 #main .block {
-  padding: 2.625em 1.875em;
+	 padding: 42px 30px;
 }
 
 .mainTop{
-	background:url("../../static/img/background/main_top_bones.jpg") no-repeat;
+	background:url("../../static/img/background/top/main_top_bones.jpg") no-repeat;
 	width:980px;
-	height:69px;
+	height:68px;
 	display:block;
 }
 
 .mainContent{
-	background:url("../../static/img/background/main-content-tile.jpg") repeat-y;
+	background:url("../../static/img/background/content/main-content-tile.jpg") repeat-y;
 	width:920px;
 	overflow:hidden;
 	padding:40px 20px 0px 40px;
 }
 
 .mainBtn{
-	background:url("../../static/img/background/main-content-btm-curve.jpg") no-repeat;
+	background:url("../../static/img/background/btm/main-content-btm-curve.jpg") no-repeat;
 	height:33px;
 	display:block;
 	width:980px;	
@@ -485,7 +485,13 @@ input[type="search"]::-webkit-search-decoration {
 	height:10px;
 	margin:-57px -180px 0 30px;
 	}
-
+	
+	#nav img{
+		display: none;
+	}
+	#nav hr{
+		display: none;
+	}
 
 	#nav .close-btn {
 	  display: none;
@@ -620,3 +626,67 @@ input[type="search"]::-webkit-search-decoration {
 	font-size: 18px;
 	width: 50%;
 }
+
+
+/*TABS*/
+/*----- Tabs -----*/
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+ 
+    /*----- Tab Links -----*/
+    /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+ 
+    .tab-links li {
+        margin:0px 5px;
+        float:left;
+        list-style:none;
+    }
+ 
+        .tab-links a {
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            background:#7FB5DA;
+            font-size:16px;
+            font-weight:600;
+            color:#4c4c4c;
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+ 
+    li.active a, li.active a:hover {
+        background:#fff;
+        color:#4c4c4c;
+    }
+ 
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        padding:15px;
+        border-radius:3px;
+        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+        background:#fff;
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+        
+.tab-content h1{
+	margin:60px 0 0 0;
+	font-size:30px;
+	color:red;
