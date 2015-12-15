@@ -48,7 +48,12 @@ def house_register(request):
     return render(request, "app/success_house_registration.html", context)
 
 
-def dog_insertion(request):
+def dog_insretion(request):
+    context = RequestContext(request, {'dog': 'dog'})
+    return render(request, 'app/dog_insert.html', context)
+
+
+def dog_insert(request):
     req_name = request.GET.get("name")
     req_description = request.GET.get("description", "N/A")
     req_color = request.GET.get("color", "N/A")
