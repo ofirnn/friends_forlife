@@ -1,3 +1,5 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.sites import requests
 from django.db.models import Q
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
@@ -5,15 +7,19 @@ from django.template import RequestContext, loader
 from models import *
 import datetime
 
-ALL_STRING ="All"
+ALL_STRING = "All"
+
+CHIP_INFO_BASE_URL = "https://klav.im/results/"
 
 
+@login_required(login_url='/accounts/login/')
 def dogs_index(request):
     dogs_list = Dog.objects.order_by('-last_updated')
     context = RequestContext(request, {'dogs_list': dogs_list})
     return render(request, 'app/dogs_index.html', context)
 
 
+@login_required(login_url='/accounts/login/')
 def dog_details(request, dog_id):
     dog = get_object_or_404(Dog, pk=dog_id)
     context = RequestContext(request, {'dog': dog})
@@ -48,11 +54,13 @@ def house_register(request):
     return render(request, "app/success_house_registration.html", context)
 
 
+@login_required(login_url='/accounts/login/')
 def dog_insretion(request):
     context = RequestContext(request, {'dog': 'dog'})
     return render(request, 'app/dog_insert.html', context)
 
 
+@login_required(login_url='/accounts/login/')
 def dog_insert(request):
     req_name = request.GET.get("name")
     req_description = request.GET.get("description", "N/A")
@@ -97,14 +105,56 @@ def dog_insert(request):
     context = RequestContext(request, {'dog': dog})
     return render(request, "app/success_dog_insertion.html", context)
 
+@login_required(login_url='/accounts/login/')
 def dog_updation(request):
     req_id = request.GET.get("id")
     dog = Dog.objects.get(id=req_id)
     context = RequestContext(request, {'dog': dog})
     return render(request, 'app/dog_update.html', context)
 
+
+@login_required(login_url='/accounts/login/')
 def dog_update(request):
-    return
+    req_id = request.GET.get("id")
+    dog = Dog.objects.get(id=req_id)
+
+    gender = request.GET.get("gender", dog.gender)
+    size = request.GET.get("dog_size", dog.size)
+    age = request.GET.get("dog_age", dog.age)
+    type_name = request.GET.get("dog_breed", dog.type_name)
+    color = request.GET.get("dog_color", ALL_STRING)
+
+    picture = request.GET.get("picture", dog.picture)
+
+    characteristics = request.GET.getlist("Characteristics[]", [])
+
+    req_children_friendly = False
+    req_suitable_for_allergic = False
+    req_habituated_for_needs = False
+
+    if "childrens_friendly" in characteristics:
+        req_children_friendly = True
+    if "suitable_for_allergic" in characteristics:
+        req_suitable_for_allergic = True
+    if "habituated_for_needs" in characteristics:
+        req_habituated_for_needs = True
+
+    # Set Values
+    dog.gender = gender
+    dog.size = size
+    dog.age = age
+    dog.type_name = type_name
+    dog.color = color
+    dog.picture = picture
+    dog.is_children_friendly = req_children_friendly
+    dog.is_hypoallergenic = req_suitable_for_allergic
+    dog.is_educated = req_habituated_for_needs
+
+    dog.save()
+
+    context = RequestContext(request, {'dog': dog})
+    return render(request, 'app/success_dog_updation.html', context)
+
 
 def dogs_list(request):
     #Parameters : gender, dog_size, dog_age, dog_breed, dog_color
@@ -164,6 +214,25 @@ def dogs_list(request):
     return render(request, 'app/dogs_list.html', context)
 
 
+def search_chip_info(search_string):
+    chip_info = dict()
+
+    return chip_info
+
+
+def chip_details(request):
+    req_search_string = request.GET.get("search_string", None)
+
+    chip_info = None
+    if req_search_string is not None:
+        chip_info = search_chip_info(req_search_string)
+
+    context = RequestContext(request, {'chip_info': chip_info})
+
+    return render(request, 'app/chip_info.html', context)
+
+
 def index(request):
     context = RequestContext(request, {'dog': 'dog'})
     return render(request, 'app/index.html', context)
+
