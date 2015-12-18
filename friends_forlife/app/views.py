@@ -12,14 +12,14 @@ ALL_STRING = "All"
 CHIP_INFO_BASE_URL = "https://klav.im/results/"
 
 
-@login_required(login_url='/accounts/login/')
+@login_required()
 def dogs_index(request):
     dogs_list = Dog.objects.order_by('-last_updated')
     context = RequestContext(request, {'dogs_list': dogs_list})
     return render(request, 'app/dogs_index.html', context)
 
 
-@login_required(login_url='/accounts/login/')
+@login_required()
 def dog_details(request, dog_id):
     dog = get_object_or_404(Dog, pk=dog_id)
     context = RequestContext(request, {'dog': dog})
@@ -29,8 +29,23 @@ def dog_details(request, dog_id):
 def dogs_4_adoption(request):
     context = RequestContext(request, {'dog': 'dog'})
     return render(request, 'app/dogs_4_adoption.html', context)
-
-
+#
+# @login_required()
+# def doghouse_index(request):
+#     houses = DogHouse.objects.all().order_by("-id")
+#
+#     stayings = dict()
+#     for house in houses:
+#
+#         #stayings[house.id] = house.
+# @login_required()
+# def doghouse_delete(request):
+#
+# @login_required()
+# def doghouse_update(request):
+#
+#
+#
 def house_registration(request):
     context = RequestContext(request, {'dog': 'dog'})
     return render(request, 'app/house_registration.html', context)
@@ -55,7 +70,7 @@ def house_register(request):
 
 
 @login_required(login_url='/accounts/login/')
-def dog_insretion(request):
+def dog_insertion(request):
     context = RequestContext(request, {'dog': 'dog'})
     return render(request, 'app/dog_insert.html', context)
 
@@ -230,6 +245,13 @@ def chip_details(request):
     context = RequestContext(request, {'chip_info': chip_info})
 
     return render(request, 'app/chip_info.html', context)
+
+
+def donation(request):
+    basketks = DonationBasket.objects.all().order_by("-creation_date")
+    context = RequestContext(request, {'donation_baskets': basketks})
+
+    return render(request, 'app/donation_baskets.html', context)
 
 
 def index(request):

@@ -440,6 +440,19 @@ input[type="search"]::-webkit-search-decoration {
   /*	margin: 5% 5% 5% 5%;*/	
 }
 
+.submitBtn2{
+	color: #3E5560;
+    font-size: 20px;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    /* margin-top: 56px; */
+    font-family: trashimclm;
+    float: left;
+    margin-left: 8px;
+    margin-bottom: 4px;
+}
 
 
 /*=========================================*/
@@ -572,29 +585,35 @@ input[type="search"]::-webkit-search-decoration {
 /*=========== PAGE - DOG LIST ===============*/ 
 /*=========================================*/
 
-#dog_div .picture
+#dog_div>.picture
 {
 	width: 30%;
 	margin-top: 5%;
 	margin-right: 5%;
 	position: relative;
+	float: right;
 }
-#dog_div .picture img
+#dog_div .picture
 {
-	width: 80%;
+	width: 14%;
 }
-
 
 #dog_div .name
 {
 	
 	font-size: 23px;
 	color: #AC6D76;
+	text-align:center;
 }
+.dogsDetails{
+	float: right;
+    margin: 5% 1%;
+    width: 70%;
+}
+
 
 #dog_div .age
 {
-	float: left;
 	display: inline; 
 	font-size: 15px;
 }
@@ -606,11 +625,23 @@ input[type="search"]::-webkit-search-decoration {
 	left: 5%;
 }
 
-#dog_div .description
-{
+#dog_div .description {
 	font-family: gisha;
 	font-size: 15px;
 	font-weight: lighter;
+}
+#dog_div{
+	width: 100%;
+    min-height: 226px;
+	padding-left: 4px;
+	padding-bottom:4px;
+	float: right;
+}
+.col{
+	width: 33.333%;
+    float: right;
+    text-align: center;
+    margin-top: 27px;
 }
 
 
@@ -621,13 +652,49 @@ input[type="search"]::-webkit-search-decoration {
 
 .information_about_foster
 {
-	margin: 20px 20px 20px 20px;
-	line-height: 25px;
-	font-size: 18px;
-	width: 50%;
+    margin: 20px 20px 20px 20px;
+    line-height: 25px;
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    border-bottom: #eee 2px solid;
+    padding-bottom: 10px;
+}
+.foster_form{
+	margin: 0 auto ;
+	text-align:center;
+
+}
+.fost_form_label{font-size:1.3em;}
+
+.foster_form_input{
+    font-size: 1.1em;
+    border: none;
+    border-bottom: #eee 3px solid;
+    margin-bottom: 22px;
+	text-align:center;
+}
+.submitBtn {
+  color: #3E5560;
+  font-size: 27px;
+  background: #eee;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+	border: none;
+    margin-top: 56px;
+	font-family: trashimclm;
 }
 
-
+.submitBtn:hover {
+  background: #3E5560;
+  text-decoration: none;
+	color:#eee;
+	 -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
 /*TABS*/
 /*----- Tabs -----*/
 .tabs {
