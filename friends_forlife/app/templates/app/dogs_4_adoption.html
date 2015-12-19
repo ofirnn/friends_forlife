@@ -92,17 +92,44 @@
 							 		
 							 		
 							        <div id="tab2" class="tab">
-										<h1>יש להציג את כל הכלבים מהרשימה, זה בדיוק כמו הדף של ההחזר תוצאות חיפוש כלב ספציפי רק שפה חוזרת כל הטבלה</h1>
-			                           {% for dog in dogs_list %}
-			                                <div id="dog_div"   <!-- here come's dog's pic-->
-								     		    <p class="name">{{ dog.name }}</p>
-								     		    <p class="age"> {{ dog.age }} גיל:</p>
-							     		    	<img src={{ dog.picture.url }}>
-								     			<article class="description"> {{ dog.description }}</article>
-												<!--  <p class="description"> {{ dog.description }}</p> -->   
-												<p class="gender"> {{ dog.gender }} צריך למקם תמונה של מין הכלב</p>
-								     	    </div>
-			                            {%  endfor %}
+										<h1>כלבים לאימוץ</h1>
+                                        {% for dog in dogs_list %}
+                                            <div id="dog_div" > <!-- here come's dog's pic-->
+                                            <img src={{ dog.picture.url }} class="picture">
+                                                <div class="dogsDetails">
+                                                 <p class="name">{{ dog.name }}</p>
+                                                    <div class="col">
+                                                        <p> מין:{{ dog.gender }}</p>
+                                                        <p class="age"> גיל: {{ dog.age }}</p>
+                                                        <br>
+                                                        <p> גזע: {{ dog.type_name }}</p>
+                                                        <p> צבע: {{ dog.color }}</p>
+                                                    </div>
+                                                    <div class="col">
+                                                        {%  if dog.is_childrens_friendly %}
+                                                            <p style="color:#2ecc71;"> ידידותי לילדים</p>
+                                                        {% else %}
+                                                           <p style="color:#e74c3c;"> לא ידידותי לילדים</p>
+                                                        {% endif %}
+
+                                                        {%  if dog.is_educated %}
+                                                            <p style="color:#2ecc71;"> מחונך לצרכים</p>
+                                                        {% else %}
+                                                           <p style="color:#e74c3c;"> לא מחונך לצרכים</p>
+                                                        {% endif %}
+
+                                                        {%  if dog.is_hypoallergenic %}
+                                                            <p style="color:#2ecc71;">מתאים לאלרגיים </p>
+                                                        {% else %}
+                                                           <p style="color:#e74c3c;"> לא מתאים לאלרגיים</p>
+                                                        {% endif %}
+                                                    </div>
+                                                    <div class="col">
+                                                        <p class="description"> {{ dog.description }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {%  endfor %}
 
 						        
 							        </div>

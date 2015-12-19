@@ -1,25 +1,155 @@
-{% if dogs_list %}
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>Friends for Life</title>
+		<script src="../../static/js/modernizr.js"></script>
+		<link rel="stylesheet" href="../../static/style/style.css">
+		<link rel="stylesheet" href="../../static/style/styleMobile.css">
+	</head>
+	<body dir="rtl">
+		<div id="outer-wrap">
+			<div id="inner-wrap">
+			    <header id="top">
+			        <div class="block">
+			            <a href="index.html"  id="logo"></a><!--Logo-->
+			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
+			            <div id="contact">
+			                <span class="based">we're based in Limerick</span>
+			                <span class="number">call us  061 43 7777</span>
+			            </div>
+					    <nav id="nav">
+				            <ul>
+				                <li class="is-active navBtnAdopt">
+				                    <a href="dogs_4_adoption.html">אמץ כלב</a>
+				                </li>
+				             	<li class="navBtnFoster">
+				                    <a href="house_registration.html">רישום לאומנה</a>
+				                </li>
+				             <!--<li class="navBtnAbout">
+				                    <a href="#">אודות</>
+				              </li>-->
+    				             <li class="navBtnGallery">
+				                    <a href="#">גלריה</a></a>
+				                </li>
+				             <!--<li class="navBtnContact">
+				                    <a href="#">צור קשר</a>
+				                </li>-->
+				                <li class="navBtnDonate">
+				                    <a href="donation_baskets.html">תרומה</a>
+				                </li>
+                                {% if request.user.is_superuser %}
+                                    <li class="navBtnDogIndex">
+                                        <a href="dogs_index.html">ניהול כלבים</a>
+                                    </li>
+                                    <li class="navBtnDogHouseIndex">
+                                        <a href="doghouse_index.html">ניהול אומנה</a></a>
+                                    </li>
+                                {% endif %}
+				            </ul>
+			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+			    		</nav>
+					</div>
+			    </header>
+				<main id="main">
+					<div class="block">
+						<div class="mainTop"></div>
+						<div class="mainContent">
+				    		<h1>ניהול כלבים</h1>
+                            {% for dog in dogs_list %}
+                                <div id="dogs_index_dog_div" > <!-- here come's dog's pic-->
+                                <img src={{ dog.picture.url }} class="picture">
+                                    <div class="dogs_index_dogsDetails">
+                                     <p class="name">{{ dog.name }}</p>
+                                        <div class="dogs_index_col">
+                                            <label class="label"> מין:</label>
+                                            <p class="text"> {{ dog.gender }}</p>
+                                            <label class="label">גיל:</label>
+                                            <p class="text">{{ dog.age }}</p>
+                                            <label class="label"> גזע:</label>
+                                            <p class="text"> {{ dog.type_name }}</p>
+                                            <label class="label"> צבע:</label>
+                                            <p class="text">{{ dog.color }}</p>
+                                        </div>
+                                        <div class="dogs_index_col">
+                                            <br>
+                                            {%  if dog.is_children_friendly %}
+                                                <p style="color:#2ecc71;"> ידידותי לילדים</p>
+                                            {% else %}
+                                               <p style="color:#e74c3c;"> לא ידידותי לילדים</p>
+                                            {% endif %}
+                                            <br>
+                                            {%  if dog.is_educated %}
+                                                <p style="color:#2ecc71;"> מחונך לצרכים</p>
+                                            {% else %}
+                                               <p style="color:#e74c3c;"> לא מחונך לצרכים</p>
+                                            {% endif %}
+                                            <br>
+                                            {%  if dog.is_hypoallergenic %}
+                                                <p style="color:#2ecc71;">מתאים לאלרגיים </p>
+                                            {% else %}
+                                               <p style="color:#e74c3c;"> לא מתאים לאלרגיים</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="dogs_index_col">
+{#                                            <p class="description"> {{ dog.description }}</p>#}
+                                              <br>
+                                              <label class="label"> עודכן:</label>
+                                              <p class="text">{{ dog.last_updated }}</p>
+                                              <label class="label"> מספר שבב:</label>
+                                              <p class="text">{{ dog.chip_id }}</p>
+                                              <label class="label"> סטאטוס:</label>
+                                              <p class="text">{{ dog.status }}</p>
+                                        </div>
+                                        <div class="dogs_index_col">
+                                            <form name="update_dog" action="dog_updation">
+                                                <input type="hidden" name="id" value="{{ dog.id }}">
+                                                <input type="submit" class="dogs_index_UpdateBtn" value="עדכון"/>
+                                            </form>
 
-    <h1> Dogs Details </h1>
-    <table style="width:100%" lang="he">
-    <tr>
-        <td>שם</td>
-        <td>תאריך לידה</td>
-        <td>גזע</td>
-        <td>חברותי לילדים?</td>
-        <td>תמונה</td>
-    </tr>
-    {% for dog in dogs_list %}
-        <tr>
-            <td>{{ dog.name }}</td>
-            <td>{{ dog.birth_date }}</td>
-            <td>{{ dog.type_name }}</td>
-            <td>{{ dog.is_children_friendly }}</td>
-            <td> <img src="{{ dog.picture }}"></td>
-        </tr>
-    {% endfor %}
+                                            <form>
+                                                <input type="hidden" name="id" value="{{ dog.id }}">
+                                                <input type="submit" class="dogs_index_RemoveBtn" value="הסרה"/>
+                                            </form>
+                                    </div>
+					     	    </div>
+                                {% if dog.dogstaying_set.all|length > 0 %}
+                                    <div class="dogs_index_foster_count">
+                                        <label class="label" style="color:#AC6D76;"> שהיות באומנה: {{ dog.dogstaying_set.all|length }}</label>
+                                    </div>
+                                    {% for staying in dog.dogstaying_set.all %}
+                                        <div class="dogs_foster_details">
+                                            <div class="dogs_index_foster_col">
+                                                <label class="label"> בית אומנה:</label>
+                                                <p class="text"> {{ staying.house.owner_name }}</p>
+                                            </div>
+                                            <div class="dogs_index_foster_col">
+                                                <label class="label"> תאריך התחלה:</label>
+                                                <p class="text"> {{ staying.start_date }}</p>
+                                            </div>
+                                            <div class="dogs_index_foster_col">
+                                                <label class="label"> תאריך סיום:</label>
+                                                {% if staying.end_date %}
+                                                    <p class="text"> {{ staying.end_date }}</p>
+                                                {% else %}
+                                                    <p class="text"> אין</p>
+                                                {%  endif %}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
 
-    </tr>
-{% else %}
-    <p>  בדיקה אין כלבים להצגה</p>
-{% endif %}
+                                {%  endif %}
+                            {%  endfor %}
+								<div class="clear"></div>
+						</div>
+						<div class="mainBtn"></div>
+					</main>
+			    	<footer id="footer"></footer>
+				</div><!--Block-->
+			</div><!--/#inner-wrap-->
+		</div><!--/#outer-wrap-->
+		<script src="../../static/js/main.js"></script>
+	</body>
+</html>
