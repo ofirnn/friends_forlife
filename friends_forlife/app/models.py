@@ -30,8 +30,8 @@ class Dog(models.Model):
     name = models.CharField(max_length=200, help_text="The name of the Dog")
 
     description = models.TextField()
-    color = models.CharField(max_length=100)
-    birth_date = models.DateField()
+    color = models.CharField(max_length=100, null=True)
+    age = models.CharField(max_length=100, null=True)
 
     is_adopted = models.BooleanField(default=False)
     is_castrated = models.BooleanField(default=False)
@@ -39,7 +39,7 @@ class Dog(models.Model):
     gender = models.CharField(max_length=10, null=True)
     status = models.CharField(max_length=50, help_text="State Name - In-Adoption / In-House / Treatment ")
     last_updated = models.DateTimeField(auto_created=True)
-    picture = models.ImageField(upload_to="media/dog_pictures/", default="media/dog_pictures/no-img.jpg")
+    picture = models.ImageField(upload_to="dog_pictures", default="media/dog_pictures/no-img.jpg")
     chip_id = models.CharField(max_length=200, help_text="IL chip-id")
 
     size = models.CharField(max_length=200, null=True)
@@ -47,7 +47,7 @@ class Dog(models.Model):
     is_hypoallergenic = models.BooleanField(default=False)
     is_children_friendly = models.BooleanField(default=True)
 
-    stayings = models.ManyToManyField(DogStaying)
+    stayings = models.ManyToManyField(DogStaying, blank=True)
 
     def __str__(self):
         output = dict()
@@ -55,6 +55,7 @@ class Dog(models.Model):
         output["name"] = self.name
         output["type_name"] = self.type_name
         return json.dumps(output)
+
 
 class AdoptionDay(models.Model):
     start_time = models.DateTimeField()

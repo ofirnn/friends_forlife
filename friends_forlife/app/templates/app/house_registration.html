@@ -20,9 +20,27 @@ class DogHouse(models.Model):
 	    <title>Friends for Life</title>	
 	    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
 		<script src="../../static/js/modernizr.js"></script>
-		
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 		<link rel="stylesheet" href="../../static/style/style.css">
 		<link rel="stylesheet" href="../../static/style/styleMobile.css">
+        <script>
+              var geocoder;
+              var autocomplete;
+
+              function initialize() {
+                geocoder = new google.maps.Geocoder();
+                 autocomplete = new google.maps.places.Autocomplete(
+                /** @type {HTMLInputElement} */(document.getElementById('autocomplete')),
+                { types: ['geocode'] });
+                     autocomplete2 = new google.maps.places.Autocomplete(
+                /** @type {HTMLInputElement} */(document.getElementById('autocompleteFormInput2')),
+                { types: ['geocode'] });
+                google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                });
+                 google.maps.event.addListener(autocomplete2, 'place_changed', function() {
+                });
+              }
+        </script>
 <script>
   var footerResize = function() {
     $('#footer').css('position', $("body").height() + $("#footer").innerHeight() > $(window).height() ? "inherit" : "fixed");
@@ -30,7 +48,7 @@ class DogHouse(models.Model):
   $(window).resize(footerResize).ready(footerResize);
 </script>
 	</head>
-	<body dir="rtl">	
+	<body dir="rtl" onload="initialize()">
 		<div id="outer-wrap">
 			<div id="inner-wrap">	
 			    <header id="top">
@@ -74,7 +92,7 @@ class DogHouse(models.Model):
 					<div class="block">
 						<div class="mainTop"></div>
 						<div class="mainContent">
-							<h1>רישום לאומנה</h1>
+							<h1>על האומנה</h1>
 							<section class="Foster_Registration">
 								<article class="information_about_foster">
 									משפחות רבות חוששות לאמץ ולהביא הביתה כלב או חתול, 
@@ -89,7 +107,7 @@ class DogHouse(models.Model):
 									 הוא אינו נמצא ברחוב או חווה את חווית המכלאה הקשה והטראומטית. הוא נמצא בבית עם אנשים שנותנים לו חום ודואגים למחסורו. 
 									  הניסיון מלמד שדרך ייחודית זו מביאה פעמים רבות לכך שבסוף התהליך, 
 									 מגיע למשפחה המאמצת בעל חיים חברותי ורגוע יותר.
-										המשפחה האומנת מקבלת מזון לכל אורך תקופת השהייה, 
+										המשפחה האומנת מקבלת מזון לכל אורך תקופת השהייה,
 										ביקורים אצל וטרינר במידת הצורך, ייעוץ רלוונטי וליווי ע"י משרד העמותה.  כך,
 										 גם כאלה שאינם בעלי ניסיון בגידול כלבים או חתולים יכולים לקחת חלק בתהליך ולסייע לנו. 
 										 במהלך שנות הפעילות הרבות שלנו, נתקלנו באנשים רבים ש"לא ידעו שהם כאלה" -
@@ -99,14 +117,33 @@ class DogHouse(models.Model):
 										שמתארח אצלה ומהווה חוליה חשובה בדרכו לאימוץ קבע,
 										 אלא שבראייתנו התהליך עצמו תורם רבות גם למשפחה עצמה,
 										  בפרט בבית עם ילדים, שסופגים חוויה ערכית אמתית של נתינה וסיוע לבעל חיים נזקק. 
-										לא מעט מהמשפחות האומנות שלנו הפכו למשפחות מאמצות עם הזמן. 
+										לא מעט מהמשפחות האומנות שלנו הפכו למשפחות מאמצות עם הזמן.
 										ככל שתצטרפנה אלינו יותר משפחות, לפעילות חשובה זו,
-										 כך נוכל לסייע במציאת בתים מאמצים ליותר כלבים וחתולים עזובים וחסרי בית.	
-								</artical>						
-							</section>			
-							<section class="indexRightSide">
-								
+										 כך נוכל לסייע במציאת בתים מאמצים ליותר כלבים וחתולים עזובים וחסרי בית.
+								</article>
 							</section>
+                            <form class ="foster_form">
+                                <h1>רישום לאומנה</h1>
+                                <div class="col">
+                                    <label class="fost_form_label">שם</label><br>
+                                    <input type="text" class="foster_form_input" name="name" placeholder="שם מלא"><br>
+                                    <label class="fost_form_label">טלפון</label><br>
+                                    <input type="tel" class="foster_form_input" name="telephone" placeholder="XXX-XXXXXXX"><br>
+                                    <label class="fost_form_label">דואר אלקטרוני</label><br>
+                                    <input type="email" class="foster_form_input" name="email" placeholder="exempale@gmail.com"><br>
+                                </div>
+                                <div class="col">
+                                    <label class="fost_form_label">יישוב</label><br>
+                                    <input type="text" class="foster_form_input" name="city" placeholder="יישוב"><br>
+                                    <label class="fost_form_label">כתובת מלאה</label><br>
+                                    <input type="text" name="address" id="autocomplete" onfocus="geolocate()" class="foster_form_input" placeholder="כתובת מלאה"><br>
+                                    <label class="fost_form_label">תפוסה מקסימאלית</label><br>
+                                    <input type="number" name="capacity" class="foster_form_input" placeholder="1"><br>
+                                </div>
+                                <div class="col">
+                                    <input type="submit" class="submitBtn" value="שלח"></input>
+                                </div>
+                            </form>
 						</div>
 						<div class="mainBtn"></div>
 					</main>

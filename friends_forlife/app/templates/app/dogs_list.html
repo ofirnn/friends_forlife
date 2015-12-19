@@ -31,7 +31,7 @@
 				             <!--<li class="navBtnAbout">
 				                    <a href="#">אודות</>
 				              </li>-->
-				             <li class="navBtnGallery">
+    				             <li class="navBtnGallery">
 				                    <a href="#">גלריה</a></a>
 				                </li>
 				             <!--<li class="navBtnContact">
@@ -51,13 +51,43 @@
 						<div class="mainContent">
 				    		<h1>תוצאות החיפוש</h1>
                             {% for dog in dogs_list %}
-                                <div id="dog_div"   <!-- here come's dog's pic-->
-					     		    <p class="name">{{ dog.name }}</p>
-					     		    <p class="age"> {{ dog.age }} גיל:</p>
-				     		    	<img src={{ dog.picture }}>
-					     			<article class="description"> אני מיקי, כלבה הרפתקנית שאוהבת בלב לבלב לבלחב בלחלבח לח בלחב לבח לחבל בחבלחל לבחבל לבחלבח </article>
-									<!--  <p class="description"> {{ dog.description }}</p> -->   
-									<p class="gender"> {{ dog.gender }} צריך למקם תמונה של מין הכלב</p>
+                                <div id="dog_div" > <!-- here come's dog's pic-->
+                                <img src={{ dog.picture.url }} class="picture">
+                                    <div class="dogsDetails">
+                                     <p class="name">{{ dog.name }}</p>
+                                        <div class="col">
+                                            <p> מין:{{ dog.gender }}</p>
+                                            <p class="age"> גיל: {{ dog.age }}</p>
+                                            <br>
+                                            <!--  <p class="description"> {{ dog.description }}</p> -->
+                                            <!--     #Parameters : gender, dog_size, dog_age, dog_breed, dog_color
+        # childrens_friendly, suitable_for_allergic , habituated_for_needs -->
+                                            <p> גזע: {{ dog.type_name }}</p>
+                                            <p> צבע: {{ dog.color }}</p>
+                                        </div>
+                                        <div class="col">
+                                            {%  if dog.is_childrens_friendly %}
+                                                <p style="color:#2ecc71;"> ידידותי לילדים</p>
+                                            {% else %}
+                                               <p style="color:#e74c3c;"> לא ידידותי לילדים</p>
+                                            {% endif %}
+
+                                            {%  if dog.is_educated %}
+                                                <p style="color:#2ecc71;"> מחונך לצרכים</p>
+                                            {% else %}
+                                               <p style="color:#e74c3c;"> לא מחונך לצרכים</p>
+                                            {% endif %}
+
+                                            {%  if dog.is_hypoallergenic %}
+                                                <p style="color:#2ecc71;">מתאים לאלרגיים </p>
+                                            {% else %}
+                                               <p style="color:#e74c3c;"> לא מתאים לאלרגיים</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col">
+                                            <p class="description"> {{ dog.description }}</p>
+                                        </div>
+                                    </div>
 					     	    </div>
                             {%  endfor %}
 								<div class="clear"></div>
