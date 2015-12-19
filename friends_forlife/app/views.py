@@ -27,7 +27,8 @@ def dog_details(request, dog_id):
 
 
 def dogs_4_adoption(request):
-    context = RequestContext(request, {'dog': 'dog'})
+    dogs = Dog.objects.all()
+    context = RequestContext(request, {'dogs_list': dogs})
     return render(request, 'app/dogs_4_adoption.html', context)
 #
 # @login_required()
@@ -46,6 +47,7 @@ def dogs_4_adoption(request):
 #
 #
 #
+
 def house_registration(request):
     context = RequestContext(request, {'dog': 'dog'})
     return render(request, 'app/house_registration.html', context)

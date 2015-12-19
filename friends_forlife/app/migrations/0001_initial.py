@@ -33,14 +33,19 @@ class Migration(migrations.Migration):
                 ('last_updated', models.DateTimeField(auto_created=True)),
                 ('name', models.CharField(help_text=b'The name of the Dog', max_length=200)),
                 ('description', models.TextField()),
-                ('color', models.CharField(max_length=100)),
-                ('birth_date', models.DateField()),
+                ('color', models.CharField(max_length=100, null=True)),
+                ('age', models.CharField(max_length=100, null=True)),
                 ('is_adopted', models.BooleanField(default=False)),
                 ('is_castrated', models.BooleanField(default=False)),
                 ('is_educated', models.BooleanField(default=False)),
+                ('gender', models.CharField(max_length=10, null=True)),
                 ('status', models.CharField(help_text=b'State Name - In-Adoption / In-House / Treatment ', max_length=50)),
-                ('picture', models.ImageField(null=True, upload_to=b'', blank=True)),
+                ('picture', models.ImageField(default=b'media/dog_pictures/no-img.jpg', upload_to=b'dog_pictures')),
                 ('chip_id', models.CharField(help_text=b'IL chip-id', max_length=200)),
+                ('size', models.CharField(max_length=200, null=True)),
+                ('type_name', models.CharField(help_text=b'The name of the Dog-type', max_length=200, null=True)),
+                ('is_hypoallergenic', models.BooleanField(default=False)),
+                ('is_children_friendly', models.BooleanField(default=True)),
             ],
         ),
         migrations.CreateModel(
@@ -60,18 +65,9 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('start_date', models.DateField(blank=True)),
-                ('end_date', models.DateField(null=True, blank=True)),
+                ('end_date', models.DateField(null=True)),
+                ('dog', models.ForeignKey(to='app.Dog')),
                 ('house', models.ForeignKey(to='app.DogHouse')),
-            ],
-        ),
-        migrations.CreateModel(
-            name='DogType',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(help_text=b'The name of the Dog-type', max_length=200)),
-                ('is_hypoallergenic', models.BooleanField(default=False)),
-                ('is_children_friendly', models.BooleanField(default=True)),
-                ('description', models.TextField()),
             ],
         ),
         migrations.CreateModel(
@@ -98,12 +94,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='dog',
             name='stayings',
-            field=models.ManyToManyField(to='app.DogStaying'),
-        ),
-        migrations.AddField(
-            model_name='dog',
-            name='type',
-            field=models.ForeignKey(to='app.DogType'),
+            field=models.ManyToManyField(to='app.DogHouse', null=True, through='app.DogStaying'),
         ),
         migrations.AddField(
             model_name='basketitem',

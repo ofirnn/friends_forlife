@@ -19,17 +19,29 @@
 			            <a href="index.html"  id="logo"></a><!--Logo-->
 			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
 						<div id="contact">
-							<div id="loginBannerBeforeClick">
-								<button id="btnClick" class="based">כניסה למערכת</button>
-							</div>
-							
-							<div id="loginBannerAfterClick" style="display:none;">
-								<form name="login" action="index_submit" method="get">	
-											<input type="submit" value="כניסה">						        	        
-								        	<input type="password" name="password" placeholder="סיסמא" required>	
-								        	<input type="text" name="usermail" placeholder="שם משתמש" required>
-								</form>	
-							</div>													
+							{% if request.user.is_authenticated %}
+                                <div id="loginBannerBeforeClick">
+                                    <button id="btnClick" class="based">מחובר למערכת</button>
+                                </div>
+                                <div id="loginBannerAfterClick" style="display:none;">
+                                    <form name="login" action="index_submit" method="get">
+                                                <input type="submit" value="כניסה">
+                                                <input type="password" name="password" placeholder="סיסמא" required>
+                                                <input type="text" name="usermail" placeholder="שם משתמש" required>
+                                    </form>
+                                </div>
+                            {% else %}
+                                <div id="loginBannerBeforeClick">
+                                    <button id="btnClick" class="based">כניסה למערכת</button>
+                                </div>
+                                <div id="loginBannerAfterClick" style="display:none;">
+                                    <form name="login" action="index_submit" method="get">
+                                                <input type="submit" value="כניסה">
+                                                <input type="password" name="password" placeholder="סיסמא" required>
+                                                <input type="text" name="usermail" placeholder="שם משתמש" required>
+                                    </form>
+                                </div>
+                            {% endif %}
 						</div>	    
 					    <nav id="nav">
 				            <ul>

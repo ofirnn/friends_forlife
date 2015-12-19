@@ -59,14 +59,11 @@
                                             <p> מין:{{ dog.gender }}</p>
                                             <p class="age"> גיל: {{ dog.age }}</p>
                                             <br>
-                                            <!--  <p class="description"> {{ dog.description }}</p> -->
-                                            <!--     #Parameters : gender, dog_size, dog_age, dog_breed, dog_color
-        # childrens_friendly, suitable_for_allergic , habituated_for_needs -->
                                             <p> גזע: {{ dog.type_name }}</p>
                                             <p> צבע: {{ dog.color }}</p>
                                         </div>
                                         <div class="col">
-                                            {%  if dog.is_childrens_friendly %}
+                                            {%  if dog.is_children_friendly %}
                                                 <p style="color:#2ecc71;"> ידידותי לילדים</p>
                                             {% else %}
                                                <p style="color:#e74c3c;"> לא ידידותי לילדים</p>
