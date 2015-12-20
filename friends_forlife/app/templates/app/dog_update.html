@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>Friends for Life</title>
+		<script src="../../static/js/modernizr.js"></script>
+		<link rel="stylesheet" href="../../static/style/style.css">
+		<link rel="stylesheet" href="../../static/style/styleMobile.css">
+	</head>
+	<body dir="rtl">
+		<div id="outer-wrap">
+			<div id="inner-wrap">
+			    <header id="top">
+			        <div class="block">
+			            <a href="index.html"  id="logo"></a><!--Logo-->
+			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
+			            <div id="contact">
+			                <span class="based">we're based in Limerick</span>
+			                <span class="number">call us  061 43 7777</span>
+			            </div>
+					    <nav id="nav">
+				            <ul>
+				                <li class="is-active navBtnAdopt">
+				                    <a href="dogs_4_adoption.html">אמץ כלב</a>
+				                </li>
+				             	<li class="navBtnFoster">
+				                    <a href="house_registration.html">רישום לאומנה</a>
+				                </li>
+				             <!--<li class="navBtnAbout">
+				                    <a href="#">אודות</>
+				              </li>-->
+    				             <li class="navBtnGallery">
+				                    <a href="#">גלריה</a></a>
+				                </li>
+				             <!--<li class="navBtnContact">
+				                    <a href="#">צור קשר</a>
+				                </li>-->
+				                <li class="navBtnDonate">
+				                    <a href="donation_baskets.html">תרומה</a>
+				                </li>
+                                {% if request.user.is_superuser %}
+                                    <li class="navBtnDogIndex">
+                                        <a href="dogs_index.html">ניהול כלבים</a>
+                                    </li>
+                                    <li class="navBtnDogHouseIndex">
+                                        <a href="doghouse_index.html">ניהול אומנה</a></a>
+                                    </li>
+                                {% endif %}
+				            </ul>
+			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+			    		</nav>
+					</div>
+			    </header>
+				<main id="main">
+					<div class="block">
+						<div class="mainTop"></div>
+						<div class="mainContent">
+				    		<h1>עדכון פרטי כלב</h1><br>
+                                <div class="dog_update_form_details">
+{##}
+{#    description = models.TextField()#}
+{#    color = models.CharField(max_length=100, null=True)#}
+{#    age = models.CharField(max_length=100, null=True)#}
+{##}
+{#    is_adopted = models.BooleanField(default=False)#}
+{#    is_castrated = models.BooleanField(default=False)#}
+{#    is_educated = models.BooleanField(default=False)#}
+{#    gender = models.CharField(max_length=10, null=True)#}
+{#    status = models.CharField(max_length=50, help_text="State Name - In-Adoption / In-House / Treatment ")#}
+{#    last_updated = models.DateTimeField(auto_created=True)#}
+{#    picture = models.ImageField(upload_to="dog_pictures", default="media/dog_pictures/no-img.jpg")#}
+{#    chip_id = models.CharField(max_length=200, help_text="IL chip-id")#}
+{##}
+{#    size = models.CharField(max_length=200, null=True)#}
+{#    type_name = models.CharField(max_length=200, null=True, help_text="The name of the Dog-type")#}
+{#    is_hypoallergenic = models.BooleanField(default=False)#}
+{#    is_children_friendly = models.BooleanField(default=True)#}
+                                    <form action="dog_update" method="get" name="dog_update" enctype="multipart/form-data" >
+                                        <div class="dog_update_col">
+                                            <label class="dog_update_form_label"> שם הכלב:</label>
+                                            <input type="text"  class="dog_update_form_input" value="{{ dog.name }}" name="name" placeholder="{{ dog.name }}">
+                                            <br>
+                                            <label class="dog_update_form_label">צבע:</label>
+                                                <select class="dog_update_form_select" name="color">
+                                                    <option value="{{ dog.color }}" selected>{{ dog.color }}</option>
+                                                    {%  if dog.color != "ג'ינג'"%}
+                                                        <option value="ג׳ינג׳י">ג'ינג'י</option>
+                                                    {% endif %}
+                                                    {% if dog.color != "כהה" %}
+                                                        <option value="כהה">כהה</option>
+                                                    {% endif %}
+                                                    {% if dog.color != "צהוב" %}
+                                                        <option value="צהוב">צהוב</option>
+                                                    {% endif %}
+                                                    {% if dog.color != "שחור" %}
+                                                        <option value="שחור">שחור</option>
+                                                    {% endif %}
+                                                    {% if dog.color != "לבן" %}
+                                                        <option value="לבן">לבן</option>
+                                                    {% endif %}
+                                                </select>
+                                                <br>
+                                            <label class="dog_update_form_label"> גיל:</label>
+                                            <select class="dog_update_form_select" name="age">
+                                                <option value="{{ dog.age }}" selected>{{ dog.age }}</option>
+                                                {% if dog.age != "גור" %}
+                                                    <option value="גור">גור</option>
+                                                {% endif %}
+                                                {% if dog.age != "צעיר" %}
+                                                    <option value="צעיר">צעיר</option>
+                                                {% endif %}
+                                                {% if dog.age != "בוגר"%}
+                                                    <option value="בוגר">בוגר</option>
+                                                {% endif %}
+                                                {% if dog.age != "מבוגר"%}
+                                                    <option value="מבוגר">מבוגר</option>
+                                                {% endif %}
+                                            </select>
+                                            <br>
+                                            <label class="dog_update_form_label"> מין:</label>
+                                            {% if dog.gender == "זכר"%}
+                                                <input class="dog_update_form_radio" type="radio" name="gender" checked value="זכר">זכר
+                                                <input class="dog_update_form_radio" type="radio" name="gender" value="נקבה">נקבה
+                                            {% else %}
+                                                <input class="dog_update_form_radio" type="radio" name="gender" value="זכר">זכר
+                                                <input class="dog_update_form_radio" type="radio" name="gender" checked value="נקבה">נקבה
+                                            {% endif %}
+                                            <br>
+                                            <label class="dog_update_form_label"> גודל:</label>
+                                            <select class="dog_update_form_select" name="size">
+                                                <option value="{{ dog.zie }}" selected> {{ dog.size }}</option>
+                                                {% if dog.size != "קטן" %}
+                                                    <option value="קטן">קטן</option>
+                                                {% endif %}
+                                                {% if dog.size != "בינוני" %}
+                                                    <option value="בינוני">בינוני</option>
+                                                {% endif %}
+                                                {% if dog.size != "גדול" %}
+                                                    <option value="גדול">גדול</option>
+                                                {% endif %}
+                                            </select>
+                                            <br>
+                                            <label class="dog_update_form_label">גזע:</label>
+                                            <input type="text"  class="dog_update_form_input" name="type_name" value="{{ dog.type_name }}" placeholder="{{ dog.type_name }}">
+                                            <br>
+                                            <label class="dog_update_form_label"> מספר שבב:</label>
+                                            <input type="text" class="dog_update_form_input" name="chip_id" value="{{ dog.chip_id }}" placeholder="{{ dog.type_name }}">
+                                            <br>
+                                            <label class="dog_update_form_label">תיאור:</label>
+                                            <br>
+                                            <textarea name="description" rows="5" cols="60" placeholder="{{ dog.description }}"> {{ dog.description }}</textarea>
+                                            <br>
+                                        </div>
+                                        <div class="dog_update_col">
+                                            {% if dog.is_educated %}
+                                                <input type="checkbox" name="is_educated"  checked>
+                                            {% else %}
+                                                <input type="checkbox" name="is_educated"  checked>
+                                            {% endif %}
+                                            <label class="dog_update_form_label"> מחונך לצרכים</label>
+                                            <br>
+                                            {% if dog.is_children_friendly %}
+                                                <input type="checkbox" name="is_children_friendly" checked>
+                                            {% else %}
+                                                <input type="checkbox" name="is_children_friendly">
+                                            {% endif %}
+                                            <label class="dog_update_form_label"> ידידותי לילדים</label>
+                                            <br>
+                                            {% if dog.is_hypoallergenic %}
+                                                <input type="checkbox" name="is_hypoallergenic" checked>
+                                            {% else %}
+                                                <input type="checkbox" name="is_hypoallergenic">
+                                            {% endif %}
+                                            <label class="dog_update_form_label"> מתאים לאלרגיים</label>
+                                            <br><br>
+                                            <label class="dog_update_form_label">תמונה:</label>
+                                            <br>
+                                            <img class="dog_update_picture" src="{{ dog.picture.url }}">
+                                        </div>
+                                        <div class="dogs_update_col">
+
+                                        </div>
+                                    </form>
+                                </div>
+
+								<div class="clear"></div>
+						</div>
+						<div class="mainBtn"></div>
+					</main>
+			    	<footer id="footer"></footer>
+				</div><!--Block-->
+			</div><!--/#inner-wrap-->
+		</div><!--/#outer-wrap-->
+		<script src="../../static/js/main.js"></script>
+	</body>
+</html>

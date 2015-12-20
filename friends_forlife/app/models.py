@@ -20,12 +20,6 @@ class DogHouse(models.Model):
     capacity = models.IntegerField(help_text="Maximum dogs capacity")
 
 
-class DogStaying(models.Model):
-    house = models.ForeignKey(DogHouse)
-    start_date = models.DateField(blank=True)
-    end_date = models.DateField(null=True, blank=True)
-
-
 class Dog(models.Model):
     name = models.CharField(max_length=200, help_text="The name of the Dog")
 
@@ -47,7 +41,7 @@ class Dog(models.Model):
     is_hypoallergenic = models.BooleanField(default=False)
     is_children_friendly = models.BooleanField(default=True)
 
-    stayings = models.ManyToManyField(DogStaying, blank=True)
+    stayings = models.ManyToManyField(DogHouse, through="DogStaying", null=True)
 
     def __str__(self):
         output = dict()
@@ -55,6 +49,13 @@ class Dog(models.Model):
         output["name"] = self.name
         output["type_name"] = self.type_name
         return json.dumps(output)
+
+
+class DogStaying(models.Model):
+    house = models.ForeignKey(DogHouse)
+    dog = models.ForeignKey(Dog)
+    start_date = models.DateField(blank=True)
+    end_date = models.DateField(null=True)
 
 
 class AdoptionDay(models.Model):

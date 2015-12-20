@@ -579,6 +579,11 @@ input[type="search"]::-webkit-search-decoration {
 #nav li.navBtnDonate a { width:84px;}
 #nav li.navBtnDonate.is-active a, #nav li.navBtnDonate a:hover {background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
 
+#nav li.navBtnDogIndex a { width:84px;}
+#nav li.navBtnDogIndex.is-active a, #nav li.navBtnDogIndex a:hover {background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
+
+#nav li.navBtnDogHouseIndex a { width:84px;}
+#nav li.navBtnDogHouseIndex.is-active a, #nav li.navBtnDogHouseIndex a:hover {background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
 }
 
 /*=========================================*/
@@ -668,11 +673,12 @@ input[type="search"]::-webkit-search-decoration {
 .fost_form_label{font-size:1.3em;}
 
 .foster_form_input{
-    font-size: 1.1em;
+    font-size: 1.0em;
     border: none;
     border-bottom: #eee 3px solid;
     margin-bottom: 22px;
 	text-align:center;
+	width: 300px;
 }
 .submitBtn {
   color: #3E5560;
@@ -757,3 +763,175 @@ input[type="search"]::-webkit-search-decoration {
 	margin:60px 0 0 0;
 	font-size:30px;
 	color:red;
+}
+
+.tab-content h1 {
+	margin: 60px 0 0 0;
+	font-size: 30px;
+	color: red;
+}
+
+/*=========================================*/
+/*====PAGE - Dogs-Index =====*/
+/*=========================================*/
+
+.dogs_index_UpdateBtn{
+	color:#2ecc71;
+    font-size: 20px;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    /* margin-top: 56px; */
+    font-family: trashimclm;
+    float: left;
+
+	margin-top: 10%;
+}
+
+.dogs_index_RemoveBtn{
+	color:#e74c3c;
+    font-size: 20px;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    /* margin-top: 56px; */
+    font-family: trashimclm;
+    float: left;
+	margin-top: 5px;
+}
+
+#dogs_index_dog_div>.picture
+{
+	width: 30%;
+	margin-top: 11%;
+	margin-right: 5%;
+	position: relative;
+	float: right;
+}
+
+#dogs_index_dog_div .picture
+{
+	width: 14%;
+}
+
+#dogs_index_dog_div .name
+{
+
+	font-size: 23px;
+	color: #AC6D76;
+	text-align:center;
+}
+.dogs_index_dogsDetails{
+	float: right;
+    margin: 5% 1%;
+    width: 70%;
+}
+
+#dogs_index_dog_div .age
+{
+	display: inline;
+	font-size: 15px;
+}
+
+#dogs_index_dog_div .gender
+{
+	position: absolute;
+	top: 15%;
+	left: 5%;
+}
+
+#dogs_index_dog_div .description {
+	font-family: gisha;
+	font-size: 15px;
+	font-weight: lighter;
+}
+
+#dogs_index_dog_div{
+	width: 100%;
+    min-height: 226px;
+	padding-left: 4px;
+	padding-bottom:4px;
+	float: right;
+}
+
+.dogs_index_col{
+	width: 25%;
+    float: right;
+    text-align: center;
+    margin-top: 27px;
+}
+
+#dogs_index_dog_div .text {
+	font-family: gisha;
+	font-size: 15px;
+	font-weight: lighter;
+}
+#dogs_index_dog_div .label{
+	font-size:18px
+}
+
+.dogs_index_foster_count {
+	width: 100%;
+	float: right;
+	text-align: right;
+	margin-top: 10px;
+	margin-right:5%;
+}
+
+.dogs_index_foster_col{
+	width: 33.33%;
+    float: right;
+    text-align: center;
+    margin-top: 27px;
+}
+
+
+/*=========================================*/
+/*====PAGE - Dog-Update =====*/
+/*=========================================*/
+
+.dog_update_form_label{font-size:1.3em;}
+
+.dog_update_form_input{
+    font-size: 1.0em;
+    border: none;
+    border-bottom: #eee 3px solid;
+    margin-bottom: 22px;
+	text-align:center;
+	width: 300px;
+}
+
+.dog_update_form_select{
+    font-size: 1.0em;
+    border: none;
+    border-bottom: #eee 3px solid;
+    margin-bottom: 22px;
+	text-align:center;
+	width: 80px;
+}
+
+.dog_update_form_radio{
+    font-size: 1.0em;
+    border: none;
+    border-bottom: #eee 3px solid;
+    margin-bottom: 22px;
+	text-align:center;
+	width: 30px;
+}
+
+.dog_update_col{
+	width: 50%;
+    float: right;
+    text-align: center;
+    margin-top: 27px;
+}
+
+.dog_update_picture{
+	width: 45%;
+    margin-top: 2%;
+    margin-right: 27%;
+	position: relative;
+	float: right;
+}
