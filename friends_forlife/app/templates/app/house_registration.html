@@ -122,7 +122,7 @@ class DogHouse(models.Model):
 										 כך נוכל לסייע במציאת בתים מאמצים ליותר כלבים וחתולים עזובים וחסרי בית.
 								</article>
 							</section>
-                            <form class ="foster_form">
+                            <form class ="foster_form" name="house_registartion" method="get" action="house_register">
                                 <h1>רישום לאומנה</h1>
                                 <div class="col">
                                     <label class="fost_form_label">שם</label><br>
@@ -138,7 +138,7 @@ class DogHouse(models.Model):
                                     <label class="fost_form_label">כתובת מלאה</label><br>
                                     <input type="text" name="address" id="autocomplete" onfocus="geolocate()" class="foster_form_input" placeholder="כתובת מלאה"><br>
                                     <label class="fost_form_label">תפוסה מקסימאלית</label><br>
-                                    <input type="number" name="capacity" class="foster_form_input" placeholder="1"><br>
+                                    <input type="number" name="capacity" class="foster_form_input" placeholder="1" value="1"><br>
                                 </div>
                                 <div class="col">
                                     <input type="submit" class="submitBtn" value="שלח"></input>

@@ -77,8 +77,9 @@
 {#    type_name = models.CharField(max_length=200, null=True, help_text="The name of the Dog-type")#}
 {#    is_hypoallergenic = models.BooleanField(default=False)#}
 {#    is_children_friendly = models.BooleanField(default=True)#}
-                                    <form action="dog_update" method="get" name="dog_update" enctype="multipart/form-data" >
+                                    <form action="dog_update" method="post" name="dog_update" enctype="multipart/form-data" >
                                         <div class="dog_update_col">
+                                            <input type="hidden" name="id" value="{{ dog.id }}">
                                             <label class="dog_update_form_label"> שם הכלב:</label>
                                             <input type="text"  class="dog_update_form_input" value="{{ dog.name }}" name="name" placeholder="{{ dog.name }}">
                                             <br>
@@ -178,9 +179,10 @@
                                             <label class="dog_update_form_label">תמונה:</label>
                                             <br>
                                             <img class="dog_update_picture" src="{{ dog.picture.url }}">
+                                            <input class="dog_update_form_input" type="file" name="picture" >
                                         </div>
                                         <div class="dogs_update_col">
-
+                                            <input class="dog_update_submitBtn" type="submit" value="שלח">
                                         </div>
                                     </form>
                                 </div>

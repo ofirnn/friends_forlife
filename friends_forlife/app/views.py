@@ -46,6 +46,7 @@ def dogs_4_adoption(request):
 #
 #
 #
+
 def house_registration(request):
     context = RequestContext(request, {'dog': 'dog'})
     return render(request, 'app/house_registration.html', context)
@@ -63,7 +64,7 @@ def house_register(request):
                          owner_email=req_owner_email, owner_city=req_owner_city, address=req_address,
                          capacity=req_capaticy)
     new_house.save()
-
+    print "New House born"
     context = RequestContext(request, {'dog_house': new_house})
 
     return render(request, "app/success_house_registration.html", context)
@@ -130,29 +131,23 @@ def dog_updation(request):
 
 @login_required(login_url='/accounts/login/')
 def dog_update(request):
-    req_id = request.GET.get("id")
+    req_id = request.POST.get("id")
     dog = Dog.objects.get(id=req_id)
 
-    gender = request.GET.get("gender", dog.gender)
-    size = request.GET.get("dog_size", dog.size)
-    age = request.GET.get("dog_age", dog.age)
-    type_name = request.GET.get("dog_breed", dog.type_name)
-    color = request.GET.get("dog_color", ALL_STRING)
+    gender = request.POST.get("gender", dog.gender)
+    size = request.POST.get("size", dog.size)
+    age = request.POST.get("age", dog.age)
+    type_name = request.POST.get("type", dog.type_name)
+    color = request.POST.get("color", dog.color)
 
-    picture = request.GET.get("picture", dog.picture)
-
-    characteristics = request.GET.getlist("Characteristics[]", [])
-
-    req_children_friendly = False
-    req_suitable_for_allergic = False
-    req_habituated_for_needs = False
-
-    if "childrens_friendly" in characteristics:
-        req_children_friendly = True
-    if "suitable_for_allergic" in characteristics:
-        req_suitable_for_allergic = True
-    if "habituated_for_needs" in characteristics:
-        req_habituated_for_needs = True
+    picture = request.FILES.get("picture")
+    print "REQ: %s" % request.FILES.keys()
+    req_children_friendly = request.POST.get("is_children_friendly", False)
+    print req_children_friendly
+    req_suitable_for_allergic = request.POST.get("is_hypoallergenic", False)
+    print req_suitable_for_allergic
+    req_habituated_for_needs = request.POST.get("is_educated", False)
+    print req_habituated_for_needs
 
     # Set Values
     dog.gender = gender
@@ -160,7 +155,10 @@ def dog_update(request):
     dog.age = age
     dog.type_name = type_name
     dog.color = color
-    dog.picture = picture
+    print "dog picture is: %s" % picture
+    if picture is not None:
+        dog.picture = picture
+    print "Now dog picture is: %s" % picture
     dog.is_children_friendly = req_children_friendly
     dog.is_hypoallergenic = req_suitable_for_allergic
     dog.is_educated = req_habituated_for_needs

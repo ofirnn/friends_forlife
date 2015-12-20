@@ -6,6 +6,7 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^dogs-index', views.dogs_index, name="dogs_index"),
+    url(r'^dogs_index', views.dogs_index, name="dogs_index"),
     url(r'^dogs_list', views.dogs_list, name="dogs_list"),
     url(r'^dog-details/(?P<dog_id>[0-9]+)', views.dog_details, name="dog_details"),
     url(r'^dogs_4_adoption', views.dogs_4_adoption, name="dogs_4_adoption"),

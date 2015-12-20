@@ -935,3 +935,28 @@ input[type="search"]::-webkit-search-decoration {
 	position: relative;
 	float: right;
 }
+.dog_update_submitBtn{
+	color: #3E5560;
+	font-size: 35px;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    font-family: trashimclm;
+    float: left;
+    margin-left: 8px;
+    margin-bottom: 4px;
+	margin-top: 10px;
+}
+
+
+/*=========================================*/
+/*====PAGE - Dog-Update =====*/
+/*=========================================*/
+
+
+.success_dog_updation_a{
+	margin-right:50px;
+	font-size: 30px;
+
+}
