@@ -108,10 +108,13 @@
                                                 <input type="hidden" name="id" value="{{ dog.id }}">
                                                 <input type="submit" class="dogs_index_UpdateBtn" value="עדכון"/>
                                             </form>
-
                                             <form>
                                                 <input type="hidden" name="id" value="{{ dog.id }}">
                                                 <input type="submit" class="dogs_index_RemoveBtn" value="הסרה"/>
+                                            </form>
+                                            <form name="dogstaying_add" action="dogstaying_add">
+                                                <input type="hidden" name="dog_id" value="{{ dog.id }}">
+                                                <input type="submit" class="dogs_index_FosterBtn" value="אומנה"/>
                                             </form>
                                     </div>
 					     	    </div>

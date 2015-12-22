@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>Friends for Life</title>
+		<script src="../../static/js/modernizr.js"></script>
+		<link rel="stylesheet" href="../../static/style/style.css">
+		<link rel="stylesheet" href="../../static/style/styleMobile.css">
+	</head>
+	<body dir="rtl">
+		<div id="outer-wrap">
+			<div id="inner-wrap">
+			    <header id="top">
+			        <div class="block">
+			            <a href="index.html"  id="logo"></a><!--Logo-->
+			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
+			            <div id="contact">
+			                <span class="based">we're based in Limerick</span>
+			                <span class="number">call us  061 43 7777</span>
+			            </div>
+					    <nav id="nav">
+				            <ul>
+				                <li class="is-active navBtnAdopt">
+				                    <a href="dogs_4_adoption.html">אמץ כלב</a>
+				                </li>
+				             	<li class="navBtnFoster">
+				                    <a href="house_registration.html">רישום לאומנה</a>
+				                </li>
+				             <!--<li class="navBtnAbout">
+				                    <a href="#">אודות</>
+				              </li>-->
+    				             <li class="navBtnGallery">
+				                    <a href="#">גלריה</a></a>
+				                </li>
+				             <!--<li class="navBtnContact">
+				                    <a href="#">צור קשר</a>
+				                </li>-->
+				                <li class="navBtnDonate">
+				                    <a href="donation_baskets.html">תרומה</a>
+				                </li>
+                                {% if request.user.is_superuser %}
+                                    <li class="navBtnDogIndex">
+                                        <a href="dogs_index.html">ניהול כלבים</a>
+                                    </li>
+                                    <li class="navBtnDogHouseIndex">
+                                        <a href="doghouse_index.html">ניהול אומנה</a></a>
+                                    </li>
+                                {% endif %}
+				            </ul>
+			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+			    		</nav>
+					</div>
+			    </header>
+				<main id="main">
+					<div class="block">
+						<div class="mainTop"></div>
+						<div class="mainContent">
+				    		<h1>הוספת שהייה באומנה</h1><br>
+                                <div class="dogstaying_add_form_details">
+{##}
+{#    description = models.TextField()#}
+{#    color = models.CharField(max_length=100, null=True)#}
+{#    age = models.CharField(max_length=100, null=True)#}
+{##}
+{#    is_adopted = models.BooleanField(default=False)#}
+{#    is_castrated = models.BooleanField(default=False)#}
+{#    is_educated = models.BooleanField(default=False)#}
+{#    gender = models.CharField(max_length=10, null=True)#}
+{#    status = models.CharField(max_length=50, help_text="State Name - In-Adoption / In-House / Treatment ")#}
+{#    last_updated = models.DateTimeField(auto_created=True)#}
+{#    picture = models.ImageField(upload_to="dog_pictures", default="media/dog_pictures/no-img.jpg")#}
+{#    chip_id = models.CharField(max_length=200, help_text="IL chip-id")#}
+{##}
+{#    size = models.CharField(max_length=200, null=True)#}
+{#    type_name = models.CharField(max_length=200, null=True, help_text="The name of the Dog-type")#}
+{#    is_hypoallergenic = models.BooleanField(default=False)#}
+{#    is_children_friendly = models.BooleanField(default=True)#}
+                                    <form action="dogstaying_addition" method="post" name="dogstaying_add" enctype="multipart/form-data" >
+                                        <div class="dogstaying_add_col">
+                                            <input type="hidden" name="dog_id" value="{{ dog_id }}">
+                                            <label class="dogstaying_add_form_label"> תאריך תחילה:</label>
+                                            <input type="date"  class="dogstaying_add_form_input" name="start_date">
+                                            <br>
+                                            <label class="dogstaying_add_form_label">תאריך סיום: </label>
+                                            <input type="date"  class="dogstaying_add_form_input" name="end_date">
+                                            <br><br>
+                                            <label class="dogstaying_add_form_label">בחר בית מארח מרשימת הבתים:</label>
+                                                <br>
+{#                                                <select class="dogstaying_add_form_select" name="doghouse">#}
+                                                    {% for house in dog_houses %}
+                                                        <input type="radio" name="doghouse" value="{{ house.id }}"> {{ house.owner_name }} , {{ house.owner_city }} <br>
+
+                                                    {% endfor %}
+                                                <br>
+                                        </div>
+                                        <div class="dogstaying_add_col">
+                                        </div>
+                                        <div class="dogs_update_col">
+                                            <input class="submitBtn" type="submit" value="הוסף">
+                                        </div>
+                                    </form>
+                                </div>
+
+								<div class="clear"></div>
+						</div>
+						<div class="mainBtn"></div>
+					</main>
+			    	<footer id="footer"></footer>
+				</div><!--Block-->
+			</div><!--/#inner-wrap-->
+		</div><!--/#outer-wrap-->
+		<script src="../../static/js/main.js"></script>
+	</body>
+</html>

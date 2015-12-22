@@ -789,6 +789,19 @@ input[type="search"]::-webkit-search-decoration {
 	margin-top: 10%;
 }
 
+.dogs_index_FosterBtn{
+	color:#AC6D76;
+    font-size: 18px;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    /* margin-top: 56px; */
+    font-family: trashimclm;
+    float: left;
+
+	margin-top: 5px;
+}
 .dogs_index_RemoveBtn{
 	color:#e74c3c;
     font-size: 20px;
@@ -960,3 +973,8 @@ input[type="search"]::-webkit-search-decoration {
 	font-size: 30px;
 
 }
+
+/*=========================================*/
+/*====PAGE - Dogstaying-add =====*/
+/*=========================================*/
+

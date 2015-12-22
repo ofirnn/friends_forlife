@@ -256,3 +256,32 @@ def index(request):
     context = RequestContext(request, {'dog': 'dog'})
     return render(request, 'app/index.html', context)
 
+
+@login_required()
+def dogstaying_add(request):
+    dog_id = request.GET.get("dog_id", None)
+    dog_houses = DogHouse.objects.all()
+
+    context = RequestContext(request, {'dog_id' : dog_id, 'dog_houses': dog_houses})
+    return render(request, 'app/dogstaying_add.html', context)
+
+
+@login_required()
+def dogstaying_addition(request):
+    dog_id = request.GET.get("dog_id", None)
+    doghouse_id = request.GET.get("doghouse_id", None)
+    start_date = request.GET.get("start_date", None)
+    end_date = request.GET.get("end_date", None)
+
+    dog = Dog.objects.get(id=dog_id)
+    dog_house = DogHouse.objects.get(id=doghouse_id)
+
+    dogstaying = DogStaying(house=dog_house, dog=dog, start_date=start_date, end_date=end_date)
+    dogstaying.save()
+
+    context = RequestContext(request, {'dogstaying': dogstaying})
+    return render(request, 'app/success_dogstaying_add.html')
+
+
+def contact_us(request):
+    return
