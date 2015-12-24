@@ -20,15 +20,16 @@ def dogs_index(request):
 
 
 @login_required()
-def dog_details(request, dog_id):
-    dog = get_object_or_404(Dog, pk=dog_id)
-    context = RequestContext(request, {'dog': dog})
-    return render(request, 'app/dog_details.html', context)
+def houses_index(request):
+    houses_list = DogHouse.objects.order_by('-last_updated')
+    context = RequestContext(request, {'houses_list': houses_list})
+    return render(request, 'app/houses_index.html', context)
 
 
 def dogs_4_adoption(request):
     context = RequestContext(request, {'dog': 'dog'})
     return render(request, 'app/dogs_4_adoption.html', context)
+
 #
 # @login_required()
 # def doghouse_index(request):
@@ -260,18 +261,24 @@ def index(request):
 @login_required()
 def dogstaying_add(request):
     dog_id = request.GET.get("dog_id", None)
-    dog_houses = DogHouse.objects.all()
+    house_id = request.GET.get("doghouse_id", None)
 
-    context = RequestContext(request, {'dog_id' : dog_id, 'dog_houses': dog_houses})
+    if dog_id:
+        houses_list = DogHouse.objects.all()
+        context = RequestContext(request, {'id': dog_id, 'list': houses_list, 'src_type': 'dog'})
+    elif house_id:
+        dogs_list = Dog.objects.all().order_by("-last_updated")
+        context = RequestContext(request, {'id': house_id, 'list': dogs_list, 'src_type': 'house'})
+
     return render(request, 'app/dogstaying_add.html', context)
 
 
 @login_required()
 def dogstaying_addition(request):
-    dog_id = request.GET.get("dog_id", None)
-    doghouse_id = request.GET.get("doghouse_id", None)
-    start_date = request.GET.get("start_date", None)
-    end_date = request.GET.get("end_date", None)
+    dog_id = request.POST.get("dog_id", None)
+    doghouse_id = request.POST.get("doghouse_id", None)
+    start_date = request.POST.get("start_date", None)
+    end_date = request.POST.get("end_date", None)
 
     dog = Dog.objects.get(id=dog_id)
     dog_house = DogHouse.objects.get(id=doghouse_id)

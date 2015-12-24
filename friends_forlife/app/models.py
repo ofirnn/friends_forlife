@@ -57,6 +57,9 @@ class DogStaying(models.Model):
     start_date = models.DateField(blank=True)
     end_date = models.DateField(null=True)
 
+    class Meta:
+        ordering = ['-start_date']
+
 
 class AdoptionDay(models.Model):
     start_time = models.DateTimeField()

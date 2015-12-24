@@ -975,6 +975,100 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 /*=========================================*/
-/*====PAGE - Dogstaying-add =====*/
+/*====PAGE - Houses_index =====*/
 /*=========================================*/
+
+.houses_index_UpdateBtn{
+	color:#2ecc71;
+    font-size: 20px;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    /* margin-top: 56px; */
+    font-family: trashimclm;
+    float: left;
+
+	margin-top: 10%;
+}
+
+.houses_index_FosterBtn{
+	color:#AC6D76;
+    font-size: 18px;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    /* margin-top: 56px; */
+    font-family: trashimclm;
+    float: left;
+
+	margin-top: 5px;
+}
+.houses_index_RemoveBtn{
+	color:#e74c3c;
+    font-size: 20px;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    /* margin-top: 56px; */
+    font-family: trashimclm;
+    float: left;
+	margin-top: 5px;
+}
+
+#house_index_house_div .name
+{
+
+	font-size: 23px;
+	color: #AC6D76;
+	text-align:center;
+}
+.house_index_houseDetails{
+	float: right;
+    margin: 5% 1%;
+    width: 70%;
+}
+
+
+#houses_index_house_div{
+	width: 100%;
+    min-height: 226px;
+	padding-left: 4px;
+	padding-bottom:4px;
+	float: right;
+}
+
+.houses_index_col{
+	width: 25%;
+    float: right;
+    text-align: center;
+    margin-top: 27px;
+}
+
+#houses_index_house_div .text {
+	font-family: gisha;
+	font-size: 15px;
+	font-weight: lighter;
+}
+#houses_index_house_div .label{
+	font-size:18px
+}
+
+.houses_index_foster_count {
+	width: 100%;
+	float: right;
+	text-align: right;
+	margin-top: 10px;
+	margin-right:5%;
+}
+
+.houses_index_foster_col{
+	width: 33.33%;
+    float: right;
+    text-align: center;
+    margin-top: 27px;
+}
+
 

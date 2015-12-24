@@ -77,23 +77,31 @@
 {#    type_name = models.CharField(max_length=200, null=True, help_text="The name of the Dog-type")#}
 {#    is_hypoallergenic = models.BooleanField(default=False)#}
 {#    is_children_friendly = models.BooleanField(default=True)#}
-                                    <form action="dogstaying_addition" method="post" name="dogstaying_add" enctype="multipart/form-data" >
+                                    <form action="dogstay_addition" method="post" name="dogstaying_addition" enctype="multipart/form-data" >
                                         <div class="dogstaying_add_col">
-                                            <input type="hidden" name="dog_id" value="{{ dog_id }}">
                                             <label class="dogstaying_add_form_label"> תאריך תחילה:</label>
                                             <input type="date"  class="dogstaying_add_form_input" name="start_date">
                                             <br>
                                             <label class="dogstaying_add_form_label">תאריך סיום: </label>
                                             <input type="date"  class="dogstaying_add_form_input" name="end_date">
                                             <br><br>
-                                            <label class="dogstaying_add_form_label">בחר בית מארח מרשימת הבתים:</label>
+                                            {% if src_type == 'dog' %}
+                                                <input type="hidden" name="dog_id" value="{{ id }}">
+                                                <label class="dogstaying_add_form_label">בחר בית מארח מרשימת הבתים:</label>
                                                 <br>
-{#                                                <select class="dogstaying_add_form_select" name="doghouse">#}
-                                                    {% for house in dog_houses %}
-                                                        <input type="radio" name="doghouse" value="{{ house.id }}"> {{ house.owner_name }} , {{ house.owner_city }} <br>
-
+                                                    {% for house in list %}
+                                                        <input type="radio" name="doghouse_id" value="{{ house.id }}"> {{ house.owner_name }} , {{ house.owner_city }} <br>
                                                     {% endfor %}
                                                 <br>
+                                            {% elif src_type == 'house' %}
+                                                <input type="hidden" name="house_id" value="{{ id }}">
+                                                <label class="dogstaying_add_form_label">בחר כלב מרשימת הכלבים:</label>
+                                                <br>
+                                                    {% for dog in list %}
+                                                        <input type="radio" name="dog_id" value="{{ dog.id }}"> {{ dog.name }} , {{ dog.type_name }} <img src="{{ dog.picture.url }}"> <br>
+                                                    {% endfor %}
+                                                <br>
+                                            {% endif %}
                                         </div>
                                         <div class="dogstaying_add_col">
                                         </div>
