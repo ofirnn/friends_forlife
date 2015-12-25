@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="no-js" dir="rtl">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>Friends for Life</title>
+		<script src="../../static/js/modernizr.js"></script>
+		<link rel="stylesheet" href="../../static/style/style.css">
+		<link rel="stylesheet" href="../../static/style/styleMobile.css">
+{#    <script src="http://maps.google.com/maps?file=api&amp;v=3&amp;key=ABQIAAAAjU0EJWnWPMv7oQ-jjS7dYxSPW5CJgpdgO_s4yyMovOaVh_KvvhSfpvagV18eOyDWu7VytS6Bi1CWxw"#}
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3VGaibmhoHkoQTRTPB6URdzoQ0vLv_Cg"
+        type="text/javascript"></script>
+    <script type="text/javascript">
+
+        function showAddress(map_id, address) {
+            var map = null;
+            var geocoder = null;
+{#            if (GBrowserIsCompatible()) {#}
+                //map = new GMap2(document.getElementById(map_id));
+                map =new google.maps.Map(document.getElementById(map_id),{
+                    zoom: 12,
+                    center: {lat: -33, lng: 151},
+                    //disableDefaultUI: true
+                });
+
+                geocoder = new google.maps.Geocoder();
+
+            if (geocoder) {
+                geocoder.geocode({'address': address}, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                  map.setCenter(results[0].geometry.location);
+
+                  var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                  });
+                } else {
+                    showAddress(map_id,'ישראל');
+                }
+                });
+          }
+        }
+    </script>
+	</head>
+	<body dir="rtl">
+		<div id="outer-wrap">
+			<div id="inner-wrap">
+			    <header id="top">
+			        <div class="block">
+			            <a href="index.html"  id="logo"></a><!--Logo-->
+			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
+			            <div id="contact">
+			                <span class="based">we're based in Limerick</span>
+			                <span class="number">call us  061 43 7777</span>
+			            </div>
+					    <nav id="nav">
+				            <ul>
+				                <li class="is-active navBtnAdopt">
+				                    <a href="dogs_4_adoption.html">אמץ כלב</a>
+				                </li>
+				             	<li class="navBtnFoster">
+				                    <a href="house_registration.html">רישום לאומנה</a>
+				                </li>
+				             <!--<li class="navBtnAbout">
+				                    <a href="#">אודות</>
+				              </li>-->
+    				             <li class="navBtnGallery">
+				                    <a href="#">גלריה</a></a>
+				                </li>
+				             <!--<li class="navBtnContact">
+				                    <a href="#">צור קשר</a>
+				                </li>-->
+				                <li class="navBtnDonate">
+				                    <a href="donation_baskets.html">תרומה</a>
+				                </li>
+                                {% if request.user.is_superuser %}
+                                    <li class="navBtnDogIndex">
+                                        <a href="dogs_index.html">ניהול כלבים</a>
+                                    </li>
+                                    <li class="navBtnDogHouseIndex">
+                                        <a href="doghouse_index.html">ניהול אומנה</a></a>
+                                    </li>
+                                {% endif %}
+				            </ul>
+			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+			    		</nav>
+					</div>
+			    </header>
+				<main id="main">
+					<div class="block">
+						<div class="mainTop"></div>
+						<div class="mainContent">
+				    		<h1>ניהול בתי אומנה</h1>
+                            {% for house in houses_list %}
+                                <div id="houses_index_house_div">
+                                    <div class="houses_index_houseDetails">
+                                        <p class="name">{{ house.owner_name }}</p>
+                                        <div class="houses_index_col">
+                                            <div id="{{ house.id }}_map" style="width:300px; height:200px" onload="showAddress('{{ house.id }}_map','{{house.address}}'); return false"></div>
+                                            <script type="text/javascript"> showAddress('{{ house.id }}_map','{{house.address}}'); </script>
+                                        </div>
+                                        <div class="houses_index_col">
+                                            <label class="label"> יישוב:</label>
+                                            <label class="text">{{ house.owner_city }}</label>
+                                            <br>
+                                            <label class="label"> כתובת מלאה:</label>
+                                            <label class="text"> {{ house.address }}</label>
+                                            <br>
+                                            <label class="label"> טלפון:</label>
+                                            <label class="text"> {{ house.owner_phone }}</label>
+                                            <br>
+                                            <label class="label"> דוא״ל:</label>
+                                            <label class="text"> {{ house.owner_email }}</label>
+                                            <br>
+                                            <label class="label"> תפוסה מקסימאלית:</label>
+                                            <label class="text"> {{ house.capacity }}</label>
+                                            <form>
+                                                <input type="hidden" name="id" value="{{ house.id }}">
+                                                <input type="submit" class="houses_index_RemoveBtn" value="הסרה"/>
+                                            </form>
+                                            <form name="dogstaying_add" action="dogstaying_add">
+                                                <input type="hidden" name="doghouse_id" value="{{ house.id }}">
+                                                <input type="submit" class="houses_index_FosterBtn" value="אומנה"/>
+                                            </form>
+                                        </div>
+                                    </div>
+					     	    </div>
+                                {% if house.dogstaying_set.all|length > 0 %}
+                                    <div class="houses_index_foster_count">
+                                        <label class="label" style="color:#AC6D76;"> שהיות באומנה: {{ house.dogstaying_set.all|length }}</label>
+                                    </div>
+                                    {% for staying in house.dogstaying_set.all %}
+                                        <div class="houses_index_fosterDetails">
+                                            <div class="houses_index_foster_col">
+                                                <img class="house_foster_picture" src="{{ staying.dog.picture.url }}">
+                                                <label class="house_foster_label"> {{ staying.dog.name }}</label>
+                                            </div>
+                                            <div class="houses_index_foster_col">
+                                                <label class="house_foster_label"> תאריך התחלה:</label>
+                                                <p class="house_foster_text"> {{ staying.start_date }}</p>
+                                            </div>
+                                            <div class="houses_index_foster_col">
+                                                <label class="house_foster_label"> תאריך סיום:</label>
+                                                {% if staying.end_date %}
+                                                    <p class="house_foster_text"> {{ staying.end_date }}</p>
+                                                {% else %}
+                                                    <p class="house_foster_text"> אין</p>
+                                                {%  endif %}
+                                            </div>
+                                        </div>
+
+                                    {% endfor %}
+
+                                {%  endif %}
+                            {%  endfor %}
+								<div class="clear"></div>
+						</div>
+						<div class="mainBtn"></div>
+					</main>
+			    	<footer id="footer"></footer>
+				</div><!--Block-->
+			</div><!--/#inner-wrap-->
+		</div><!--/#outer-wrap-->
+		<script src="../../static/js/main.js"></script>
+	</body>
+</html>

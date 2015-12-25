@@ -993,7 +993,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .houses_index_FosterBtn{
-	color:#AC6D76;
+	color:#2ecc71;
     font-size: 18px;
     background: #eee;
     padding: 10px 20px 10px 20px;
@@ -1001,9 +1001,9 @@ input[type="search"]::-webkit-search-decoration {
     border: none;
     /* margin-top: 56px; */
     font-family: trashimclm;
-    float: left;
+    float: right;
 
-	margin-top: 5px;
+	margin-top: 35px;
 }
 .houses_index_RemoveBtn{
 	color:#e74c3c;
@@ -1015,17 +1015,18 @@ input[type="search"]::-webkit-search-decoration {
     /* margin-top: 56px; */
     font-family: trashimclm;
     float: left;
-	margin-top: 5px;
+	margin-top: 35px;
 }
 
-#house_index_house_div .name
+#houses_index_house_div .name
 {
 
 	font-size: 23px;
 	color: #AC6D76;
 	text-align:center;
 }
-.house_index_houseDetails{
+
+.houses_index_houseDetails{
 	float: right;
     margin: 5% 1%;
     width: 70%;
@@ -1041,7 +1042,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .houses_index_col{
-	width: 25%;
+	width: 50%;
     float: right;
     text-align: center;
     margin-top: 27px;
@@ -1071,4 +1072,29 @@ input[type="search"]::-webkit-search-decoration {
     margin-top: 27px;
 }
 
+.house_foster_picture
+{
+	width: 30%;
+	/*margin-top: 5%;*/
+	margin-right: 5%;
+	position: relative;
+	float: right;
+}
 
+.house_foster_label
+{
+	margin-top: 5%;
+	font-size:18px
+}
+
+.house_foster_text
+{
+	font-family: gisha;
+	font-size: 15px;
+	font-weight: lighter;
+}
+.houses_index_fosterDetails{
+	float: right;
+    margin-right: 8%;
+    width: 70%;
+}

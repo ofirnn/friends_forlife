@@ -20,10 +20,10 @@ def dogs_index(request):
 
 
 @login_required()
-def houses_index(request):
-    houses_list = DogHouse.objects.order_by('-last_updated')
+def doghouse_index(request):
+    houses_list = DogHouse.objects.all()
     context = RequestContext(request, {'houses_list': houses_list})
-    return render(request, 'app/houses_index.html', context)
+    return render(request, 'app/doghouse_index.html', context)
 
 
 def dogs_4_adoption(request):
