@@ -396,51 +396,59 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.adoptDogForm{
+.dogsListTitle {
+	margin-bottom: 15px !important;
+}
 
-	background: rgba(255, 255, 255, 0.5);
+.searchDogs {
+	margin-bottom: 50px;
+}
+    
+.adoptDogForm {
+	padding: 2%;
+	/*background: rgba(255, 255, 255, 0.5);
 	border-radius: 10px;
 	border: rgba(255, 255, 255, 0.5) solid 5px;
 	width:70%;
-	margin: 5% 14% 0 0;
+	margin: 5% 14% 0 0;*/
 }
 
+.adoptDogForm h3 {
+	margin-top: 10px;
+    margin-bottom: 5px;
+    color: rgba(114, 146, 153, 1);
+}
 
-.dog_search_first_section
-{
+.dog_search_first_section, .dog_search_second_section, .dog_search_third_section, .dog_search_fourth_section {
     float: right;
-	width: 35%;
-	margin: 5% 5% 5% 0%;
-	/*padding-bottom: 5%;*/
-	border: 4px solid;
-	border-color: #D9F3FF; 
+	width: 25%;
+	/*margin: 5% 5% 5% 0%;
+	padding-bottom: 5%;*/
+	/*border: 4px solid;
+	border-color: #D9F3FF;*/ 
 }
 
-.dog_search_second_section /*WEB*/
-{  
-	float: left;
-	width: 40%;
-	margin: 5% 5% 5% 5%;
-	border: 4px solid;
-	border-radius: 5px;
-	border-color: #D9F3FF; 
-}
-
-.dog_search_first_section label
-{
- 	float:right;
+/*.dog_search_first_section label {
+ 	float: right;
   	padding: 10% 0% 10% 0;	
-}
+}*/
 
-.dog_search_second_section label
-{
-
-
+.dog_search_second_section label {
   	/*padding: 5% 0 10% 0;
   /*	margin: 5% 5% 5% 5%;*/	
 }
 
-.submitBtn2{
+.dog_search_first_section input, .dog_search_fourth_section input {
+    margin-bottom: 10px;
+}
+
+.dog_search_first_section .radio_botton, .dog_search_fourth_section .checkbox_botton {
+	vertical-align: top;
+    margin-right: 5px;
+}
+
+
+.submitBtn2 {
 	color: #3E5560;
     font-size: 20px;
     background: #eee;
@@ -450,10 +458,21 @@ input[type="search"]::-webkit-search-decoration {
     /* margin-top: 56px; */
     font-family: trashimclm;
     float: left;
-    margin-left: 8px;
-    margin-bottom: 4px;
+    margin-top: 10px;
+   /* margin-left: 8px;
+    margin-bottom: 4px;*/
 }
 
+.submitBtn2:hover {
+	background: #3E5560;
+    text-decoration: none;
+    color: #eee;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
 
 /*=========================================*/
 /*=========== Desktop Adaption ===============*/ 

@@ -1,306 +1,467 @@
 <!DOCTYPE html>
 <html class="no-js">
 	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
-	    <title>Friends for Life</title>	
-	    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Friends for Life</title>
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
 		<script src="../../static/js/modernizr.js"></script>
-		
+
 		<link rel="stylesheet" href="../../static/style/style.css">
 		<link rel="stylesheet" href="../../static/style/styleMobile.css">
 	</head>
-	<body dir="rtl">	
+	<body dir="rtl">
 		<div id="outer-wrap">
-			<div id="inner-wrap">	
-			    <header id="top">
-			        <div class="block">
-			            <a href="index.html"  id="logo"></a><!--Logo-->
-			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
+			<div id="inner-wrap">
+				<header id="top">
+					<div class="block">
+						<a href="index.html"  id="logo"></a><!--Logo-->
+						<a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
 						<div id="contact">
 							<div id="loginBannerBeforeClick">
-								<button id="btnClick" class="based">כניסה למערכת</button>
+								<button id="btnClick" class="based">
+									כניסה למערכת
+								</button>
 							</div>
-							
+
 							<div id="loginBannerAfterClick" style="display:none;">
-								<form name="login" action="index_submit" method="get">	
-											<input type="submit" value="כניסה">						        	        
-								        	<input type="password" name="password" placeholder="סיסמא" required>	
-								        	<input type="text" name="usermail" placeholder="שם משתמש" required>
-								</form>	
-							</div>													
-						</div>	    
-					    <nav id="nav">
-				            <ul>
-				                <li class="is-active navBtnAdopt">
-				                	<img src="../../static/img/icons/adoption_icon.jpg">
-				                    <a href="dogs_4_adoption.html">אמץ כלב</a>
-				                    <hr>
-				                </li>
-				             	<li class="navBtnFoster">
-				             		<img src="../../static/img/icons/foster.png">
-				                    <a href="house_registration.html">רישום לאומנה</a>
-				                    <hr>
-				                </li>
-				             	<li class="navBtnAbout">
+								<form name="login" action="index_submit" method="get">
+									<input type="submit" value="כניסה">
+									<input type="password" name="password" placeholder="סיסמא" required>
+									<input type="text" name="usermail" placeholder="שם משתמש" required>
+								</form>
+							</div>
+						</div>
+						<nav id="nav">
+							<ul>
+								<li class="is-active navBtnAdopt">
+									<img src="../../static/img/icons/adoption_icon.jpg">
+									<a href="dogs_4_adoption.html">אמץ כלב</a>
+									<hr>
+								</li>
+								<li class="navBtnFoster">
+									<img src="../../static/img/icons/foster.png">
+									<a href="house_registration.html">רישום לאומנה</a>
+									<hr>
+								</li>
+								<li class="navBtnAbout">
 									<img src="../../static/img/icons/logo_icon.png">
 									<a href="">על העמותה</a>
 									<hr>
-				                </li>
-				                <li class="navBtnDonate">
-				                	<img src="../../static/img/icons/donation.png">
-				                    <a href="#">תרומה</a>
-				                    <hr>
-				                </li>
-				            </ul>	
-			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
-			    		</nav>
-					</div>			        
-			    </header>
+								</li>
+								<li class="navBtnDonate">
+									<img src="../../static/img/icons/donation.png">
+									<a href="#">תרומה</a>
+									<hr>
+								</li>
+							</ul>
+							<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+						</nav>
+					</div>
+				</header>
+
 				<main id="main">
 					<div class="block">
 						<div class="mainTop"></div>
 						<div class="mainContent">
 							<section class="mobileMainContent"></section>
 							<section class="desktopMainContent">
-								
-								
-							<div class="tabs">
-							    <ul class="tab-links">
-							        <li class="active"><a href="#tab1">אודות אימוץ כלבים</a></li>
-							        <li><a href="#tab2">מאגר הכלבים לאימוץ</a></li><!--כל הכלבים שיש לנו בדאט בייס-->
-							        <li><a href="#tab3">חיפוש מתקדם</a></li><!--חיפוש ספציפי של כלב-->
-							        <li><a href="#tab4">הכלבים האחרונים שנוספו</a></li><!--הצגת הפייסבוק-->
-							    </ul>
-							 
-							 
-							 	<!-- להוסיף שורת חיפוש לפי שם של כלב -->
-							 	
-							    <div class="tab-content">
-							        <div id="tab1" class="tab active">
-						        		
-						        		<h1>צריך לסדר את המלל כך שיופיע נורמלי והטאב הזה מוכן</h1>
-						        		
-						        		<p>משפחות רבות חוששות לאמץ ולהביא הביתה כלב או חתול, מחשש שיהיה צורך להחזירו בשל חוסר התאמה. לנו בעמותת "חברים לחיים"  חשוב ליידע את הציבור שישנה דרך נוספת, מוכרת פחות לשם סיוע להצלת כלבים וחתולים.  מכיוון שהעמותה פועלת בדרך ייחודית - ללא מכלאות, מרבית בעלי החיים שלנו שוהים במהלך השבוע בבתים של משפחות אומנה.  בית אומנה נועד לארח את בעל החיים זמנית לתקופה קצובה, לרוב של שבוע. במהלך השבוע הכלב או החתול יגיעו  ליום האימוץ אשר בו ימצא בית מאמץ קבוע או שיעבור לבית אומנה זמני אחר, לשבוע נוסף. גם אם בעל החיים עובר כמה בתים עד למציאת בית קבע, הוא אינו נמצא ברחוב או חווה את חווית המכלאה הקשה והטראומטית. הוא נמצא בבית עם אנשים שנותנים לו חום ודואגים למחסורו.  הניסיון מלמד שדרך ייחודית זו מביאה פעמים רבות לכך שבסוף התהליך, מגיע למשפחה המאמצת בעל חיים חברותי ורגוע יותר. המשפחה האומנת מקבלת מזון לכל אורך תקופת השהייה, ביקורים אצל וטרינר במידת הצורך, ייעוץ רלוונטי וליווי ע"י משרד העמותה.  כך, גם כאלה שאינם בעלי ניסיון בגידול כלבים או חתולים יכולים לקחת חלק בתהליך ולסייע לנו.  במהלך שנות הפעילות הרבות שלנו, נתקלנו באנשים רבים ש"לא ידעו שהם כאלה" - כלומר שיש בהם אהבה גדולה לבעלי חיים שרק מחכה לפרוץ החוצה, ושמאז שההולך על ארבע נכנס לביתם, חייהם השתנו לטובה.  משפחה אומנת לשבוע, לא רק שמסייעת רבות לבעל החיים שמתארח אצלה ומהווה חוליה חשובה בדרכו לאימוץ קבע, אלא שבראייתנו התהליך עצמו תורם רבות גם למשפחה עצמה, בפרט בבית עם ילדים, שסופגים חוויה ערכית אמתית של נתינה וסיוע לבעל חיים נזקק. לא מעט מהמשפחות האומנות שלנו הפכו למשפחות מאמצות עם הזמן. ככל שתצטרפנה אלינו יותר משפחות, לפעילות חשובה זו, כך נוכל לסייע במציאת בתים מאמצים ליותר כלבים וחתולים עזובים וחסרי בית.</p>
-						        
-						        
-							        </div>
-							        
-							        
-							 		<!--MORE TABS-->
-							 		
-							 		
-							        <div id="tab2" class="tab">
-										<h1>כלבים לאימוץ</h1>
-                                        {% for dog in dogs_list %}
-                                            <div id="dog_div" >
-                                            <img src={{ dog.picture.url }} class="picture">
-                                                <div class="dogsDetails">
-                                                 <p class="name">{{ dog.name }}</p>
-                                                    <div class="col">
-                                                        <p> מין:{{ dog.gender }}</p>
-                                                        <p class="age"> גיל: {{ dog.age }}</p>
-                                                        <br>
-                                                        <p> גזע: {{ dog.type_name }}</p>
-                                                        <p> צבע: {{ dog.color }}</p>
-                                                    </div>
-                                                    <div class="col">
-                                                        {%  if dog.is_childrens_friendly %}
-                                                            <p style="color:#2ecc71;"> ידידותי לילדים</p>
-                                                        {% else %}
-                                                           <p style="color:#e74c3c;"> לא ידידותי לילדים</p>
-                                                        {% endif %}
 
-                                                        {%  if dog.is_educated %}
-                                                            <p style="color:#2ecc71;"> מחונך לצרכים</p>
-                                                        {% else %}
-                                                           <p style="color:#e74c3c;"> לא מחונך לצרכים</p>
-                                                        {% endif %}
-                                                        {%  if dog.is_hypoallergenic %}
-                                                            <p style="color:#2ecc71;">מתאים לאלרגיים </p>
-                                                        {% else %}
-                                                           <p style="color:#e74c3c;"> לא מתאים לאלרגיים</p>
-                                                        {% endif %}
-                                                    </div>
-                                                    <div class="col">
-                                                        <p class="description"> {{ dog.description }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {%  endfor %}
-							        </div>
-							 
-							        <div id="tab3" class="tab">
+								<h1 class="dogsListTitle">כלבים לאימוץ</h1>
 
-										<h1 style="color: red">החיפוש המתקדם - אופיר זה צריך להיות עם אגקס שזה יחזיר את התוצאות לכאן בעיקרון זה לא בעיה אני אעשה את זה ברגע שיהיה דף תוצאות נפרד שמוחזר אני אאחד אותם</h1>
-								
-							    		<h2>חיפוש כלבים לאימוץ</h2>
-								     		<form action="dogs_list" method="get" autocomplete="on" class="adoptDogForm">
-												<section class="dog_search_first_section"> 
-													<label class="radio_botton_label">
-														<h3>מין</h3>
-														<input type="radio" name="gender" value="All"><span class="radio_botton">שניהם</span>
-														<input type="radio" name="gender" value=״זכר״><span class="radio_botton">זכר</span>
-														<input type="radio" name="gender" value="נקבה"><span class="radio_botton">נקבה</span>
-													</label>
-													<label class="">
-														<h3>גודל</h3>
-														<select name="dog_size">
-															<option value="All">הכול</option>
-															<option value="קטן">קטן</option>
-															<option value="בינוני">בינוני</option>
-															<option value="גדול">גדול</option>
-														</select>
-													</label>
-													<label class="">
-														<h3>גיל</h3>
-														<select name="dog_age">
-															<option value="All">הכול</option>
-															<option value="גור">גור</option>
-															<option value="צעיר">צעיר</option>
-															<option value="בוגר">בוגר</option>
-															<option value="מבוגר">מבוגר</option>
-														</select>
-													</label>
-													<label class="">
-														<h3>גזע</h3>
-														<select name="dog_breed">
-															<option value="All">מעורב</option>
-															<option value="לברדור">לברדור</option>
-															<option value="רועה גרמני">רועה גרמני</option>
-															<option value="קבלייר ספניאל">קבלייר ספניאל</option>
-															<option value="גולדן רטריבר">גולדן רטריבר</option>
-															<option value="בוקסר">בוקסר</option>
-															<option value="יורקשיר טרייר">יורקשיר טרייר</option>
-															<option value="ביגל">ביגל</option>
-															<option value="פודל">פודל</option>
-															<option value="שי טסו">שי טסו</option>
-															<option value="בול טרייר">בול טרייר</option>
-															<option value="בורדר קולי">בורדר קולי</option>
-															<option value="פאג">פאג</option>
-															<option value="קוקר ספניאל">קוקר ספניאל</option>
-															<option value="דלמטי">דלמטי</option>
-															<option value="רוטווילר">רוטווילר</option>
-															<option value="ג׳ק ראסל">ג'ק ראסל</option>
-															<option value="דני ענק">דני ענק</option>
-															<option value="דוברמן">דוברמן</option>
-															<option value="מלטז">מלטז</option>
-															<option value="בולדוג צרפתי">בולדוג צרפתי</option>
-															<option value="צ׳יוואווה">צ'יוואווה</option>
-															<option value="האסקי סיבירי">האסקי סיבירי</option>
-															<option value="פיט בול">פיט בול</option>
-														</select>
-													</label>
-													<label class="">
-														<h3>צבעים</h3>
-														<select name="dog_color">
-															<option value="All">הכול</option>
-															<option value="ג׳ינג׳י">ג'ינג'י</option>
-															<option value="כהה">כהה</option>
-															<option value="צהוב">צהוב</option>
-															<option value="שחור">שחור</option>
-															<option value="לבן">לבן</option>
-														</select>
-													</label>
-											</section>	
-											<section class="dog_search_second_section">	
-												<h3>תכונות אופי</h3>
-												<input type="checkbox" name="Characteristics[]" value="childrens_friendly"><label>ידידותי לילדים</label><br>
-												<input type="checkbox" name="Characteristics[]" value="suitable_for_allergic"><label>מתאים לאלרגיים</label><br>
-			                                    <input type="checkbox" name="Characteristics[]" value="habituated_for_needs"><label>מחונך לצרכים</label><br>
-			                                    <input type="submit" class="submitBtn2" value="חפש">
-			                                </section>
-											<div class="clear"></div>
-										</form>
+								<div class="searchDogs">
+									<!--<h2>חיפוש כלבים לאימוץ</h2>-->
+									<form action="dogs_list" method="get" autocomplete="on" class="adoptDogForm">
+										<section class="dog_search_first_section">
+											<label class="radio_botton_label"> <h3>מין</h3>
+												<input type="radio" name="gender" value="זכר">
+												<span class="radio_botton">זכר</span>
+												<br>
+												<input type="radio" name="gender" value="נקבה">
+												<span class="radio_botton">נקבה</span>
+												<br>
+												<input type="radio" name="gender" value="All">
+												<span class="radio_botton">שניהם</span> </label>
+										</section>
 
-							       
-							        </div>
-							        
-							        <div id="tab4" class="tab">
-							        	
-							        	<h1 style="color: red">זה הדף קישוריות לפייסבוק בעיקרון בחוט מחשבה שלי - אחרי שהמנהל הוסיף כלב למאגר דרך הוספת כלבים אז  הוא הולך ומוסיף אותו גם בפייסבוק ככה יש מעקב מסודר על הכלבים שמפורסמים בשני המקומותן</h1>
-							        	<h1 style="color: red">צריך לסדר את העיצוב - אני אעשה את זה כי זה מקושר עם הפייסבוק וזה מעצבן</h1>
-							        	<br>
-							        	<h2>הכלבים האחרונים שנוספו למאגר</h2>
-							        	<h3>על מנת לאמץ כלב שמוצג בפייסבוק ניתן לתקשר אלינו לטלפונים המוצגים או לחפש את שם הכלב בשורת החיפוש</h3>
-							      
-							      
-										<div id="fb-root"></div>
-										<script>(function(d, s, id) {
-										  var js, fjs = d.getElementsByTagName(s)[0];
-										  if (d.getElementById(id)) return;
-										  js = d.createElement(s); js.id = id;
-										  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1510949932532906";
-										  fjs.parentNode.insertBefore(js, fjs);
-										}(document, 'script', 'facebook-jssdk'));</script>	
-										
-										
-										<div class="fb-page" data-href="https://www.facebook.com/chaverim.la.chaim" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-											<div class="fb-xfbml-parse-ignore">
-											<blockquote cite="https://www.facebook.com/chaverim.la.chaim"><a href="https://www.facebook.com/chaverim.la.chaim">Facebook</a></blockquote></div></div>										
-													        							        
-								      
-							      
-							      
-							        </div>
+										<section class="dog_search_second_section">
+											<label class=""> <h3>גודל</h3>
+												<select name="dog_size">
+													<option value="All">הכול</option>
+													<option value="קטן">קטן</option>
+													<option value="בינוני">בינוני</option>
+													<option value="גדול">גדול</option>
+												</select> </label>
+											<label class=""> <h3>גיל</h3>
+												<select name="dog_age">
+													<option value="All">הכול</option>
+													<option value="גור">גור</option>
+													<option value="צעיר">צעיר</option>
+													<option value="בוגר">בוגר</option>
+													<option value="מבוגר">מבוגר</option>
+												</select> </label>
+										</section>
 
-							    </div>
-							</div>								
-								
-								
-								
-								
-								
-								
-								
+										<section class="dog_search_third_section">
+											<label class=""> <h3>גזע</h3>
+												<select name="dog_breed">
+													<option value="All">מעורב</option>
+													<option value="לברדור">לברדור</option>
+													<option value="רועה גרמני">רועה גרמני</option>
+													<option value="קבלייר ספניאל">קבלייר ספניאל</option>
+													<option value="גולדן רטריבר">גולדן רטריבר</option>
+													<option value="בוקסר">בוקסר</option>
+													<option value="יורקשיר טרייר">יורקשיר טרייר</option>
+													<option value="ביגל">ביגל</option>
+													<option value="פודל">פודל</option>
+													<option value="שי טסו">שי טסו</option>
+													<option value="בול טרייר">בול טרייר</option>
+													<option value="בורדר קולי">בורדר קולי</option>
+													<option value="פאג">פאג</option>
+													<option value="קוקר ספניאל">קוקר ספניאל</option>
+													<option value="דלמטי">דלמטי</option>
+													<option value="רוטווילר">רוטווילר</option>
+													<option value="ג׳ק ראסל">ג'ק ראסל</option>
+													<option value="דני ענק">דני ענק</option>
+													<option value="דוברמן">דוברמן</option>
+													<option value="מלטז">מלטז</option>
+													<option value="בולדוג צרפתי">בולדוג צרפתי</option>
+													<option value="צ׳יוואווה">צ'יוואווה</option>
+													<option value="האסקי סיבירי">האסקי סיבירי</option>
+													<option value="פיט בול">פיט בול</option>
+												</select> </label>
+											<label class=""> <h3>צבעים</h3>
+												<select name="dog_color">
+													<option value="All">הכול</option>
+													<option value="ג׳ינג׳י">ג'ינג'י</option>
+													<option value="כהה">כהה</option>
+													<option value="צהוב">צהוב</option>
+													<option value="שחור">שחור</option>
+													<option value="לבן">לבן</option>
+												</select> </label>
+										</section>
 
-							</section><!--/Desktop Section-->							
+										<section class="dog_search_fourth_section">
+											<h3>תכונות אופי</h3>
+											<input type="checkbox" name="Characteristics[]" value="childrens_friendly">
+											<label class="checkbox_botton">ידידותי לילדים</label>
+											<br>
+											<input type="checkbox" name="Characteristics[]" value="suitable_for_allergic">
+											<label class="checkbox_botton">מתאים לאלרגיים</label>
+											<br>
+											<input type="checkbox" name="Characteristics[]" value="habituated_for_needs">
+											<label class="checkbox_botton">מחונך לצרכים</label>
+											<br>
+											<input type="submit" class="submitBtn2" value="חפש">
+										</section>
+										<div class="clear"></div>
+									</form>
+								</div>
+
+								<div class="dogForAdoption">
+									<!--<h1>כלבים לאימוץ</h1>-->
+									{% for dog in dogs_list %}
+									<div id="dog_div" >
+										<img src={{ dog.picture.url }} class="picture">
+										<div class="dogsDetails">
+											<p class="name">
+												{{ dog.name }}
+											</p>
+											<div class="col">
+												<p>
+													מין:{{ dog.gender }}
+												</p>
+												<p class="age">
+													גיל: {{ dog.age }}
+												</p>
+												<br>
+												<p>
+													גזע: {{ dog.type_name }}
+												</p>
+												<p>
+													צבע: {{ dog.color }}
+												</p>
+											</div>
+											<div class="col">
+												{%  if dog.is_childrens_friendly %}
+												<p style="color:#2ecc71;">
+													ידידותי לילדים
+												</p>
+												{% else %}
+												<p style="color:#e74c3c;">
+													לא ידידותי לילדים
+												</p>
+												{% endif %}
+
+												{%  if dog.is_educated %}
+												<p style="color:#2ecc71;">
+													מחונך לצרכים
+												</p>
+												{% else %}
+												<p style="color:#e74c3c;">
+													לא מחונך לצרכים
+												</p>
+												{% endif %}
+												{%  if dog.is_hypoallergenic %}
+												<p style="color:#2ecc71;">
+													מתאים לאלרגיים
+												</p>
+												{% else %}
+												<p style="color:#e74c3c;">
+													לא מתאים לאלרגיים
+												</p>
+												{% endif %}
+											</div>
+											<div class="col">
+												<p class="description">
+													{{ dog.description }}
+												</p>
+											</div>
+										</div>
+									</div>
+									{%  endfor %}
+								</div>
+
+								<!--
+								<div class="tabs">
+								<ul class="tab-links">
+								<li class="active"><a href="#tab1">אודות אימוץ כלבים</a></li>
+								<li><a href="#tab2">מאגר הכלבים לאימוץ</a></li>
+								<li><a href="#tab3">חיפוש מתקדם</a></li>
+								<li><a href="#tab4">הכלבים האחרונים שנוספו</a></li>
+								</ul>
+
+								<div class="tab-content">
+								<div id="tab1" class="tab active">
+
+								<h1>צריך לסדר את המלל כך שיופיע נורמלי והטאב הזה מוכן</h1>
+
+								<p>משפחות רבות חוששות לאמץ ולהביא הביתה כלב או חתול, מחשש שיהיה צורך להחזירו בשל חוסר התאמה. לנו בעמותת "חברים לחיים"  חשוב ליידע את הציבור שישנה דרך נוספת, מוכרת פחות לשם סיוע להצלת כלבים וחתולים.  מכיוון שהעמותה פועלת בדרך ייחודית - ללא מכלאות, מרבית בעלי החיים שלנו שוהים במהלך השבוע בבתים של משפחות אומנה.  בית אומנה נועד לארח את בעל החיים זמנית לתקופה קצובה, לרוב של שבוע. במהלך השבוע הכלב או החתול יגיעו  ליום האימוץ אשר בו ימצא בית מאמץ קבוע או שיעבור לבית אומנה זמני אחר, לשבוע נוסף. גם אם בעל החיים עובר כמה בתים עד למציאת בית קבע, הוא אינו נמצא ברחוב או חווה את חווית המכלאה הקשה והטראומטית. הוא נמצא בבית עם אנשים שנותנים לו חום ודואגים למחסורו.  הניסיון מלמד שדרך ייחודית זו מביאה פעמים רבות לכך שבסוף התהליך, מגיע למשפחה המאמצת בעל חיים חברותי ורגוע יותר. המשפחה האומנת מקבלת מזון לכל אורך תקופת השהייה, ביקורים אצל וטרינר במידת הצורך, ייעוץ רלוונטי וליווי ע"י משרד העמותה.  כך, גם כאלה שאינם בעלי ניסיון בגידול כלבים או חתולים יכולים לקחת חלק בתהליך ולסייע לנו.  במהלך שנות הפעילות הרבות שלנו, נתקלנו באנשים רבים ש"לא ידעו שהם כאלה" - כלומר שיש בהם אהבה גדולה לבעלי חיים שרק מחכה לפרוץ החוצה, ושמאז שההולך על ארבע נכנס לביתם, חייהם השתנו לטובה.  משפחה אומנת לשבוע, לא רק שמסייעת רבות לבעל החיים שמתארח אצלה ומהווה חוליה חשובה בדרכו לאימוץ קבע, אלא שבראייתנו התהליך עצמו תורם רבות גם למשפחה עצמה, בפרט בבית עם ילדים, שסופגים חוויה ערכית אמתית של נתינה וסיוע לבעל חיים נזקק. לא מעט מהמשפחות האומנות שלנו הפכו למשפחות מאמצות עם הזמן. ככל שתצטרפנה אלינו יותר משפחות, לפעילות חשובה זו, כך נוכל לסייע במציאת בתים מאמצים ליותר כלבים וחתולים עזובים וחסרי בית.</p>
+
+								</div>
+
+								<div id="tab2" class="tab">
+								<h1>כלבים לאימוץ</h1>
+								{% for dog in dogs_list %}
+								<div id="dog_div" >
+								<img src={{ dog.picture.url }} class="picture">
+								<div class="dogsDetails">
+								<p class="name">{{ dog.name }}</p>
+								<div class="col">
+								<p> מין:{{ dog.gender }}</p>
+								<p class="age"> גיל: {{ dog.age }}</p>
+								<br>
+								<p> גזע: {{ dog.type_name }}</p>
+								<p> צבע: {{ dog.color }}</p>
+								</div>
+								<div class="col">
+								{%  if dog.is_childrens_friendly %}
+								<p style="color:#2ecc71;"> ידידותי לילדים</p>
+								{% else %}
+								<p style="color:#e74c3c;"> לא ידידותי לילדים</p>
+								{% endif %}
+
+								{%  if dog.is_educated %}
+								<p style="color:#2ecc71;"> מחונך לצרכים</p>
+								{% else %}
+								<p style="color:#e74c3c;"> לא מחונך לצרכים</p>
+								{% endif %}
+								{%  if dog.is_hypoallergenic %}
+								<p style="color:#2ecc71;">מתאים לאלרגיים </p>
+								{% else %}
+								<p style="color:#e74c3c;"> לא מתאים לאלרגיים</p>
+								{% endif %}
+								</div>
+								<div class="col">
+								<p class="description"> {{ dog.description }}</p>
+								</div>
+								</div>
+								</div>
+								{%  endfor %}
+								</div>
+
+								<div id="tab3" class="tab">
+
+								<h1 style="color: red">החיפוש המתקדם - אופיר זה צריך להיות עם אגקס שזה יחזיר את התוצאות לכאן בעיקרון זה לא בעיה אני אעשה את זה ברגע שיהיה דף תוצאות נפרד שמוחזר אני אאחד אותם</h1>
+
+								<h2>חיפוש כלבים לאימוץ</h2>
+								<form action="dogs_list" method="get" autocomplete="on" class="adoptDogForm">
+								<section class="dog_search_first_section">
+								<label class="radio_botton_label">
+								<h3>מין</h3>
+								<input type="radio" name="gender" value="All"><span class="radio_botton">שניהם</span>
+								<input type="radio" name="gender" value=״זכר״><span class="radio_botton">זכר</span>
+								<input type="radio" name="gender" value="נקבה"><span class="radio_botton">נקבה</span>
+								</label>
+								<label class="">
+								<h3>גודל</h3>
+								<select name="dog_size">
+								<option value="All">הכול</option>
+								<option value="קטן">קטן</option>
+								<option value="בינוני">בינוני</option>
+								<option value="גדול">גדול</option>
+								</select>
+								</label>
+								<label class="">
+								<h3>גיל</h3>
+								<select name="dog_age">
+								<option value="All">הכול</option>
+								<option value="גור">גור</option>
+								<option value="צעיר">צעיר</option>
+								<option value="בוגר">בוגר</option>
+								<option value="מבוגר">מבוגר</option>
+								</select>
+								</label>
+								<label class="">
+								<h3>גזע</h3>
+								<select name="dog_breed">
+								<option value="All">מעורב</option>
+								<option value="לברדור">לברדור</option>
+								<option value="רועה גרמני">רועה גרמני</option>
+								<option value="קבלייר ספניאל">קבלייר ספניאל</option>
+								<option value="גולדן רטריבר">גולדן רטריבר</option>
+								<option value="בוקסר">בוקסר</option>
+								<option value="יורקשיר טרייר">יורקשיר טרייר</option>
+								<option value="ביגל">ביגל</option>
+								<option value="פודל">פודל</option>
+								<option value="שי טסו">שי טסו</option>
+								<option value="בול טרייר">בול טרייר</option>
+								<option value="בורדר קולי">בורדר קולי</option>
+								<option value="פאג">פאג</option>
+								<option value="קוקר ספניאל">קוקר ספניאל</option>
+								<option value="דלמטי">דלמטי</option>
+								<option value="רוטווילר">רוטווילר</option>
+								<option value="ג׳ק ראסל">ג'ק ראסל</option>
+								<option value="דני ענק">דני ענק</option>
+								<option value="דוברמן">דוברמן</option>
+								<option value="מלטז">מלטז</option>
+								<option value="בולדוג צרפתי">בולדוג צרפתי</option>
+								<option value="צ׳יוואווה">צ'יוואווה</option>
+								<option value="האסקי סיבירי">האסקי סיבירי</option>
+								<option value="פיט בול">פיט בול</option>
+								</select>
+								</label>
+								<label class="">
+								<h3>צבעים</h3>
+								<select name="dog_color">
+								<option value="All">הכול</option>
+								<option value="ג׳ינג׳י">ג'ינג'י</option>
+								<option value="כהה">כהה</option>
+								<option value="צהוב">צהוב</option>
+								<option value="שחור">שחור</option>
+								<option value="לבן">לבן</option>
+								</select>
+								</label>
+								</section>
+								<section class="dog_search_second_section">
+								<h3>תכונות אופי</h3>
+								<input type="checkbox" name="Characteristics[]" value="childrens_friendly"><label>ידידותי לילדים</label><br>
+								<input type="checkbox" name="Characteristics[]" value="suitable_for_allergic"><label>מתאים לאלרגיים</label><br>
+								<input type="checkbox" name="Characteristics[]" value="habituated_for_needs"><label>מחונך לצרכים</label><br>
+								<input type="submit" class="submitBtn2" value="חפש">
+								</section>
+								<div class="clear"></div>
+								</form>
+
+								</div>
+
+								<div id="tab4" class="tab">
+
+								<h1 style="color: red">זה הדף קישוריות לפייסבוק בעיקרון בחוט מחשבה שלי - אחרי שהמנהל הוסיף כלב למאגר דרך הוספת כלבים אז  הוא הולך ומוסיף אותו גם בפייסבוק ככה יש מעקב מסודר על הכלבים שמפורסמים בשני המקומותן</h1>
+								<h1 style="color: red">צריך לסדר את העיצוב - אני אעשה את זה כי זה מקושר עם הפייסבוק וזה מעצבן</h1>
+								<br>
+								<h2>הכלבים האחרונים שנוספו למאגר</h2>
+								<h3>על מנת לאמץ כלב שמוצג בפייסבוק ניתן לתקשר אלינו לטלפונים המוצגים או לחפש את שם הכלב בשורת החיפוש</h3>
+
+								<div id="fb-root"></div>
+								<script>(function(d, s, id) {
+								var js, fjs = d.getElementsByTagName(s)[0];
+								if (d.getElementById(id)) return;
+								js = d.createElement(s); js.id = id;
+								js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1510949932532906";
+								fjs.parentNode.insertBefore(js, fjs);
+								}(document, 'script', 'facebook-jssdk'));</script>
+
+								<div class="fb-page" data-href="https://www.facebook.com/chaverim.la.chaim" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+								<div class="fb-xfbml-parse-ignore">
+								<blockquote cite="https://www.facebook.com/chaverim.la.chaim"><a href="https://www.facebook.com/chaverim.la.chaim">Facebook</a></blockquote></div></div>
+								</div>
+
+								</div>
+								</div>
+								-->
+
+							</section><!--/Desktop Section-->
 						</div>
 						<div class="mainBtn"></div>
-					</main>		
-			    	<footer id="footer">
-			            <div id="footer_data">
-			                <div id="footer_menu">
-			                    <div id="footer_menu_data">			        			            
-			                		<div class="footer_menu">
-					                    <h2><a href='/recreation-and-tours/'>אמץ כלב</a></h2>
-				                        <ul>				                        
-				                            <li><a href="">&#187; מידע על אימוץ כלבים </a></li>
-				                            <li><a href="">&#187; כלבים לאימוץ </a></li>
-				                            <li><a href="">&#187; חיפוש מתקדם </a></li>
-				                        </ul>                    
-            						</div>
-			                		<div class="footer_menu">
-					                    <h2><a href='/recreation-and-tours/'>אומנה</a></h2>
-				                        <ul>				                        
-				                            <li><a href="">&#187;רישום לאומנה </a></li>
-				                        </ul>                    
-            						</div>			        
-			                		<div class="footer_menu">
-					                    <h2><a href='/recreation-and-tours/'>על העמותה</a></h2>
-				                        <ul>				                        
-				                            <li><a href="">&#187; אודות </a></li>
-				                            <li><a href="">&#187; ימי אימוץ </a></li>
-				                            <li><a href="">&#187; צור קשר </a></li>
-				                            <li><a href="">&#187; כתבו אודותינו </a></li>
-				                        </ul>                    
-            						</div>
-			                		<div class="footer_menu">
-					                    <h2><a href='/recreation-and-tours/'>תרומות</a></h2>
-				                        <ul>				                        
-				                            <li><a href="">&#187; סלי תרומה </a></li>
-				                            <li><a href="">&#187; חנות החיות של העמותה </a></li>
-				                            <li><a href="">&#187; תרומות אוכל וציוד </a></li>
-				                            <li><a href="">&#187; התנדבות לעמותה </a></li>
-				                        </ul>                    
-            						</div>
-            					</div>
-            				</div>
-            			</div>            			         								    		
-			    	</footer>
-				</div><!--Block-->			    	
-			</div><!--/#inner-wrap-->
+				</main>
+				<footer id="footer">
+					<div id="footer_data">
+						<div id="footer_menu">
+							<div id="footer_menu_data">
+								<div class="footer_menu">
+									<h2><a href='/recreation-and-tours/'>אמץ כלב</a></h2>
+									<ul>
+										<li>
+											<a href="">&#187; מידע על אימוץ כלבים </a>
+										</li>
+										<li>
+											<a href="">&#187; כלבים לאימוץ </a>
+										</li>
+										<li>
+											<a href="">&#187; חיפוש מתקדם </a>
+										</li>
+									</ul>
+								</div>
+								<div class="footer_menu">
+									<h2><a href='/recreation-and-tours/'>אומנה</a></h2>
+									<ul>
+										<li>
+											<a href="">&#187;רישום לאומנה </a>
+										</li>
+									</ul>
+								</div>
+								<div class="footer_menu">
+									<h2><a href='/recreation-and-tours/'>על העמותה</a></h2>
+									<ul>
+										<li>
+											<a href="">&#187; אודות </a>
+										</li>
+										<li>
+											<a href="">&#187; ימי אימוץ </a>
+										</li>
+										<li>
+											<a href="">&#187; צור קשר </a>
+										</li>
+										<li>
+											<a href="">&#187; כתבו אודותינו </a>
+										</li>
+									</ul>
+								</div>
+								<div class="footer_menu">
+									<h2><a href='/recreation-and-tours/'>תרומות</a></h2>
+									<ul>
+										<li>
+											<a href="">&#187; סלי תרומה </a>
+										</li>
+										<li>
+											<a href="">&#187; חנות החיות של העמותה </a>
+										</li>
+										<li>
+											<a href="">&#187; תרומות אוכל וציוד </a>
+										</li>
+										<li>
+											<a href="">&#187; התנדבות לעמותה </a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div><!--Block-->
+		</div><!--/#inner-wrap-->
 		</div><!--/#outer-wrap-->
 		<script src="../../static/js/main.js"></script>
 		<script src="../../static/js/script.js"></script>
