@@ -27,7 +27,8 @@ def doghouse_index(request):
 
 
 def dogs_4_adoption(request):
-    context = RequestContext(request, {'dog': 'dog'})
+    dogs_list = Dog.objects.order_by('-last_updated')
+    context = RequestContext(request, {'dogs_list': dogs_list})
     return render(request, 'app/dogs_4_adoption.html', context)
 
 #

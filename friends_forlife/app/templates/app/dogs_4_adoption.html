@@ -94,7 +94,7 @@
 							        <div id="tab2" class="tab">
 										<h1>כלבים לאימוץ</h1>
                                         {% for dog in dogs_list %}
-                                            <div id="dog_div" > <!-- here come's dog's pic-->
+                                            <div id="dog_div" >
                                             <img src={{ dog.picture.url }} class="picture">
                                                 <div class="dogsDetails">
                                                  <p class="name">{{ dog.name }}</p>
@@ -117,7 +117,6 @@
                                                         {% else %}
                                                            <p style="color:#e74c3c;"> לא מחונך לצרכים</p>
                                                         {% endif %}
-
                                                         {%  if dog.is_hypoallergenic %}
                                                             <p style="color:#2ecc71;">מתאים לאלרגיים </p>
                                                         {% else %}
@@ -130,8 +129,6 @@
                                                 </div>
                                             </div>
                                         {%  endfor %}
-
-						        
 							        </div>
 							 
 							        <div id="tab3" class="tab">
