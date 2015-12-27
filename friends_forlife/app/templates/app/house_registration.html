@@ -122,19 +122,19 @@ class DogHouse(models.Model):
 										 כך נוכל לסייע במציאת בתים מאמצים ליותר כלבים וחתולים עזובים וחסרי בית.
 								</article>
 							</section>
-                            <form class ="foster_form" name="house_registartion" method="get" action="house_register">
+                            <form class ="foster_form" name="house_registartion" method="post" action="house_register">
                                 <h1>רישום לאומנה</h1>
                                 <div class="col">
                                     <label class="fost_form_label">שם</label><br>
-                                    <input type="text" class="foster_form_input" name="name" placeholder="שם מלא"><br>
+                                    <input type="text" class="foster_form_input" name="owner_name" placeholder="שם מלא"><br>
                                     <label class="fost_form_label">טלפון</label><br>
-                                    <input type="tel" class="foster_form_input" name="telephone" placeholder="XXX-XXXXXXX"><br>
+                                    <input type="tel" class="foster_form_input" name="owner_phone" placeholder="XXX-XXXXXXX"><br>
                                     <label class="fost_form_label">דואר אלקטרוני</label><br>
-                                    <input type="email" class="foster_form_input" name="email" placeholder="exempale@gmail.com"><br>
+                                    <input type="email" class="foster_form_input" name="owner_email" placeholder="exempale@gmail.com"><br>
                                 </div>
                                 <div class="col">
                                     <label class="fost_form_label">יישוב</label><br>
-                                    <input type="text" class="foster_form_input" name="city" placeholder="יישוב"><br>
+                                    <input type="text" class="foster_form_input" name="owner_city" placeholder="יישוב"><br>
                                     <label class="fost_form_label">כתובת מלאה</label><br>
                                     <input type="text" name="address" id="autocomplete" onfocus="geolocate()" class="foster_form_input" placeholder="כתובת מלאה"><br>
                                     <label class="fost_form_label">תפוסה מקסימאלית</label><br>

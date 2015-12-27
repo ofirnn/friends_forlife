@@ -3,7 +3,7 @@ from django.contrib.sites import requests
 from django.db.models import Q
 from django.shortcuts import render
 from django.template import RequestContext, loader
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from models import *
 import datetime
 
@@ -23,6 +23,12 @@ def login_endpoint(request):
         return index(request)
     else:
         return "Incorrect password"
+
+
+@login_required()
+def logout_endpoint(request):
+    logout(request)
+    return index(request)
 
 @login_required()
 def dogs_index(request):
@@ -67,12 +73,12 @@ def house_registration(request):
 
 
 def house_register(request):
-    req_owner_name = request.GET.get("owner_name", "N/A")
-    req_owner_phone = request.GET.get("owner_phone", "N/A")
-    req_owner_email = request.GET.get("owner_email", "N/A")
-    req_owner_city = request.GET.get("owner_city", "N/A")
-    req_address = request.GET.get("address", "N/A")
-    req_capaticy = request.GET.get("capacity", "N/A")
+    req_owner_name = request.POST.get("owner_name", "N/A")
+    req_owner_phone = request.POST.get("owner_phone", "N/A")
+    req_owner_email = request.POST.get("owner_email", "N/A")
+    req_owner_city = request.POST.get("owner_city", "N/A")
+    req_address = request.POST.get("address", "N/A")
+    req_capaticy = request.POST.get("capacity", "N/A")
 
     new_house = DogHouse(owner_name=req_owner_name, owner_phone=req_owner_phone,
                          owner_email=req_owner_email, owner_city=req_owner_city, address=req_address,

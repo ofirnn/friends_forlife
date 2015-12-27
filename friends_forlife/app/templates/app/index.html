@@ -24,10 +24,11 @@
                                     <button id="btnClick" class="based">מחובר למערכת</button>
                                 </div>
                                 <div id="loginBannerAfterClick" style="display:none;">
-                                    <form name="login" action="login_endpoint" method="post">
-                                                <input type="submit" value="כניסה">
-                                                <input type="password" name="password" placeholder="סיסמא" required>
-                                                <input type="text" name="usermail" placeholder="שם משתמש" required>
+                                    <form name="logout" action="logout_endpoint" method="post">
+                                                <input type="submit" value="התנתק">
+{#                                                <input type="password" name="password" placeholder="סיסמא" required>#}
+                                        <label> מחובר כ:</label><br>
+                                        <label class="text"> {{ user.username }}</label>
                                     </form>
                                 </div>
                             {% else %}

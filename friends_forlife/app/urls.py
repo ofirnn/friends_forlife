@@ -21,7 +21,9 @@ urlpatterns = [
     url(r'^dog_updation', views.dog_updation, name="dog_updation"),
     url(r'^dog_update', views.dog_update, name="dog_update_endpoint"),
     url(r'^login_endpoint', views.login_endpoint, name="login_endpoint"),
+    url(r'^logout_endpoint', views.logout_endpoint, name="logout_endpoint"),
     url(r'^index', views.index),
+    url(r'^', views.index),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
 
