@@ -1,9 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites import requests
 from django.db.models import Q
-from django.shortcuts import render,get_object_or_404
-from django.http import HttpResponse
+from django.shortcuts import render
 from django.template import RequestContext, loader
+from django.contrib.auth import authenticate, login
 from models import *
 import datetime
 
@@ -11,6 +11,18 @@ ALL_STRING = "All"
 
 CHIP_INFO_BASE_URL = "https://klav.im/results/"
 
+
+def login_endpoint(request):
+    username = request.POST.get("usermail")
+    password = request.POST.get("password")
+
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        print user
+        login(request, user)
+        return index(request)
+    else:
+        return "Incorrect password"
 
 @login_required()
 def dogs_index(request):
