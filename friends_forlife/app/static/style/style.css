@@ -444,7 +444,7 @@ input[type="search"]::-webkit-search-decoration {
 .submitBtn2 {
 	color: #3E5560;
     font-size: 20px;
-    background: #eee;
+    background: #DEDEDE;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     border: none;
@@ -452,6 +452,7 @@ input[type="search"]::-webkit-search-decoration {
     font-family: trashimclm;
     float: left;
     margin-top: 10px;
+    margin-bottom: 0px;
    /* margin-left: 8px;
     margin-bottom: 4px;*/
 }
@@ -630,6 +631,7 @@ input[type="search"]::-webkit-search-decoration {
 
 .dogsDetails p span {
 	color: rgba(114, 146, 153, 1);
+	font-size: 16px;
 }
 
 .dogsDetails .col-4 {
@@ -667,9 +669,23 @@ input[type="search"]::-webkit-search-decoration {
     margin-top: 27px;
 }
 
+.col-2 {
+	width: 40%;
+    float: right;
+    text-align: center;
+    margin-top: 27px;
+}
+
 .col-4 {
 	width: 25%;
 	float: right;
+}
+
+.col-5 {
+	width: 20%;
+    float: right;
+    text-align: center;
+    margin-top: 27px;
 }
 
 /*=========================================*/
@@ -677,7 +693,7 @@ input[type="search"]::-webkit-search-decoration {
 /*=========================================*/
 
 .information_about_foster {
-    margin: 20px 20px 20px 20px;
+    margin: 20px 20px 50px 20px;
     line-height: 25px;
     font-size: 13px;
     width: 100%;
@@ -686,10 +702,18 @@ input[type="search"]::-webkit-search-decoration {
     padding-bottom: 10px;
 }
 
+.fosterRegistartion {
+	margin: 50px auto;
+}
+
 .foster_form {
 	margin: 0 auto ;
 	text-align:center;
 
+}
+
+.foster_form .col-2, .foster_form .col-5 {
+	margin-bottom: 25px;
 }
 
 .fost_form_label {
@@ -704,6 +728,7 @@ input[type="search"]::-webkit-search-decoration {
 	text-align:center;
 	width: 300px;
 }
+
 .submitBtn {
   color: #3E5560;
   font-size: 27px;
