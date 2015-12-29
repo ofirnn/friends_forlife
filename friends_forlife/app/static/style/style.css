@@ -59,6 +59,10 @@ footer, #outer-wrap:after {
 /*=========== HEADER SETTINGS ===============*/ 
 /*=========================================*/
 
+header #top {
+	margin-bottom: 20px;
+}
+
 /*=====Logo===*/
 #logo{width: 425px; height: 175px; background:transparent url("../../static/img/logo_425_156.png") no-repeat;
       display: block; float:right; 
@@ -197,7 +201,7 @@ footer, #outer-wrap:after {
 }
 
 #main .block {
-	 padding: 42px 30px;
+	 padding: 22px 30px 42px 30px;
 }
 
 .mainTop{
@@ -586,6 +590,9 @@ input[type="search"]::-webkit-search-decoration {
 #nav li.navBtnFoster a { width:100px;}
 #nav li.navBtnFoster.is-active a, #nav li.navBtnFoster a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn131.jpg) no-repeat;}
 
+#nav li.navBtnGallery a { width:84px;}
+#nav li.navBtnGallery.is-active a, #nav li.navBtnGallery a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
+
 #nav li.navBtnAbout a { width:84px;}
 #nav li.navBtnAbout.is-active a, #nav li.navBtnAbout a:hover { background:url(../../static/img/buttons/menu-tabs/navBtn118.jpg) no-repeat; }
 
@@ -864,13 +871,13 @@ input[type="search"]::-webkit-search-decoration {
 	margin-top: 5px;
 }
 
-#dogs_index_dog_div>.picture
-{
+#dogs_index_dog_div>.picture {
 	width: 30%;
 	margin-top: 11%;
 	margin-right: 5%;
 	position: relative;
 	float: right;
+	border-radius: 10px;
 }
 
 #dogs_index_dog_div .picture
@@ -930,8 +937,15 @@ input[type="search"]::-webkit-search-decoration {
 	font-size: 15px;
 	font-weight: lighter;
 }
+
 #dogs_index_dog_div .label{
-	font-size:18px
+	font-size:18px;
+	color: rgba(114, 146, 153, 1);
+}
+
+.dogs_index_col p span {
+	font-size: 18px;
+	color: rgba(114, 146, 153, 1);
 }
 
 .dogs_index_foster_count {
