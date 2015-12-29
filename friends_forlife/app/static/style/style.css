@@ -632,7 +632,7 @@ input[type="search"]::-webkit-search-decoration {
 	color: rgba(114, 146, 153, 1);
 }
 
-.dogsDetails .col-4 p {
+.dogsDetails .col-4 {
 	padding-right: 8%;
 }
 
