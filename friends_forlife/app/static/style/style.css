@@ -831,7 +831,7 @@ input[type="search"]::-webkit-search-decoration {
 /*====PAGE - Dogs-Index =====*/
 /*=========================================*/
 
-.dogs_index_UpdateBtn{
+.dogs_index_UpdateBtn {
 	color:#2ecc71;
     font-size: 20px;
     background: #eee;
@@ -845,7 +845,7 @@ input[type="search"]::-webkit-search-decoration {
 	margin-top: 10%;
 }
 
-.dogs_index_FosterBtn{
+.dogs_index_FosterBtn {
 	color:#AC6D76;
     font-size: 18px;
     background: #eee;
@@ -858,7 +858,7 @@ input[type="search"]::-webkit-search-decoration {
 
 	margin-top: 5px;
 }
-.dogs_index_RemoveBtn{
+.dogs_index_RemoveBtn {
 	color:#e74c3c;
     font-size: 20px;
     background: #eee;
@@ -870,6 +870,17 @@ input[type="search"]::-webkit-search-decoration {
     float: left;
 	margin-top: 5px;
 }
+
+.dogs_index_UpdateBtn:hover, .dogs_index_FosterBtn:hover, .dogs_index_RemoveBtn:hover {
+	background: #3E5560;
+    text-decoration: none;
+    color: #eee;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+} 
 
 #dogs_index_dog_div>.picture {
 	width: 30%;
@@ -937,14 +948,14 @@ input[type="search"]::-webkit-search-decoration {
 	margin-top: 36px;
 }
 
-.dogs_index_col.dogDetailAdmin p {
+.dogs_index_col.dogDetailAdmin p,  .dogs_index_col.dogs_index_details p {
 	margin-bottom: 5px;
 }
 
 .dogs_index_col.dogDetailAdmin p {
 	font-family: gisha;
 	font-weight: lighter;
-	font-size: 18px;
+	font-size: 15px;
 }
 
 .dogs_index_col.dogDetailAdmin p span {
