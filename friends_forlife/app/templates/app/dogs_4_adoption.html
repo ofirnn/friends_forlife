@@ -163,12 +163,12 @@
 									<!--<h1>כלבים לאימוץ</h1>-->
 									{% for dog in dogs_list %}
 									<div id="dog_div" >
-										<img src={{ dog.picture.url }} class="picture">
+										<img src={{ dog.picture.url }} class="picture col-4">
 										<div class="dogsDetails">
 											<p class="name">
 												{{ dog.name }}
 											</p>
-											<div class="col">
+											<div class="col-4">
 												<p>
 													<span>מין: </span> {{ dog.gender }}
 												</p>
@@ -183,7 +183,7 @@
 													<span>צבע: </span>  {{ dog.color }}
 												</p>
 											</div>
-											<div class="col">
+											<div class="col-4">
 												{%  if dog.is_children_friendly %}
 												<p style="color:#2ecc71;">
 													ידידותי לילדים
@@ -213,7 +213,7 @@
 												</p>
 												{% endif %}
 											</div>
-											<div class="col">
+											<div class="col-4">
 												<p class="description">
 													{{ dog.description }}
 												</p>

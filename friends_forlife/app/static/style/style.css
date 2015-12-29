@@ -193,6 +193,7 @@ footer, #outer-wrap:after {
 }
 .desktopMainContent{
 	display:block;
+	padding-right: 20px;
 }
 
 #main .block {
@@ -411,6 +412,7 @@ input[type="search"]::-webkit-search-decoration {
 	border: rgba(255, 255, 255, 0.5) solid 5px;
 	width:70%;
 	margin: 5% 14% 0 0;*/
+	background: rgba(62, 85, 96, 0.05);
 }
 
 .adoptDogForm h3 {
@@ -600,11 +602,10 @@ input[type="search"]::-webkit-search-decoration {
 /*=========== PAGE - DOG LIST ===============*/ 
 /*=========================================*/
 
-#dog_div>.picture
-{
+#dog_div>.picture {
 	width: 30%;
 	margin-top: 5%;
-	margin-right: 5%;
+	margin-right: 2.5%;
 	position: relative;
 	float: right;
 	border-radius: 10px;
@@ -615,31 +616,32 @@ input[type="search"]::-webkit-search-decoration {
 	width: 14%;
 }
 
-#dog_div .name
-{
-	
+#dog_div .name {	
 	font-size: 23px;
 	color: #AC6D76;
 	text-align:center;
+	margin-bottom: 20px;
 }
-.dogsDetails{
+.dogsDetails {
 	float: right;
     margin: 5% 1%;
     width: 70%;
 }
 
-.dogsDetails span {
+.dogsDetails p span {
 	color: rgba(114, 146, 153, 1);
 }
 
-#dog_div .age
-{
+.dogsDetails .col-4 p {
+	padding-right: 8%;
+}
+
+#dog_div .age {
 	display: inline; 
 	font-size: 15px;
 }
 
-#dog_div .gender
-{	
+#dog_div .gender {	
 	position: absolute;
 	top: 15%;
 	left: 5%;
@@ -650,14 +652,15 @@ input[type="search"]::-webkit-search-decoration {
 	font-size: 15px;
 	font-weight: lighter;
 }
-#dog_div{
+#dog_div {
 	width: 100%;
     min-height: 226px;
-	padding-left: 4px;
-	padding-bottom:4px;
+    padding: 0px 4px 4px 4px;
 	float: right;
+	border-bottom: 1px solid #eee;
 }
-.col{
+
+.col {
 	width: 33.333%;
     float: right;
     text-align: center;
@@ -673,8 +676,7 @@ input[type="search"]::-webkit-search-decoration {
 /*====PAGE - Foster_Registration =====*/ 
 /*=========================================*/
 
-.information_about_foster
-{
+.information_about_foster {
     margin: 20px 20px 20px 20px;
     line-height: 25px;
     font-size: 13px;
@@ -683,14 +685,18 @@ input[type="search"]::-webkit-search-decoration {
     border-bottom: #eee 2px solid;
     padding-bottom: 10px;
 }
-.foster_form{
+
+.foster_form {
 	margin: 0 auto ;
 	text-align:center;
 
 }
-.fost_form_label{font-size:1.3em;}
 
-.foster_form_input{
+.fost_form_label {
+	font-size:1.3em;
+}
+
+.foster_form_input {
     font-size: 1.0em;
     border: none;
     border-bottom: #eee 3px solid;
