@@ -933,27 +933,27 @@ input[type="search"]::-webkit-search-decoration {
     padding-right: 4%;
 }
 
-.dogs_index_col .dogDetailAdmin {
+.dogs_index_col.dogDetailAdmin {
 	margin-top: 36px;
 }
 
-.dogs_index_col .dogDetailAdmin p {
+.dogs_index_col.dogDetailAdmin p {
 	margin-bottom: 5px;
 }
 
-.dogs_index_col .dogDetailAdmin p {
+.dogs_index_col.dogDetailAdmin p {
 	font-family: gisha;
 	font-weight: lighter;
 	font-size: 18px;
 }
 
-.dogs_index_col .dogDetailAdmin p span {
+.dogs_index_col.dogDetailAdmin p span {
 	font-size: 18px;
 	color: rgba(114, 146, 153, 1);
 	font-family: trashimclm;
 }
 
-.dogs_index_col .dogs_index_btn {
+.dogs_index_col.dogs_index_btn {
 	width: 6%;
     padding-right: 13%;	
 }
