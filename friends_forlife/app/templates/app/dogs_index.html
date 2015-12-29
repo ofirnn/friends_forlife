@@ -63,7 +63,7 @@
                                 <img src={{ dog.picture.url }} class="picture">
                                     <div class="dogs_index_dogsDetails">
                                      <p class="name">{{ dog.name }}</p>
-                                        <div class="dogs_index_col">
+                                        <div class="dogs_index_col dogDetailAdmin">
                                         	<p>
 												<span>מין: </span> {{ dog.gender }}
 											</p>
@@ -118,7 +118,7 @@
                                               <label class="label"> סטאטוס:</label>
                                               <p class="text">{{ dog.status }}</p>
                                         </div>
-                                        <div class="dogs_index_col">
+                                        <div class="dogs_index_col dogs_index_btn">
                                             <form name="update_dog" action="dog_updation">
                                                 <input type="hidden" name="id" value="{{ dog.id }}">
                                                 <input type="submit" class="dogs_index_UpdateBtn" value="עדכון"/>
