@@ -73,7 +73,7 @@
 								<div class="searchDogs">
 									<!--<h2>חיפוש כלבים לאימוץ</h2>-->
 									<form action="dogs_list" method="get" autocomplete="on" class="adoptDogForm">
-										<section class="dog_search_first_section">
+										<section class="dog_search_first_section col-4">
 											<label class="radio_botton_label"> <h3>מין</h3>
 												<input type="radio" name="gender" value="זכר">
 												<span class="radio_botton">זכר</span>
@@ -85,7 +85,7 @@
 												<span class="radio_botton">שניהם</span> </label>
 										</section>
 
-										<section class="dog_search_second_section">
+										<section class="dog_search_second_section col-4">
 											<label class=""> <h3>גודל</h3>
 												<select name="dog_size">
 													<option value="All">הכול</option>
@@ -103,7 +103,7 @@
 												</select> </label>
 										</section>
 
-										<section class="dog_search_third_section">
+										<section class="dog_search_third_section col-4">
 											<label class=""> <h3>גזע</h3>
 												<select name="dog_breed">
 													<option value="All">מעורב</option>
@@ -142,7 +142,7 @@
 												</select> </label>
 										</section>
 
-										<section class="dog_search_fourth_section">
+										<section class="dog_search_fourth_section col-4">
 											<h3>תכונות אופי</h3>
 											<input type="checkbox" name="Characteristics[]" value="childrens_friendly">
 											<label class="checkbox_botton">ידידותי לילדים</label>
@@ -170,17 +170,17 @@
 											</p>
 											<div class="col">
 												<p>
-													מין:{{ dog.gender }}
+													<span>מין: </span> {{ dog.gender }}
 												</p>
 												<p class="age">
-													גיל: {{ dog.age }}
+													<span>גיל: </span> {{ dog.age }}
 												</p>
 												<br>
 												<p>
-													גזע: {{ dog.type_name }}
+													<span>גזע: </span> {{ dog.type_name }}
 												</p>
 												<p>
-													צבע: {{ dog.color }}
+													<span>צבע: </span>  {{ dog.color }}
 												</p>
 											</div>
 											<div class="col">
