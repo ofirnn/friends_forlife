@@ -6,6 +6,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <title>Friends for Life</title>
 		<script src="../../static/js/modernizr.js"></script>
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
 		<link rel="stylesheet" href="../../static/style/style.css">
 		<link rel="stylesheet" href="../../static/style/styleMobile.css">
 	</head>
@@ -17,9 +18,29 @@
 			            <a href="index.html"  id="logo"></a><!--Logo-->
 			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
 			            <div id="contact">
-			                <span class="based">we're based in Limerick</span>
-			                <span class="number">call us  061 43 7777</span>
-			            </div>
+							{% if request.user.is_authenticated %}
+                                <div id="loginBannerBeforeClick">
+                                    <button id="btnClick" class="based">מחובר למערכת</button>
+                                </div>
+                                <div id="loginBannerAfterClick" style="display:none;">
+                                    <form name="logout" action="logout_endpoint" method="post">
+                                                <input type="submit" value="התנתק">
+                                        <label> מחובר כ:</label><br>
+                                        <label class="text"> {{ user.username }}</label>
+                                    </form>
+                                </div>
+                            {% else %}
+                                <div id="loginBannerBeforeClick">
+                                    <button id="btnClick" class="based">כניסה למערכת</button>
+                                </div>
+                                <div id="loginBannerAfterClick" style="display:none;">
+                                    <form name="login" action="login_endpoint" method="post">
+                                                <input type="submit" value="כניסה">
+                                                <input type="password" name="password" placeholder="סיסמא" required>
+                                                <input type="text" name="usermail" placeholder="שם משתמש" required>
+                                    </form>
+                                </div>
+                            {% endif %}			            </div>
 					    <nav id="nav">
 				            <ul>
 				                <li class="is-active navBtnAdopt">
@@ -168,6 +189,7 @@
 				</div><!--Block-->
 			</div><!--/#inner-wrap-->
 		</div><!--/#outer-wrap-->
-		<script src="../../static/js/main.js"></script>
+        <script src="../../static/js/main.js"></script>
+		<script src="../../static/js/script.js"></script>
 	</body>
 </html>

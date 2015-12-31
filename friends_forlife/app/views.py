@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites import requests
 from django.db.models import Q
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import RequestContext, loader
 from django.contrib.auth import authenticate, login, logout
@@ -22,7 +23,7 @@ def login_endpoint(request):
         login(request, user)
         return index(request)
     else:
-        return "Incorrect password"
+        return HttpResponse("Incorrect password")
 
 
 @login_required()

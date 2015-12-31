@@ -26,7 +26,6 @@
                                 <div id="loginBannerAfterClick" style="display:none;">
                                     <form name="logout" action="logout_endpoint" method="post">
                                                 <input type="submit" value="התנתק">
-{#                                                <input type="password" name="password" placeholder="סיסמא" required>#}
                                         <label> מחובר כ:</label><br>
                                         <label class="text"> {{ user.username }}</label>
                                     </form>
@@ -72,6 +71,14 @@
 				                    <a href="#">תרומה</a>
 				                    <hr>
 				                </li>
+                                {% if request.user.is_superuser %}
+                                    <li class="navBtnDogIndex">
+                                        <a href="dogs_index.html">ניהול כלבים</a>
+                                    </li>
+                                    <li class="navBtnDogHouseIndex">
+                                        <a href="doghouse_index.html">ניהול אומנה</a></a>
+                                    </li>
+                                {% endif %}
 				            </ul>	
 			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
 			    		</nav>

@@ -56,17 +56,29 @@ class DogHouse(models.Model):
 			            <a href="index.html"  id="logo"></a><!--Logo-->
 			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
 						<div id="contact">
-							<div id="loginBannerBeforeClick">
-								<button id="btnClick" class="based">כניסה למערכת</button>
-							</div>
-
-							<div id="loginBannerAfterClick" style="display:none;">
-								<form name="login" action="index_submit" method="get">
-						        	<input type="text" name="usermail" placeholder="שם משתמש" required>
-						        	<input type="password" name="password" placeholder="סיסמא" required>
-						        	<input type="submit" value="כניסה">
-								</form>
-							</div>
+                        {% if request.user.is_authenticated %}
+                                <div id="loginBannerBeforeClick">
+                                    <button id="btnClick" class="based">מחובר למערכת</button>
+                                </div>
+                                <div id="loginBannerAfterClick" style="display:none;">
+                                    <form name="logout" action="logout_endpoint" method="post">
+                                                <input type="submit" value="התנתק">
+                                        <label> מחובר כ:</label><br>
+                                        <label class="text"> {{ user.username }}</label>
+                                    </form>
+                                </div>
+                            {% else %}
+                                <div id="loginBannerBeforeClick">
+                                    <button id="btnClick" class="based">כניסה למערכת</button>
+                                </div>
+                                <div id="loginBannerAfterClick" style="display:none;">
+                                    <form name="login" action="login_endpoint" method="post">
+                                                <input type="submit" value="כניסה">
+                                                <input type="password" name="password" placeholder="סיסמא" required>
+                                                <input type="text" name="usermail" placeholder="שם משתמש" required>
+                                    </form>
+                                </div>
+                            {% endif %}
 						</div>
 					    <nav id="nav">
 				            <ul>
@@ -83,6 +95,14 @@ class DogHouse(models.Model):
 				                <li class="navBtnDonate">
 				                    <a href="#">תרומה</a></a>
 				                </li>
+                                {% if request.user.is_superuser %}
+                                    <li class="navBtnDogIndex">
+                                        <a href="dogs_index.html">ניהול כלבים</a>
+                                    </li>
+                                    <li class="navBtnDogHouseIndex">
+                                        <a href="doghouse_index.html">ניהול אומנה</a></a>
+                                    </li>
+                                {% endif %}
 				            </ul>
 			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
 			    		</nav>
