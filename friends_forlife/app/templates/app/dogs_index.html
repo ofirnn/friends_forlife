@@ -7,6 +7,8 @@
 	    <title>Friends for Life</title>
 		<script src="../../static/js/modernizr.js"></script>
         <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+        <script src="../../static/js/sweetalert-master/dist/sweetalert.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../static/js/sweetalert-master/dist/sweetalert.css">
 		<link rel="stylesheet" href="../../static/style/style.css">
 		<link rel="stylesheet" href="../../static/style/styleMobile.css">
 	</head>
@@ -79,6 +81,9 @@
 						<div class="mainTop"></div>
 						<div class="mainContent">
 				    		<h1>ניהול כלבים</h1>
+                            <div id="dogs_index_insert_dog">
+                                <a href="dog_insertion" class="dog_index_insert_button">+הוסף כלב</a>
+                            </div>
                             {% for dog in dogs_list %}
                                 <div id="dogs_index_dog_div" > <!-- here come's dog's pic-->
                                 <img src={{ dog.picture.url }} class="picture">
@@ -97,17 +102,7 @@
 											<p>
 												<span>צבע: </span>  {{ dog.color }}
 											</p>
-                                        	
-                                        	<!--
-                                            <label class="label"> מין:</label>
-                                            <p class="text"> {{ dog.gender }}</p>
-                                            <label class="label">גיל:</label>
-                                            <p class="text">{{ dog.age }}</p>
-                                            <label class="label"> גזע:</label>
-                                            <p class="text"> {{ dog.type_name }}</p>
-                                            <label class="label"> צבע:</label>
-                                            <p class="text">{{ dog.color }}</p>-->
-                                            
+
                                         </div>
                                         <div class="dogs_index_col">
                                             <br>
@@ -144,9 +139,9 @@
                                                 <input type="hidden" name="id" value="{{ dog.id }}">
                                                 <input type="submit" class="dogs_index_UpdateBtn" value="עדכון"/>
                                             </form>
-                                            <form>
+                                            <form id="delete{{ dog.id }}" action="dog_delete">
                                                 <input type="hidden" name="id" value="{{ dog.id }}">
-                                                <input type="submit" class="dogs_index_RemoveBtn" value="הסרה"/>
+                                                <button class="dogs_index_RemoveBtn"> הסרה </button>
                                             </form>
                                             <form name="dogstaying_add" action="dogstaying_add">
                                                 <input type="hidden" name="dog_id" value="{{ dog.id }}">
@@ -180,10 +175,41 @@
                                     {% endfor %}
 
                                 {%  endif %}
+                                <script>
+                                        document.querySelector('#delete{{ dog.id }}').addEventListener('submit', function(e) {
+                                            var form = this;
+                                            e.preventDefault();
+                                            swal({
+                                                title: "האם אתה בטוח?",
+                                                text: "הסרת כלב מהמערכת היא צעד בלתי הפיך",
+                                                type: "warning",
+                                                showCancelButton: true,
+                                                confirmButtonColor: '#DD6B55',
+                                                confirmButtonText: 'כן, אני בטוח',
+                                                cancelButtonText: "לא, בטל",
+                                                closeOnConfirm: false,
+                                                closeOnCancel: false
+                                            },
+                                            function(isConfirm) {
+                                                if (isConfirm) {
+                                                    swal({
+                                                        title: 'מחיקה אושרה',
+                                                        text: 'הנך מועבר לדף הראשי',
+                                                        type: 'success'
+                                                    }, function() {
+                                                        form.submit();
+                                                    });
+
+                                                } else {
+                                                    swal("בוטל", "מחיקת הכלב בוטלה", "error");
+                                                }
+                                            });
+                                        });
+                            </script>
                             {%  endfor %}
 								<div class="clear"></div>
 						</div>
-						<div class="mainBtn"></div>
+
 					</main>
 			    	<footer id="footer"></footer>
 				</div><!--Block-->

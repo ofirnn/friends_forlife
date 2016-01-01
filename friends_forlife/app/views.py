@@ -31,6 +31,7 @@ def logout_endpoint(request):
     logout(request)
     return index(request)
 
+
 @login_required()
 def dogs_index(request):
     dogs_list = Dog.objects.order_by('-last_updated')
@@ -50,23 +51,6 @@ def dogs_4_adoption(request):
     context = RequestContext(request, {'dogs_list': dogs_list})
     return render(request, 'app/dogs_4_adoption.html', context)
 
-#
-# @login_required()
-# def doghouse_index(request):
-#     houses = DogHouse.objects.all().order_by("-id")
-#
-#     stayings = dict()
-#     for house in houses:
-#
-#         #stayings[house.id] = house.
-# @login_required()
-# def doghouse_delete(request):
-#
-# @login_required()
-# def doghouse_update(request):
-#
-#
-#
 
 def house_registration(request):
     context = RequestContext(request, {'dog': 'dog'})
@@ -99,38 +83,28 @@ def dog_insertion(request):
 
 @login_required(login_url='/accounts/login/')
 def dog_insert(request):
-    req_name = request.GET.get("name")
-    req_description = request.GET.get("description", "N/A")
-    req_color = request.GET.get("color", "N/A")
-    req_age = request.GET.get("age")
-    req_gender = request.GET.get("gender")
-    req_status = request.GET.get("status")
-    req_chip_id = request.GET.get("chip_id", "N/A")
-    req_size = request.GET.get("size", "N/A")
-    req_type_name = request.GET.get("type_name", "N/A")
-
-    req_picture = request.GET.get("picture")
-
-    characteristics = request.GET.getlist("Characteristics[]", [])
-
-    req_children_friendly = False
-    req_suitable_for_allergic = False
-    req_habituated_for_needs = False
-    req_is_casrated = False
-
-    if "childrens_friendly" in characteristics:
-        req_children_friendly = True
-    if "suitable_for_allergic" in characteristics:
-        req_suitable_for_allergic = True
-    if "habituated_for_needs" in characteristics:
-        req_habituated_for_needs = True
-    if "is_castrated" in characteristics:
-        req_is_casrated = True
+    req_name = request.POST.get("name")
+    req_description = request.POST.get("description", "N/A")
+    req_color = request.POST.get("color", "N/A")
+    req_age = request.POST.get("age")
+    req_gender = request.POST.get("gender")
+    req_status = request.POST.get("status")
+    req_chip_id = request.POST.get("chip_id", "N/A")
+    req_size = request.POST.get("size", "N/A")
+    req_type_name = request.POST.get("type_name", "N/A")
+    req_status = request.POST.get("status", "N/A")
+    req_picture = request.FILES.get("picture")
+    req_children_friendly = request.POST.get("is_children_friendly", False)
+    print req_children_friendly
+    req_suitable_for_allergic = request.POST.get("is_hypoallergenic", False)
+    print req_suitable_for_allergic
+    req_habituated_for_needs = request.POST.get("is_educated", False)
+    print req_habituated_for_needs
 
     last_updated = datetime.datetime.now()
 
     dog = Dog(name=req_name, description=req_description, color=req_color,
-              age=req_age, is_adopted=False, is_castrated=req_is_casrated,
+              age=req_age, is_adopted=False,
               is_educated=req_habituated_for_needs, gender=req_gender,
               status=req_status, last_updated=last_updated, picture=req_picture,
               chip_id=req_chip_id, size=req_size, type_name=req_type_name,
@@ -141,6 +115,7 @@ def dog_insert(request):
 
     context = RequestContext(request, {'dog': dog})
     return render(request, "app/success_dog_insertion.html", context)
+
 
 @login_required(login_url='/accounts/login/')
 def dog_updation(request):

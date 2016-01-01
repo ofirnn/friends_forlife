@@ -222,7 +222,7 @@ header#top {
 	background:url("../../static/img/background/btm/main-content-btm-curve.jpg") no-repeat;
 	height:33px;
 	display:block;
-	width:980px;	
+	width:980px;
 }
 
 .mainContent h1{
@@ -831,6 +831,28 @@ input[type="search"]::-webkit-search-decoration {
 /*====PAGE - Dogs-Index =====*/
 /*=========================================*/
 
+.dog_index_insert_button {
+	color:#AC6D76;
+    font-size: 20px;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    font-family: trashimclm;
+    float: right;
+	margin-top: 3%;
+    margin-right: 2%;
+}
+.dog_index_insert_button:hover {
+	background-color: #AC6D76;
+	color: #eee;
+	-webkit-transition: background-color 1000ms linear;
+	-moz-transition: background-color 1000ms linear;
+	-o-transition: background-color 1000ms linear;
+	-ms-transition: background-color 1000ms linear;
+	transition: background-color 1000ms linear;
+}
+
 .dogs_index_UpdateBtn {
 	color:#2ecc71;
     font-size: 20px;
@@ -1192,4 +1214,148 @@ input[type="search"]::-webkit-search-decoration {
 	float: right;
     margin-right: 8%;
     width: 70%;
+}
+
+
+/*=========================================*/
+/*====PAGE - Dog-Insert =====*/
+/*=========================================*/
+
+
+.dog_insert_form_label{font-size:1.3em;}
+
+.dog_insert_form_input{
+    font-size: 1.0em;
+    border: none;
+    border-bottom: #eee 3px solid;
+    margin-bottom: 22px;
+	text-align:center;
+	width: 300px;
+}
+
+.dog_insert_form_select{
+    font-size: 1.0em;
+    border: none;
+    border-bottom: #eee 3px solid;
+    margin-bottom: 22px;
+	text-align:center;
+	width: 80px;
+}
+
+.dog_insert_form_radio{
+    font-size: 1.0em;
+    border: none;
+    border-bottom: #eee 3px solid;
+    margin-bottom: 22px;
+	text-align:center;
+	width: 30px;
+}
+
+.dog_insert_col{
+	width: 50%;
+    float: right;
+    text-align: center;
+    margin-top: 27px;
+}
+
+.dog_insert_picture{
+	width: 45%;
+    margin-top: 2%;
+    margin-right: 27%;
+	position: relative;
+	float: right;
+}
+.dog_insert_submitBtn{
+	color: #3E5560;
+	font-size: 35px;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    font-family: trashimclm;
+    float: left;
+    margin-left: 8px;
+    margin-bottom: 4px;
+	margin-top: 10px;
+}
+
+.dog_insert_submitBtn:hover {
+	background: #3E5560;
+    text-decoration: none;
+    color: #eee;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
+
+
+/*=========================================*/
+/*====PAGE - Dog-insert =====*/
+/*=========================================*/
+
+
+.success_dog_insert_a{
+	margin-right:50px;
+	font-size: 30px;
+
+}
+
+
+
+/*=========================================*/
+/*====PAGE - Dogstaying-add =====*/
+/*=========================================*/
+
+.datepicker {
+    font-size: 1.2em;
+    border: none;
+    border-bottom: #eee 3px solid;
+    margin-bottom: 22px;
+    text-align: center;
+    width: 300px;
+}
+
+.dogsSection article{
+	float: right;
+    padding: 10px 10px;
+}
+.dogsSection img {
+    width: 100px;
+    border-radius: 59px;
+    padding-bottom: 3px;
+    height: 100px;
+}
+.dogsSection input[type=radio]{
+	float: right;
+    padding: 10px 10px;
+}
+.chooseOmanaBtn{
+	color: #3E5560;
+    font-size: 27px;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    font-family: trashimclm;
+    float: left;
+    margin-left: 125px;
+}
+.dogStayingMainBtn{
+	background:url("../../static/img/background/btm/main-content-btm-curve.jpg") no-repeat;
+	height:33px;
+	display:block;
+	width:960px;
+}
+
+.chooseOmanaBtn:hover {
+	background: #3E5560;
+    text-decoration: none;
+    color: #eee;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
 }

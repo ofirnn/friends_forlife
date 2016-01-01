@@ -101,10 +101,9 @@
                                     <form action="dogstay_addition" method="post" name="dogstaying_addition" enctype="multipart/form-data" >
                                         <div class="dogstaying_add_col">
                                             <label class="dogstaying_add_form_label"> תאריך תחילה:</label>
-                                            <input type="date"  class="dogstaying_add_form_input" name="start_date">
-                                            <br>
-                                            <label class="dogstaying_add_form_label">תאריך סיום: </label>
-                                            <input type="date"  class="dogstaying_add_form_input" name="end_date">
+                                            <input type="date"  class="dogstaying_add_form_input datepicker" name="start_date">
+                                            <label class="dogstaying_add_form_label" style="padding-right:14px">תאריך סיום: </label>
+                                            <input type="date"  class="dogstaying_add_form_input datepicker" name="end_date">
                                             <br><br>
                                             {% if src_type == 'dog' %}
                                                 <input type="hidden" name="dog_id" value="{{ id }}">
@@ -118,29 +117,29 @@
                                                 <input type="hidden" name="house_id" value="{{ id }}">
                                                 <label class="dogstaying_add_form_label">בחר כלב מרשימת הכלבים:</label>
                                                 <br>
+                                                <Section class="dogsSection">
                                                     {% for dog in list %}
-                                                        <input type="radio" name="dog_id" value="{{ dog.id }}"> {{ dog.name }} , {{ dog.type_name }} <img src="{{ dog.picture.url }}"> <br>
+                                                        <article>
+                                                            <img src="{{ dog.picture.url }}"> <br> <input type="radio" name="dog_id" value="{{ dog.id }}"> {{ dog.name }} , {{ dog.type_name }}
+                                                        </article>
                                                     {% endfor %}
+                                               </Section>
                                                 <br>
                                             {% endif %}
-                                        </div>
-                                        <div class="dogstaying_add_col">
-                                        </div>
-                                        <div class="dogs_update_col">
-                                            <input class="submitBtn" type="submit" value="הוסף">
                                         </div>
                                     </form>
                                 </div>
 
 								<div class="clear"></div>
+                            <input class="chooseOmanaBtn" type="submit" value="הוסף">
+
 						</div>
-						<div class="mainBtn"></div>
 					</main>
 			    	<footer id="footer"></footer>
 				</div><!--Block-->
 			</div><!--/#inner-wrap-->
 		</div><!--/#outer-wrap-->
-		<script src="../../static/js/main.js"></script>
-		<script src="../../static/js/script.js"></script>
-	</body>
+        <script src="../../static/js/main.js"></script>
+        <script src="../../static/js/script.js"></script>
+    </body>
 </html>
