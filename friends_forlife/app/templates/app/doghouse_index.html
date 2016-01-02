@@ -119,11 +119,11 @@
                                 <div id="houses_index_house_div">
                                     <div class="houses_index_houseDetails">
                                         <p class="name">{{ house.owner_name }}</p>
-                                        <div class="houses_index_col">
+                                        <div class="houses_index_col mapContainer">
                                             <div id="{{ house.id }}_map" style="width:300px; height:200px" onload="showAddress('{{ house.id }}_map','{{house.address}}'); return false"></div>
                                             <script type="text/javascript"> showAddress('{{ house.id }}_map','{{house.address}}'); </script>
                                         </div>
-                                        <div class="houses_index_col">
+                                        <div class="houses_index_col detailsContainer">
                                             <label class="label"> יישוב:</label>
                                             <label class="text">{{ house.owner_city }}</label>
                                             <br>
@@ -138,13 +138,13 @@
                                             <br>
                                             <label class="label"> תפוסה מקסימאלית:</label>
                                             <label class="text"> {{ house.capacity }}</label>
-                                            <form id="delete{{ house.id }}" action="doghouse_delete">
-                                                <input type="hidden" name="id" value="{{ house.id }}">
-                                                <input type="submit" class="houses_index_RemoveBtn" value="הסרה"/>
-                                            </form>
                                             <form name="dogstaying_add" action="dogstaying_add">
                                                 <input type="hidden" name="doghouse_id" value="{{ house.id }}">
                                                 <input type="submit" class="houses_index_FosterBtn" value="אומנה"/>
+                                            </form>
+                                            <form id="delete{{ house.id }}" action="doghouse_delete">
+                                                <input type="hidden" name="id" value="{{ house.id }}">
+                                                <input type="submit" class="houses_index_RemoveBtn" value="הסרה"/>
                                             </form>
                                         </div>
                                     </div>
