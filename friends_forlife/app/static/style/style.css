@@ -1163,7 +1163,7 @@ input[type="search"]::-webkit-search-decoration {
 .houses_index_houseDetails {
 	float: right;
     /*margin: 5% 1%;*/
-    width: 100%;
+    width: 94.5%;
     padding: 35px;
     border-bottom: 1px solid #eee;
 }
@@ -1183,11 +1183,11 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .houses_index_col.mapContainer {
-	width: 38%;
+	width: 39%;
 }
 
 .houses_index_col.detailsContainer {
-	width: 62%;
+	width: 61%;
 }
 
 #houses_index_house_div .text {
