@@ -642,13 +642,13 @@ input[type="search"]::-webkit-search-decoration {
     width: 70%;
 }
 
-.dogsDetails p {
+.dogsDetails .generalDetails p {
 	font-family: gisha;
     font-weight: lighter;
     font-size: 15px;
 }
 
-.dogsDetails p span {
+.dogsDetails .generalDetails p span {
 	font-family: trashimclm;
 	color: rgba(114, 146, 153, 1);
 	font-size: 18px;
