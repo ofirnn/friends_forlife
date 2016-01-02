@@ -642,9 +642,16 @@ input[type="search"]::-webkit-search-decoration {
     width: 70%;
 }
 
+.dogsDetails p {
+	font-family: gisha;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
 .dogsDetails p span {
+	font-family: trashimclm;
 	color: rgba(114, 146, 153, 1);
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .dogsDetails .col-4 {
