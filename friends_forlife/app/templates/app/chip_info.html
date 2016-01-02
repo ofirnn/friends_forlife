@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>Friends for Life</title>
+		<script src="../../static/js/modernizr.js"></script>
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+		<link rel="stylesheet" href="../../static/style/style.css">
+		<link rel="stylesheet" href="../../static/style/styleMobile.css">
+	</head>
+	<body dir="rtl">
+		<div id="outer-wrap">
+			<div id="inner-wrap">
+			    <header id="top">
+			        <div class="block">
+			            <a href="index.html"  id="logo"></a><!--Logo-->
+			            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
+			            <div id="contact">
+							{% if request.user.is_authenticated %}
+                                <div id="loginBannerBeforeClick">
+                                    <button id="btnClick" class="based">מחובר למערכת</button>
+                                </div>
+                                <div id="loginBannerAfterClick" style="display:none;">
+                                    <form name="logout" action="logout_endpoint" method="post">
+                                                <input type="submit" value="התנתק">
+                                        <label> מחובר כ:</label><br>
+                                        <label class="text"> {{ user.username }}</label>
+                                    </form>
+                                </div>
+                            {% else %}
+                                <div id="loginBannerBeforeClick">
+                                    <button id="btnClick" class="based">כניסה למערכת</button>
+                                </div>
+                                <div id="loginBannerAfterClick" style="display:none;">
+                                    <form name="login" action="login_endpoint" method="post">
+                                                <input type="submit" value="כניסה">
+                                                <input type="password" name="password" placeholder="סיסמא" required>
+                                                <input type="text" name="usermail" placeholder="שם משתמש" required>
+                                    </form>
+                                </div>
+                            {% endif %}
+			            </div>
+					    <nav id="nav">
+				            <ul>
+				                <li class="navBtnAdopt">
+				                    <a href="dogs_4_adoption.html">אמץ כלב</a>
+				                </li>
+				             	<li class="navBtnFoster">
+				                    <a href="house_registration.html">רישום לאומנה</a>
+				                </li>
+				             <!--<li class="navBtnAbout">
+				                    <a href="#">אודות</>
+				              </li>-->
+    				             <li class="navBtnGallery">
+				                    <a href="#">גלריה</a></a>
+				                </li>
+				             <!--<li class="navBtnContact">
+				                    <a href="#">צור קשר</a>
+				                </li>-->
+				                <li class="navBtnDonate">
+				                    <a href="donation_baskets.html">תרומה</a></a>
+				                </li>
+                                {% if request.user.is_superuser %}
+                                    <li class="navBtnDogIndex">
+                                        <a href="dogs_index.html">ניהול כלבים</a>
+                                    </li>
+                                    <li class="navBtnDogHouseIndex">
+                                        <a href="doghouse_index.html">ניהול אומנה</a></a>
+                                    </li>
+                                {% endif %}
+				            </ul>
+			            	<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+			    		</nav>
+					</div>
+			    </header>
+				<main id="main">
+					<div class="block">
+						<div class="mainTop"></div>
+						<div class="mainContent">
+				    		<h1>תוצאות החיפוש</h1>
+                                {% if dog_chip_info.name != "None" %}
+                                    <img src="../../static/img/dogs_img/no-img.jpg" class="picture col-4" style="width:100px; height:70px; margin-top:70px" >
+										<div class="dogsDetails">
+											<p class="name">
+												{{ dog_chip_info.name }}
+											</p>
+											<div class="col-4">
+												<p>
+                                                    <span> בעלים:</span> <br>{{ dog_chip_info.owner_name }}
+                                                </p>
+                                                <p>
+                                                    <span> כתובת:</span> <br>{{ dog_chip_info.owner_address }}
+                                                </p>
+                                                <p>
+                                                    <span> טלפון:</span> <br> {{ dog_chip_info.owner_phone }}
+                                                </p>
+                                            </div>
+                                            <div class="col-4">
+												<p class="age">
+													<span>תאריך לידה: </span><br> {{ dog_chip_info.birth_date }}
+												</p>
+												<br>
+												<p>
+													<span>גזע: </span> {{ dog_chip_info.type_name }}
+												</p>
+                                            </div>
+											<div class="col-4">
+                                                <p>
+													<span>צבע: </span>  {{ dog_chip_info.color }}
+												</p>
+                                                <br>
+												{%  if dog_chip_info.is_castrated == "כן" %}
+												<p style="color:#2ecc71;">
+													מסורס
+												</p>
+												{% else %}
+												<p style="color:#e74c3c;">
+													לא מסורס
+												</p>
+												{% endif %}
+                                                <br>
+                                                <p>
+													<span>חיסון כלבת אחרון:</span> {{ dog_chip_info.last_kalevet }}
+												</p>
+                                            </div>
+                                {% else %}
+
+                                {% endif %}
+								<div class="clear"></div>
+							</form>
+						</div>
+					</main>
+			    	<footer id="footer"></footer>
+				</div><!--Block-->
+			</div><!--/#inner-wrap-->
+		</div><!--/#outer-wrap-->
+		<script src="../../static/js/main.js"></script>
+		<script src="../../static/js/script.js"></script>
+	</body>
+</html>

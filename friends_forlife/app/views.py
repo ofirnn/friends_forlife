@@ -5,12 +5,15 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import RequestContext, loader
 from django.contrib.auth import authenticate, login, logout
+from lxml import html
+import requests
 from models import *
 import datetime
 
 ALL_STRING = "All"
 
 CHIP_INFO_BASE_URL = "https://klav.im/results/"
+
 
 
 def login_endpoint(request):
@@ -30,6 +33,56 @@ def login_endpoint(request):
 def logout_endpoint(request):
     logout(request)
     return index(request)
+
+def chip_info(request):
+    findstr = request.GET.get("findstr")
+
+    page = requests.get("%s%s" % (CHIP_INFO_BASE_URL, findstr))
+    tree = html.fromstring(page.content)
+
+    dog_chip_info = dict()
+
+    name = tree.xpath('//*[@id="results"]/ul/li[1]/div/text()')
+    if len(name) == 0:
+        dog_chip_info['name'] = "None"
+    else:
+        dog_chip_info['name'] = name[0]
+        dog_chip_info['type_name'] = tree.xpath('//*[@id="results"]/ul/li[3]/div/div')[0].text_content()
+        dog_chip_info['birth_date'] = tree.xpath('//*[@id="results"]/ul/li[7]/div/div')[0].text_content()
+        dog_chip_info['last_kalevet'] = tree.xpath('//*[@id="results"]/ul/li[9]/div/div')[0].text_content()
+        dog_chip_info['is_castrated'] = tree.xpath('//*[@id="results"]/ul/li[5]/div/div')[0].text_content()
+        dog_chip_info['owner_name'] = tree.xpath('//*[@id="results"]/ul/li[10]/div/div/a')[0].text_content()
+        dog_chip_info['owner_phone'] = tree.xpath('//*[@id="results"]/ul/li[11]/div/div[1]')[0].text_content()
+        dog_chip_info['color'] = tree.xpath('//*[@id="results"]/ul/li[4]/div/div')[0].text_content()
+
+        address = ""
+        for item in tree.xpath('//*[@id="results"]/ul/li[12]/div/div'):
+            address += item.text_content()
+            address += " "
+
+        dog_chip_info['owner_address'] = address
+
+    print dog_chip_info
+    context = RequestContext(request, {'dog_chip_info': dog_chip_info})
+    return render(request, 'app/chip_info.html', context)
+
+
+@login_required()
+def dog_delete(request):
+    id = request.GET.get("id")
+    dog = Dog.objects.get(id=id)
+    dog.delete()
+
+    return dogs_index(request)
+
+
+@login_required()
+def doghouse_delete(request):
+    id = request.GET.get("id")
+    dog_house = DogHouse.objects.get(id=id)
+    dog_house.delete()
+
+    return doghouse_index(request)
 
 
 @login_required()

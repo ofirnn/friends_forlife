@@ -11,6 +11,8 @@
 {#    <script src="http://maps.google.com/maps?file=api&amp;v=3&amp;key=ABQIAAAAjU0EJWnWPMv7oQ-jjS7dYxSPW5CJgpdgO_s4yyMovOaVh_KvvhSfpvagV18eOyDWu7VytS6Bi1CWxw"#}
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3VGaibmhoHkoQTRTPB6URdzoQ0vLv_Cg"
         type="text/javascript"></script>
+        <script src="../../static/js/sweetalert-master/dist/sweetalert.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../static/js/sweetalert-master/dist/sweetalert.css">
     <script type="text/javascript">
 
         function showAddress(map_id, address) {
@@ -136,7 +138,7 @@
                                             <br>
                                             <label class="label"> תפוסה מקסימאלית:</label>
                                             <label class="text"> {{ house.capacity }}</label>
-                                            <form>
+                                            <form id="delete{{ house.id }}" action="doghouse_delete">
                                                 <input type="hidden" name="id" value="{{ house.id }}">
                                                 <input type="submit" class="houses_index_RemoveBtn" value="הסרה"/>
                                             </form>
@@ -174,7 +176,39 @@
                                     {% endfor %}
 
                                 {%  endif %}
+                                <script>
+                                        document.querySelector('#delete{{ house.id }}').addEventListener('submit', function(e) {
+                                            var form = this;
+                                            e.preventDefault();
+                                            swal({
+                                                title: "האם אתה בטוח?",
+                                                text: "הסרת אומנה מהמערכת היא צעד בלתי הפיך",
+                                                type: "warning",
+                                                showCancelButton: true,
+                                                confirmButtonColor: '#DD6B55',
+                                                confirmButtonText: 'כן, אני בטוח',
+                                                cancelButtonText: "לא, בטל",
+                                                closeOnConfirm: false,
+                                                closeOnCancel: false
+                                            },
+                                            function(isConfirm) {
+                                                if (isConfirm) {
+                                                    swal({
+                                                        title: 'מחיקה אושרה',
+                                                        text: 'הנך מועבר לדף הראשי',
+                                                        type: 'success'
+                                                    }, function() {
+                                                        form.submit();
+                                                    });
+
+                                                } else {
+                                                    swal("בוטל", "מחיקת האומנה בוטלה", "error");
+                                                }
+                                            });
+                                        });
+                                </script>
                             {%  endfor %}
+
 								<div class="clear"></div>
 						</div>
 						<div class="mainBtn"></div>
