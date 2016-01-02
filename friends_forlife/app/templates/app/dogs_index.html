@@ -45,7 +45,7 @@
                             {% endif %}			            </div>
 					    <nav id="nav">
 				            <ul>
-				                <li class="is-active navBtnAdopt">
+				                <li class="navBtnAdopt">
 				                    <a href="dogs_4_adoption.html">אמץ כלב</a>
 				                </li>
 				             	<li class="navBtnFoster">
@@ -64,7 +64,7 @@
 				                    <a href="donation_baskets.html">תרומה</a>
 				                </li>
                                 {% if request.user.is_superuser %}
-                                    <li class="navBtnDogIndex">
+                                    <li class="is-active navBtnDogIndex">
                                         <a href="dogs_index.html">ניהול כלבים</a>
                                     </li>
                                     <li class="navBtnDogHouseIndex">
