@@ -1101,7 +1101,7 @@ input[type="search"]::-webkit-search-decoration {
 /*====PAGE - Houses_index =====*/
 /*=========================================*/
 
-.houses_index_UpdateBtn{
+.houses_index_UpdateBtn {
 	color:#2ecc71;
     font-size: 20px;
     background: #eee;
@@ -1115,7 +1115,7 @@ input[type="search"]::-webkit-search-decoration {
 	margin-top: 10%;
 }
 
-.houses_index_FosterBtn{
+.houses_index_FosterBtn {
 	color:#2ecc71;
     font-size: 18px;
     background: #eee;
@@ -1126,17 +1126,6 @@ input[type="search"]::-webkit-search-decoration {
     font-family: trashimclm;
     float: right;
 	margin-top: 35px;
-}
-
-.houses_index_FosterBtn:hover .houses_index_RemoveBtn:hover {
-	background: #3E5560;
-    text-decoration: none;
-    color: #eee;
-    -webkit-transition: background-color 1000ms linear;
-    -moz-transition: background-color 1000ms linear;
-    -o-transition: background-color 1000ms linear;
-    -ms-transition: background-color 1000ms linear;
-    transition: background-color 1000ms linear;
 }
 
 .houses_index_RemoveBtn {
@@ -1151,6 +1140,17 @@ input[type="search"]::-webkit-search-decoration {
     float: right;
 	margin-top: 35px;
 	margin-right: 30%;
+}
+
+.houses_index_FosterBtn:hover, .houses_index_RemoveBtn:hover, .houses_index_UpdateBtn :hover {
+	background: #3E5560;
+    text-decoration: none;
+    color: #eee;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
 }
 
 #houses_index_house_div .name {
