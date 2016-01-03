@@ -34,8 +34,14 @@ def logout_endpoint(request):
     logout(request)
     return index(request)
 
+
+def chip_search(request):
+    context = RequestContext(request, {'dog': 'dog'})
+    return render(request, 'app/chip_search.html', context)
+
+
 def chip_info(request):
-    findstr = request.GET.get("findstr")
+    findstr = request.GET.get("chip_id")
 
     page = requests.get("%s%s" % (CHIP_INFO_BASE_URL, findstr))
     tree = html.fromstring(page.content)
@@ -274,25 +280,6 @@ def dogs_list(request):
     dogs = dogs.order_by('-last_updated')
     context = RequestContext(request, {'dogs_list': dogs})
     return render(request, 'app/dogs_list.html', context)
-
-
-def search_chip_info(search_string):
-    chip_info = dict()
-
-    return chip_info
-
-
-def chip_details(request):
-    req_search_string = request.GET.get("search_string", None)
-
-    chip_info = None
-    if req_search_string is not None:
-        chip_info = search_chip_info(req_search_string)
-
-    context = RequestContext(request, {'chip_info': chip_info})
-
-    return render(request, 'app/chip_info.html', context)
-
 
 def donation(request):
     basketks = DonationBasket.objects.all().order_by("-creation_date")

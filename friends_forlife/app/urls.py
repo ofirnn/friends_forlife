@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^dog_delete', views.dog_delete, name="dog_delete_endpoint"),
     # url(r'^adoptionday_add', views.adoptionday_add, name="adoptionday_add_page"),
     # url(r'^adoptionday_list', views.adoptionday_list, name="adoptionday_list"),
+    url(r'^chip_search', views.chip_search, name="chip_search"),
     url(r'^chip_info', views.chip_info, name="chip_info"),
     url(r'^login_endpoint', views.login_endpoint, name="login_endpoint"),
     url(r'^logout_endpoint', views.logout_endpoint, name="logout_endpoint"),

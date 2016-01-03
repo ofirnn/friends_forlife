@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d4db9c7-08d6-4cfa-97d7-657fd3a65cde" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/img/dogs_img/no-img.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/app/chip_search.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/app/chip_info.html" afterPath="$PROJECT_DIR$/app/templates/app/chip_info.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/app/doghouse_index.html" afterPath="$PROJECT_DIR$/app/templates/app/doghouse_index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/app/dogs_4_adoption.html" afterPath="$PROJECT_DIR$/app/templates/app/dogs_4_adoption.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/app/success_dog_insertion.html" afterPath="$PROJECT_DIR$/app/templates/app/success_dog_insertion.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/urls.py" afterPath="$PROJECT_DIR$/app/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views.py" afterPath="$PROJECT_DIR$/app/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -35,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+              <caret line="26" column="64" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="64" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -57,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/app/templates/app/dogstaying_add.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-5.8846154">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+              <caret line="9" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="144" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#label#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -79,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -87,11 +84,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chip_info.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/app/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4460719">
+              <caret line="177" column="83" selection-start-line="177" selection-start-column="83" selection-end-line="177" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chip_info.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/app/chip_info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.086551264">
-              <caret line="99" column="44" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
+            <state vertical-scroll-proportion="-10.576923">
+              <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#div#2;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -100,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="success_dog_insertion.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/app/success_dog_insertion.html">
+      <file leaf-file-name="chip_search.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/app/chip_search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.384615">
-              <caret line="115" column="68" selection-start-line="115" selection-start-column="68" selection-end-line="115" selection-end-column="68" />
+            <state vertical-scroll-proportion="-11.884615">
+              <caret line="83" column="35" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -114,20 +121,10 @@
         <entry file="file://$PROJECT_DIR$/app/templates/app/dogs_4_adoption.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-25.615385">
-              <caret line="222" column="50" selection-start-line="173" selection-start-column="40" selection-end-line="222" selection-end-column="50" />
+              <caret line="223" column="50" selection-start-line="173" selection-start-column="40" selection-end-line="222" selection-end-column="50" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="doghouse_index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/app/doghouse_index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.307693">
-              <caret line="158" column="80" selection-start-line="158" selection-start-column="60" selection-end-line="158" selection-end-column="80" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -136,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/app/static/style/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-24.407408">
-              <caret line="1291" column="0" selection-start-line="1291" selection-start-column="0" selection-end-line="1291" selection-end-column="0" />
+              <caret line="1324" column="0" selection-start-line="1324" selection-start-column="0" selection-end-line="1324" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -164,9 +161,10 @@
         <option value="$PROJECT_DIR$/app/templates/app/doghouse_index.html" />
         <option value="$PROJECT_DIR$/app/templates/app/success_dog_insertion.html" />
         <option value="$PROJECT_DIR$/app/templates/app/dogs_4_adoption.html" />
-        <option value="$PROJECT_DIR$/app/urls.py" />
-        <option value="$PROJECT_DIR$/app/views.py" />
         <option value="$PROJECT_DIR$/app/templates/app/chip_info.html" />
+        <option value="$PROJECT_DIR$/app/urls.py" />
+        <option value="$PROJECT_DIR$/app/templates/app/chip_search.html" />
+        <option value="$PROJECT_DIR$/app/views.py" />
       </list>
     </option>
   </component>
@@ -311,102 +309,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friends_forlife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friends_forlife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friends_forlife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friends_forlife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friends_forlife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friends_forlife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friends_forlife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friends_forlife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dogs_img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -641,7 +543,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451669420194</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first version of chip info&#10;fixed delete in doghouse">
+      <created>1451754093976</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1451754093976</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -684,10 +592,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed login in all pages" />
     <MESSAGE value="Fixed decoration of dogstaying add&#10;Added sweet-alert before delete dog (not yet on house!)&#10;Fixed picture upload for dog_insert&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed decoration of dogstaying add&#10;Added sweet-alert before delete dog (not yet on house!)&#10;Fixed picture upload for dog_insert&#10;&#10;" />
+    <MESSAGE value="first version of chip info&#10;fixed delete in doghouse" />
+    <option name="LAST_COMMIT_MESSAGE" value="first version of chip info&#10;fixed delete in doghouse" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/app/views.py</url>
+          <line>102</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -741,14 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.923077">
-          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="195" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/app/donation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -789,24 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/style/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.407408">
-          <caret line="1291" column="0" selection-start-line="1291" selection-start-column="0" selection-end-line="1291" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/app/dogs_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.615385">
@@ -823,12 +714,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/app/success_dog_insertion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.384615">
+          <caret line="115" column="68" selection-start-line="115" selection-start-column="68" selection-end-line="115" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/app/dogs_4_adoption.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-25.615385">
-          <caret line="222" column="50" selection-start-line="173" selection-start-column="40" selection-end-line="222" selection-end-column="50" />
+          <caret line="223" column="50" selection-start-line="173" selection-start-column="40" selection-end-line="222" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/style/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.407408">
+          <caret line="1324" column="0" selection-start-line="1324" selection-start-column="0" selection-end-line="1324" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="64" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -841,16 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/app/dogstaying_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#label#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -859,32 +766,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/app/success_dog_insertion.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/app/dogstaying_add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.384615">
-          <caret line="115" column="68" selection-start-line="115" selection-start-column="68" selection-end-line="115" selection-end-column="68" />
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="9" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="144" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#label#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/app/chip_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.884615">
+          <caret line="83" column="35" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/app/chip_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.576923">
+          <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#2;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/app/chip_info.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.086551264">
-          <caret line="99" column="44" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#2;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.4460719">
+          <caret line="177" column="83" selection-start-line="177" selection-start-column="83" selection-end-line="177" selection-end-column="83" />
+          <folding />
         </state>
       </provider>
     </entry>

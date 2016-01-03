@@ -40,11 +40,10 @@
                                                 <input type="text" name="usermail" placeholder="שם משתמש" required>
                                     </form>
                                 </div>
-                            {% endif %}
-			            </div>
+                            {% endif %}			            </div>
 					    <nav id="nav">
 				            <ul>
-				                <li class="navBtnAdopt">
+				                <li class="is-active navBtnAdopt">
 				                    <a href="dogs_4_adoption.html">אמץ כלב</a>
 				                </li>
 				             	<li class="navBtnFoster">
@@ -60,7 +59,7 @@
 				                    <a href="#">צור קשר</a>
 				                </li>-->
 				                <li class="navBtnDonate">
-				                    <a href="donation_baskets.html">תרומה</a></a>
+				                    <a href="donation_baskets.html">תרומה</a>
 				                </li>
                                 {% if request.user.is_superuser %}
                                     <li class="navBtnDogIndex">
@@ -79,64 +78,27 @@
 					<div class="block">
 						<div class="mainTop"></div>
 						<div class="mainContent">
-				    		<h1>תוצאות החיפוש</h1>
-                                {% if dog_chip_info.name != "None" %}
-                                    <img src="../../static/img/dogs_img/no-img.jpg" class="picture col-4" style="width:100px; height:70px; margin-top:70px" >
-										<div class="dogsDetails">
-											<p class="name">
-												{{ dog_chip_info.name }}
-											</p>
-											<div class="col-4">
-												<p>
-                                                    <span> בעלים:</span> <br>{{ dog_chip_info.owner_name }}
-                                                </p>
-                                                <p>
-                                                    <span> כתובת:</span> <br>{{ dog_chip_info.owner_address }}
-                                                </p>
-                                                <p>
-                                                    <span> טלפון:</span> <br> {{ dog_chip_info.owner_phone }}
-                                                </p>
-                                            </div>
-                                                <div class="col-4">
-												<p class="age">
-													<span>תאריך לידה: </span><br> {{ dog_chip_info.birth_date }}
-												</p>
-												<br>
-												<p>
-													<span>גזע: </span> {{ dog_chip_info.type_name }}
-												</p>
-                                            </div>
-											<div class="col-4">
-                                                <p>
-													<span>צבע: </span>  {{ dog_chip_info.color }}
-												</p>
-                                                <br>
-												{%  if dog_chip_info.is_castrated == "כן" %}
-												<p style="color:#2ecc71;">
-													מסורס
-												</p>
-												{% else %}
-												<p style="color:#e74c3c;">
-													לא מסורס
-												</p>
-												{% endif %}
-                                                <br>
-                                                <p>
-													<span>חיסון כלבת אחרון:</span> {{ dog_chip_info.last_kalevet }}
-												</p>
-                                            </div>
-                                {% else %}
+				    		<h1>חיפוש פרטי שבב</h1><br>
+                                <div class="dogstaying_add_form_details">
 
-                                {% endif %}
+                                    <form action="chip_info" method="get" name="dogstaying_addition" enctype="multipart/form-data" >
+                                        <div class="dogstaying_add_col">
+                                            <label class="dogstaying_add_form_label"> מספר השבב:</label>
+                                            <input type="text"  class="dogstaying_add_form_input datepicker" name="chip_id">
+                                            <br><br>
+                                        </div>
+                                </div>
+
 								<div class="clear"></div>
-							</form>
+                            <input class="chooseOmanaBtn" type="submit" value="חפש">
+                            </form>
 						</div>
 					</main>
 			    	<footer id="footer"></footer>
 				</div><!--Block-->
 			</div><!--/#inner-wrap-->
 		</div><!--/#outer-wrap-->
-		<script src="../../static/js/main.js"></script>
-		<script src="../../static/js/script.js"></script>
-	</body>
+        <script src="../../static/js/main.js"></script>
+        <script src="../../static/js/script.js"></script>
+    </body>
 </html>
