@@ -44,7 +44,7 @@ def chip_search(request):
 
 
 def convert_encode(str):
-    return str.decode('cp1251').encode('utf8')
+    return str.encode('utf8')
 
 def chip_info(request):
     findstr = request.GET.get("chip_id")
