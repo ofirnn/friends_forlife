@@ -43,6 +43,9 @@ def chip_search(request):
     return render(request, 'app/chip_search.html', context)
 
 
+def convert_encode(str):
+    return str.decode('cp1251').encode('utf8')
+
 def chip_info(request):
     findstr = request.GET.get("chip_id")
 
@@ -55,7 +58,7 @@ def chip_info(request):
     if len(name) == 0:
         dog_chip_info['name'] = "None"
     else:
-        dog_chip_info['name'] = name[0]
+        dog_chip_info['name'] = convert_encode(name[0])
         dog_chip_info['type_name'] = tree.xpath('//*[@id="results"]/ul/li[3]/div/div')[0].text_content()
         dog_chip_info['birth_date'] = tree.xpath('//*[@id="results"]/ul/li[7]/div/div')[0].text_content()
         dog_chip_info['last_kalevet'] = tree.xpath('//*[@id="results"]/ul/li[9]/div/div')[0].text_content()
