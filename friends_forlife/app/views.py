@@ -10,6 +10,9 @@ import requests
 from models import *
 import datetime
 
+import _ssl
+_ssl.PROTOCOL_SSLv23 = _ssl.PROTOCOL_TLSv1
+
 ALL_STRING = "All"
 
 CHIP_INFO_BASE_URL = "https://klav.im/results/"
