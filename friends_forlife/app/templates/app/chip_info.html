@@ -81,12 +81,13 @@
 						<div class="mainContent mainContentChipSearch">
 				    		<h1>תוצאות החיפוש</h1>
                                 {% if dog_chip_info.name != "None" %}
-                                    <img src="../../static/img/dogs_img/no-img.jpg" class="picture col-4" style="width:100px; height:70px; margin-top:70px" >
+                                <div id="dog_div" class="chipInfoPage">
+                                    <img src="../../static/img/dogs_img/no-img.jpg" class="picture col-4">
 										<div class="dogsDetails">
 											<p class="name">
 												{{ dog_chip_info.name }}
 											</p>
-											<div class="col-4">
+											<div class="col-4 generalDetails">
 												<p>
                                                     <span> בעלים:</span> <br>{{ dog_chip_info.owner_name }}
                                                 </p>
@@ -97,7 +98,7 @@
                                                     <span> טלפון:</span> <br> {{ dog_chip_info.owner_phone }}
                                                 </p>
                                             </div>
-                                                <div class="col-4">
+                                                <div class="col-4 generalDetails">
 												<p class="age">
 													<span>תאריך לידה: </span><br> {{ dog_chip_info.birth_date }}
 												</p>
@@ -106,17 +107,17 @@
 													<span>גזע: </span> {{ dog_chip_info.type_name }}
 												</p>
                                             </div>
-											<div class="col-4">
+											<div class="col-4 generalDetails">
                                                 <p>
 													<span>צבע: </span>  {{ dog_chip_info.color }}
 												</p>
                                                 <br>
 												{%  if dog_chip_info.is_castrated == "כן" %}
-												<p style="color:#2ecc71;">
+												<p style="color:#2ecc71; font-family: trashimclm;">
 													מסורס
 												</p>
 												{% else %}
-												<p style="color:#e74c3c;">
+												<p style="color:#e74c3c; font-family: trashimclm;">
 													לא מסורס
 												</p>
 												{% endif %}
@@ -126,7 +127,7 @@
 												</p>
                                             </div>
                                 {% else %}
-
+								</div>
                                 {% endif %}
 								<div class="clear"></div>
 							</form>

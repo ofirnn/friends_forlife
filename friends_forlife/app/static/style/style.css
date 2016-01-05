@@ -636,6 +636,7 @@ input[type="search"]::-webkit-search-decoration {
 	text-align:center;
 	margin-bottom: 20px;
 }
+
 .dogsDetails {
 	float: right;
     margin: 5% 1%;
@@ -1367,7 +1368,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .mainContent.mainContentChipSearch {
-	min-height: 215px;
+	min-height: 22px;
 }
 
 .dogstaying_add_col {
@@ -1408,4 +1409,13 @@ input[type="search"]::-webkit-search-decoration {
     -o-transition: background-color 1000ms linear;
     -ms-transition: background-color 1000ms linear;
     transition: background-color 1000ms linear;
+}
+
+.chipInfoPage .picture {
+	width: 14%;
+    margin-top: 5%;
+    margin-right: 2.5%;
+    position: relative;
+    float: right;
+    border-radius: 10px;
 }
