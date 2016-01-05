@@ -1368,7 +1368,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .mainContent.mainContentChipSearch {
-	min-height: 22px;
+	min-height: 205px;
 }
 
 .dogstaying_add_col {
@@ -1411,11 +1411,16 @@ input[type="search"]::-webkit-search-decoration {
     transition: background-color 1000ms linear;
 }
 
-.chipInfoPage .picture {
-	width: 14%;
-    margin-top: 5%;
+#dog_div.chipInfoPage .picture {
+	width: 18% !important;
+    margin-top: 8% !important;
     margin-right: 2.5%;
     position: relative;
     float: right;
     border-radius: 10px;
+}
+
+.chipInfoPage .dogsDetails {
+	margin: 2% 1%;
+	width: 75%;
 }
