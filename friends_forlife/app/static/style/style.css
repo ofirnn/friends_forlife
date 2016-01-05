@@ -1354,6 +1354,7 @@ input[type="search"]::-webkit-search-decoration {
 	float: right;
     padding: 10px 10px;
 }
+
 .dogsSection img {
     width: 100px;
     border-radius: 59px;
@@ -1364,7 +1365,23 @@ input[type="search"]::-webkit-search-decoration {
 	float: right;
     padding: 10px 10px;
 }
-.chooseOmanaBtn{
+
+.mainContent.mainContentChipSearch {
+	min-height: 215px;
+}
+
+.dogstaying_add_col {
+    margin-top: 3%;
+    margin-right: 2%;
+}
+   
+.dogstaying_add_col .dogstaying_add_form_label {
+	font-size: 22px;
+    color: rgba(114, 146, 153, 1);
+    font-family: trashimclm;
+}
+
+.chooseOmanaBtn {
 	color: #3E5560;
     font-size: 27px;
     background: #eee;
@@ -1375,7 +1392,7 @@ input[type="search"]::-webkit-search-decoration {
     float: left;
     margin-left: 125px;
 }
-.dogStayingMainBtn{
+.dogStayingMainBtn {
 	background:url("../../static/img/background/btm/main-content-btm-curve.jpg") no-repeat;
 	height:33px;
 	display:block;
