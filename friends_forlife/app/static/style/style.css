@@ -1093,6 +1093,16 @@ input[type="search"]::-webkit-search-decoration {
 	margin-top: 10px;
 }
 
+.dog_update_submitBtn:hover {
+	background: #3E5560;
+    text-decoration: none;
+    color: #eee;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
 
 /*=========================================*/
 /*====PAGE - Dog-Update =====*/
@@ -1341,6 +1351,9 @@ input[type="search"]::-webkit-search-decoration {
 /*=========================================*/
 /*====PAGE - Dogstaying-add =====*/
 /*=========================================*/
+.mainContent.mainContentDogstaying {
+	min-height: 270px;
+}
 
 .datepicker {
     font-size: 1.2em;
